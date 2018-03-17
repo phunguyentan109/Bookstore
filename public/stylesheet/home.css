@@ -1,0 +1,713 @@
+
+/*==========================================*/
+/* CAROUSEL AND NAV BAR CSS
+/*==========================================*/
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar-default{
+  background-color: transparent;
+  border-color: #faebd700;
+  padding: 0.8%;
+}
+
+.navbar-default .navbar-brand{
+  color: #e4e4e4;
+  font-size: 30px;
+  text-shadow:  0px 4px 3px rgba(0, 0, 0, 0.2),
+  0px 8px 13px rgba(0, 0, 0, 0.1),
+  0px 18px 23px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+  color: white;
+}
+
+.fas.fa-book.brand_logo{
+  font-size: 40px;
+  color: #e4e4e4;
+}
+
+.authentication{
+  font-size: unset;
+}
+
+.navbar-default .navbar-nav>li>a.authen:hover{
+  border-radius: 60%;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #e0dddd;
+  font-family: Lato;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus{
+  outline: none;
+  border-color: none;
+  border-radius: 10%;
+  background-color: #9999994f;
+  color: white;
+}
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  margin: auto;
+  min-height:400px;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.container-fluid.main{
+  position: relative;
+  padding: 0;
+}
+
+#logo{
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+#logo_p1{
+  font-family: 'Montserrat';
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+#logo_p2{
+  font-size: 16px;
+}
+
+.carousel-content{
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  color: white;
+  font-family: Lato;
+  font-weight: 700;
+  margin: 10% 0 0 0;
+  padding: 0 15%;
+  text-align: left;
+}
+
+.slogan_welcome{
+  font-size: 50px;
+  display: block;
+}
+
+.slogan{
+  font-size: 20px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#search_bar{
+  outline: none;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0 10px 0 10px;
+  color: white;
+}
+
+.form-group.search_bar{
+  margin-top: 2%;
+  width: 50%;
+}
+
+#search_filter{
+  font-size: 15px;
+  display: block;
+  font-weight: 500;
+}
+
+#search{
+  color: #ddd;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px)  {
+  .carousel-content{
+    margin: 20% 0 0 0;
+  }
+
+  .slogan_welcome{
+    font-size: 30px;
+    display: block;
+  }
+
+  .slogan{
+    font-size: 16px;
+  }
+
+  .form-group.search_bar{
+    width: 100%;
+  }
+
+  #search_bar{
+    height: 35px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .fas.fa-book.brand_logo{
+    font-size: 30px;
+  }
+
+  #logo_p1{
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+
+  #logo_p2{
+    display: none;
+  }
+
+  .navbar-default{
+    background-color: #252c31eb;
+    z-index: 30;
+  }
+}
+
+/*==========================================*/
+/* BENEFITS SHOWNCASE CSS
+/*==========================================*/
+.benefit_bg{
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1.5% 0;
+}
+
+.ben_name{
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+}
+
+.ben_des{
+  font-family: Lato;
+  color: #8e8d8d;
+}
+
+.arr_horizontal{
+  display: flex;
+  font-family: Lato;
+}
+
+.arr_vertical{
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon_benefit{
+  margin: auto;
+  padding: 15px;
+  font-size: 25px;
+  border: 2px solid #6f5757;
+  border-radius: 20%;
+  display: block;
+}
+
+/*==========================================*/
+/* EVENT CSS
+/*==========================================*/
+.rowEvent{
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+.stick{
+  height: 150px;
+  width: 100%;
+}
+
+.special-model{
+  height: 400px;
+}
+
+.left-bound{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#left{
+  height: 510px;
+  width: 100%;
+}
+
+#up{
+  margin-bottom: 10px;
+  height: 250px;
+  width: 100%
+}
+
+#down{
+  width: 100%;
+  height: 250px;
+}
+
+.left-event{
+  position: relative;
+}
+
+.left-event-des{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #00000036;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-title{
+  font-family: Lato;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: 2%;
+}
+
+.event-des{
+  font-family: Lato;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 4%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-shop{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2;
+  outline: none;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.left-event:hover .btn-shop{
+  opacity: 1;
+}
+
+.btn_event_position{
+  background-color: transparent;
+  color: #44444494;
+  border: 2px solid #44444475;
+  border-radius: 15px;
+  font-weight: 300;
+}
+
+/*==========================================*/
+/* NEW ARRIVAL BEST SELLER CSS
+/*==========================================*/
+.title-type{
+  font-family: Lato;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+  margin-top: 5%;
+  color: #555;
+}
+
+.title-des{
+  font-family: Lato;
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.rowBook{
+  margin-top: 1%;
+}
+
+.rowDeal{
+  margin-top: 1%;
+}
+
+p{
+  margin: 0px;
+}
+
+.book-info{
+  position: relative;
+}
+
+.top-bar{
+  transform: translateY(-10px);
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  font-family: 'Slabo 27px', serif;
+  line-height: 3;
+  background-color: #0e0e0ee3;
+}
+
+.rating{
+  right: 0;
+  left: 0;
+  text-align: left;
+  font-size: 16px;
+  z-index: 10;
+  color: white;
+  flex-basis: 70%;
+}
+
+.fa.fa-star{
+  font-size: 18px;
+  color: #f3da1b;
+  padding-left: 10px;
+}
+
+.btn_add{
+  color: white;
+  background-color: #67c7a5;
+  line-height: 3;
+  font-size: 16px;
+  z-index: 10;
+  flex-basis: 15%;
+  transition-duration: 0.5s;
+}
+
+.btn_add:hover,
+.btn_add:focus,
+.btn_add:active{
+  color: white;
+  transform: translateY(-10px);
+}
+
+.btn_wish{
+  line-height: 3;
+  font-size: 16px;
+  color: #dc671f;
+  z-index: 10;
+  flex-basis: 15%;
+  transition-duration: 0.5s;
+}
+
+.btn_wish:hover,
+.btn_wish:focus,
+.btn_wish:active{
+  transform: scale(1.4);
+  color: #ff6405;
+}
+
+.book-des{
+  transform: translateY(10px);
+  opacity: 0;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  position: absolute;
+  text-align: left;
+  color: white;
+  background-color: #0e0e0ee3;
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-family: 'Slabo 27px', serif;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+#book{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+  max-width: 250px;
+  font-size: 18px;
+}
+
+#price{
+  line-height: 2;
+  color: #56ded9;
+  font-size: 14px;
+}
+
+#sale{
+  font-size: 12px;
+  color: gray;
+  text-decoration: line-through;
+}
+
+#discount{
+  color: #e83935;
+}
+
+.arrival-book-model{
+  height: 515px;
+  width: 100%;
+}
+
+.best-book-model{
+  height: 400px;
+  width: 100%;
+}
+
+.book-info:hover .book-des{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.book-info:hover .top-bar{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.owl-theme .owl-dots .owl-dot{
+  margin-top: 2%;
+  outline: none;
+}
+
+.btn_position{
+  margin-top: 2%;
+  background-color: transparent;
+  color: #44444494;
+  border: 2px solid #44444475;
+  border-radius: 15px;
+  font-weight: 300;
+  transition-duration: 0.5s;
+}
+
+.btn_position:hover,
+.btn_position:focus,
+.btn_position:active{
+  background-color: transparent;
+  border: 2px solid #444444c7;
+  color: #444444c7;
+}
+
+/*==========================================*/
+/* AUTHORS
+/*==========================================*/
+.first-author{
+  display: flex;
+  margin-bottom: 5%;
+  align-items: center;
+  border-left: 7px solid gray;
+}
+
+.first-author-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 30%;
+  flex-grow: 1;
+}
+
+.first-author-img{
+  width: 250px;
+  height: 250px;
+  border-radius: 70%;
+}
+
+.first-author-name{
+  margin: 0px;
+  margin-top: 2%;
+  color: #555;
+  font-family: Lato;
+  text-align: left;
+}
+
+.first-author-quote{
+  font-family: 'Sanchez', serif;
+  padding-left: 3%;
+  flex-basis: 70%;
+  flex-grow: 1;
+  position: relative;
+  padding-top: 1%;
+
+}
+
+.first-author-quote:before {
+  content: '\201C';
+  position: absolute;
+  top: 0em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 3rem;
+  height: 3rem;
+  font: 7em/1.08em 'PT Sans', sans-serif;
+  color: #555;
+  text-align: center;
+}
+
+.big-quote{
+  margin: 0px;
+  font-size: 35px;
+  border-left: none;
+  color: #555555e0;
+}
+
+.quote-name{
+  color: gray;
+}
+
+.author-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 7%;
+}
+
+.author-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+}
+
+.author-des{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+  text-align: left;
+}
+
+.author-name{
+  font-weight: bold;
+  margin: 0px;
+  margin-bottom: 1%;
+  color: #555555b5;
+  font-family: Lato;
+  font-size: 18px;
+  font-family: 'Sanchez', serif;
+}
+
+.author-quote{
+  color: #808080de;
+  font-family: 'Sanchez', serif;
+}
+
+/*==========================================*/
+/* BRAND LOGO
+/*==========================================*/
+.brand-title{
+  font-family: Lato;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+  margin-top: 3%;
+  color: #555;
+}
+
+.brand-des{
+  font-family: Lato;
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 2%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+/*==========================================*/
+/* GET NEWS
+/*==========================================*/
+.news-bg{
+  background-color: #e8e8e88c;
+  margin-top: 20px;
+}
+
+.get-news{
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex-direction: column;
+}
+
+.news-des{
+  color: #404040cf;
+  font-family: Lato;
+  font-size: 18px;
+}
+
+.form-news{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.type_email{
+  border: none;
+  border-bottom: 1px solid #6969698f;
+  color: #696969;
+  background-color: transparent;
+  outline: none;
+  margin-left: 1%;
+  font-size: 16px;
+  line-height: 1.2;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.btn_submit{
+  color: #f7f7f7;
+  border: none;
+  outline: none;
+  margin-left: 1%;
+  padding: 10px;
+  background-color: #4a4949;
+  border-radius: 10px;
+}
+
+/*==========================================*/
+/* FOOTER
+/*==========================================*/
+/*footer{
+  height: 300px;
+  background-color: black;
+  }*/
+
+
+
