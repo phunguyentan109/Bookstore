@@ -40,10 +40,12 @@ app.get("/", function(req, res){
 	res.render("landing");
 });
 
+//REGISTER ROUTE - GET
 app.get("/register", function(req, res){
 	res.render("register");
 });
 
+//REGISTER ROUTE - POST
 app.post("/register", function(req, res){
 	var newUser = new User({username: req.body.username});
 	User.register(newUser, req.body.password, function(err, user){
@@ -55,6 +57,17 @@ app.post("/register", function(req, res){
 		});
 	})
 })
+
+//LOGIN ROUTE - GET
+app.get("/login", function(req, res){
+	res.render("login");
+})
+
+//LOGIN ROUTE - POST
+app.post("/login", passport.authenticate("local", {
+	successRedirect: "/",
+	failureRedirect: "/login"
+}));
 
 app.listen(3000, function(req, res){
 	console.log("Server is running...");

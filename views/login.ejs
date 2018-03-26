@@ -1,0 +1,52 @@
+<% include partials/header %>
+<link rel="stylesheet" href="/stylesheet/authen.css">
+</head>
+<body>
+	<div class="container content">
+		<div class="customize-md-6">
+			<div class="intro-content">
+				<h1 id="brand-name"><i class="fas fa-book"></i> Kafka</h1>
+				<p class="brand-slogan">Book for everyone</p>
+				<p class="become-member">Don't have account? Want to be a member?</p>
+				<button id="join-us">Join Us</button>
+				<p class="social-account">Or login via social account</p>
+				<div id="social-login">
+					<button class="btn btn-primary btn-block" id="button-facebook"><i class="fab fa-facebook-f social-icon"></i> <span class="social-text">Facebook</span></button>
+					<button class="btn btn-primary btn-block" id="button-twitter"><i class="fab fa-twitter social-icon"></i> <span class="social-text">Twitter</span></button>
+					<button class="btn btn-primary btn-block" id="button-google">
+						<i class="fab fa-google social-icon"></i> 
+						<span class="social-text">Google</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="customize-md-6">
+			<div class="register-form">
+				<div class="type-form">
+					<h2 class="title">Login</h2>
+					<p>Enter your username and password to log on.</p>
+					<hr>
+					<form action="/login" method="POST">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon addon-customize"><i class="fas fa-user"></i></div>
+								<input type="text" placeholder="Username" class="field-box" name="username">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon addon-customize"><i class="fas fa-key"></i></div>
+								<input type="text" placeholder="Password" class="field-box" name="password">
+							</div>
+						</div>
+						<button class="btn btn-primary btn-block" id="button-signup">Sign in</button>
+					</form>
+					<a href="#" class="option-choice">Forgot your password?</a>
+				</div>
+			</div>			
+		</div>
+	</div>
+	
+
+</body>
+</html>

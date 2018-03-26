@@ -1,0 +1,242 @@
+body{
+	background-image: url(/image/login2.jpg);
+	background-repeat: no-repeat;
+}
+
+.content{
+	margin-top: 15%;
+	padding-right: 0px;
+	padding-left: 0px;
+	background-color: #131313b3;
+	display: flex;
+	flex-direction: row;
+}
+
+.customize-md-6{
+	flex-grow: 1;
+	flex-basis: 50%;
+}
+
+/*==========================================*/
+/* INTRODUCTION CSS
+/*==========================================*/
+
+.intro-content{
+	color: #e0e0e0;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	width: 80%;
+	margin: auto;
+	font-family: 'Montserrat';
+}
+
+#brand-name{
+	color: #f7f7f7;
+	font-size: 50px;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	margin-bottom: 6%;
+}
+
+.brand-slogan{
+	margin-top: 4%;
+	margin-bottom: 6%;
+	text-align: center;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+
+.become-member{
+	margin-top: 10%;
+	margin-bottom: 7%;
+	text-align: center;
+	letter-spacing: 1px;
+	font-weight: 700;
+	color: #ccc;	
+}
+
+#join-us{
+	display: block;
+	width: 40%;
+	margin: auto;
+	line-height: 2.5;
+	color: #e46b09;
+	background-color: transparent;
+	border: 2px solid #e46b09;
+	border-radius: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.social-account{
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 12%;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	color: #ccc;
+	margin-bottom: 7%;
+}
+
+#social-login{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+{
+	outline: none;
+}
+
+#button-facebook{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	outline: none;
+	border-radius: 30px;
+	background-color: #496b9c;
+	border: 2px solid #496b9c;
+	line-height: 2;
+	flex-basis: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    transition: flex-basis 0.3s;
+}
+
+#button-twitter{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	outline: none;
+	border-radius: 30px;
+	background-color: #4eb1ab;
+	border: 2px solid #4eb1ab;
+	line-height: 2;
+	margin-top: 0px;
+	flex-basis: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    transition: flex-basis 0.3s;
+}
+
+#button-google{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	outline: none;
+	border-radius: 30px;
+	background-color: #b74c2f;
+	border: 2px solid #b74c2f;
+	line-height: 2;
+	flex-basis: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
+	margin-top: 0px;
+
+	transition: flex-basis 0.3s;
+}
+
+#button-facebook:hover .social-icon,
+#button-twitter:hover .social-icon,
+#button-google:hover .social-icon{
+	margin-right: 7%;
+}
+
+.social-text{
+	visibility: hidden;
+	transition: visibility 0s, opacity 0.5s;
+	opacity: 0;
+	width: 0px;
+}
+
+#button-facebook:hover .social-text,
+#button-twitter:hover .social-text,
+#button-google:hover .social-text{
+	visibility: visible;
+	opacity: 1;
+}
+
+#button-facebook:hover,
+#button-twitter:hover,
+#button-google:hover{
+	flex-basis: 28%;
+	justify-content: flex-start;
+}
+
+/*==========================================*/
+/* LOGIN CSS
+/*==========================================*/
+
+.register-form{
+	background-color: white;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.type-form{
+	width: 60%;
+	margin: auto;
+}
+
+#icon-login{
+	font-size: 100px;
+	text-align: center;
+	display: block;
+	color: #69b599;
+}
+
+.title{
+	font-family: Lato;
+}
+
+.form-group{
+	margin-bottom: 20px;
+}
+
+.addon-customize{
+	border: none;
+	background-color: white;
+	border-bottom: 1px solid #80808054;
+}
+
+.field-box{
+	width: 100%;
+	display: block;
+	line-height: 2;
+	border: none;
+	border-bottom: 1px solid #80808054;
+}
+
+#button-signup{
+	border-radius: 20px;
+	background-color: #69b599;
+	border: 1px solid #69b599;
+	margin-top: 10%;
+	line-height: 1.8;
+}
+
+.option-choice{
+	display: block;
+	color: gray;
+	margin-top: 6%;
+}
+
+.option-choice:hover,
+.option-choice:focus{
+	text-decoration: none;
+	color: #dc6767;
+}
