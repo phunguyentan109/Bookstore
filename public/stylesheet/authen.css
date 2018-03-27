@@ -10,6 +10,14 @@ body{
 	background-color: #131313b3;
 	display: flex;
 	flex-direction: row;
+	opacity: 0;
+	transition-duration: 1s;
+	transform: translateY(-50px);
+}
+
+.content-show{
+	opacity: 1;
+	transform: translateY(0px);
 }
 
 .customize-md-6{
@@ -55,10 +63,14 @@ body{
 	text-align: center;
 	letter-spacing: 1px;
 	font-weight: 700;
-	color: #ccc;	
+	color: #ccc;
+
+	opacity: 0;
+	transition-duration: 0.5s;
+	transform: translateX(-40px);	
 }
 
-#join-us{
+.join{
 	display: block;
 	width: 40%;
 	margin: auto;
@@ -69,6 +81,16 @@ body{
 	border-radius: 20px;
 	font-weight: 700;
 	text-transform: uppercase;
+	outline: none;
+
+	opacity: 0;
+	transition-duration: 0.5s;
+	transform: translateX(-40px);
+}
+
+.join-appear{
+	opacity: 1;
+	transform: translateX(0px);
 }
 
 .social-account{
@@ -79,6 +101,15 @@ body{
 	letter-spacing: 1px;
 	color: #ccc;
 	margin-bottom: 7%;
+
+	opacity: 0;
+	transition-duration: 0.5s;
+	transform: translateY(40px);
+}
+
+.social-appear{
+	opacity: 1;
+	transform: translateX(0px);
 }
 
 #social-login{
@@ -87,17 +118,18 @@ body{
 	justify-content: center;
 }
 
-{
-	outline: none;
+.btn-appear{
+	opacity: 1 !important;
+	transform: translateY(0px) !important;
 }
 
-#button-facebook{
+.button-facebook{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-
-	outline: none;
+	
+	padding: 6px 12px; 
 	border-radius: 30px;
 	background-color: #496b9c;
 	border: 2px solid #496b9c;
@@ -106,15 +138,18 @@ body{
     margin-left: 1%;
     margin-right: 1%;
 
-    transition: flex-basis 0.3s;
+    transition: flex-basis 0.3s, transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-#button-twitter{
+.button-twitter{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 
+	padding: 6px 12px;
 	outline: none;
 	border-radius: 30px;
 	background-color: #4eb1ab;
@@ -125,16 +160,18 @@ body{
     margin-left: 1%;
     margin-right: 1%;
 
-    transition: flex-basis 0.3s;
+    transition: flex-basis 0.3s, transform 0.5s 0.2s, opacity 0.5s 0.2s;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-#button-google{
+.button-google{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 
-	outline: none;
+	padding: 6px 12px;
 	border-radius: 30px;
 	background-color: #b74c2f;
 	border: 2px solid #b74c2f;
@@ -143,13 +180,17 @@ body{
     margin-left: 1%;
     margin-right: 1%;
 	margin-top: 0px;
-
-	transition: flex-basis 0.3s;
+	transition: flex-basis 0.3s, transform 0.5s 0.4s, opacity 0.5s 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-#button-facebook:hover .social-icon,
-#button-twitter:hover .social-icon,
-#button-google:hover .social-icon{
+.button-facebook:hover .social-icon,
+.button-facebook:focus .social-icon,
+.button-twitter:hover .social-icon,
+.button-twitter:focus .social-icon,
+.button-google:hover .social-icon,
+.button-google:focus .social-icon{
 	margin-right: 7%;
 }
 
@@ -160,18 +201,41 @@ body{
 	width: 0px;
 }
 
-#button-facebook:hover .social-text,
-#button-twitter:hover .social-text,
-#button-google:hover .social-text{
+.button-facebook:hover .social-text,
+.button-facebook:focus .social-text,
+.button-twitter:hover .social-text,
+.button-twitter:focus .social-text,
+.button-google:hover .social-text,
+.button-google:focus .social-text{
 	visibility: visible;
 	opacity: 1;
 }
 
-#button-facebook:hover,
-#button-twitter:hover,
-#button-google:hover{
+.button-facebook:hover,
+.button-facebook:focus{
+	outline: none;
 	flex-basis: 28%;
 	justify-content: flex-start;
+	border-color: #496b9c;
+	background-color: #496b9c;
+}
+
+.button-twitter:hover, 
+.button-twitter:focus{
+	outline: none;
+	flex-basis: 28%;
+	justify-content: flex-start;
+	border-color: #4eb1ab;
+	background-color: #4eb1ab;
+}
+
+.button-google:hover,
+.button-google:focus{
+	outline: none;
+	flex-basis: 28%;
+	justify-content: flex-start;
+	border-color: #b74c2f;
+	background-color: #b74c2f;
 }
 
 /*==========================================*/
@@ -207,6 +271,44 @@ body{
 	margin-bottom: 20px;
 }
 
+.email{
+	visibility: hidden;
+	transform: translateX(-50px);
+	opacity: 0;
+	transition-duration: 0.7s;
+	transition-delay: 0s;
+	height: 0px;
+	margin-bottom: 0px;
+}
+
+.re-email{
+	visibility: hidden;
+	transform: translateX(-50px);
+	opacity: 0;
+	transition-duration: 0.7s;
+	transition-delay: 0.3s; 
+	height: 0px;
+	margin-bottom: 0px;
+}
+
+.re-password{
+	visibility: hidden;
+	transform: translateX(-50px);
+	opacity: 0;
+	transition-duration: 0.7s;
+	transition-delay: 0.6s;
+	height: 0px;
+	margin-bottom: 0px;
+}
+
+.signup-appear{
+	visibility: visible;
+	transform: translateX(0px);
+	opacity: 1;
+	height: unset;
+	margin-bottom: 20px;
+}
+
 .addon-customize{
 	border: none;
 	background-color: white;
@@ -221,12 +323,27 @@ body{
 	border-bottom: 1px solid #80808054;
 }
 
-#button-signup{
+.button-signup{
 	border-radius: 20px;
 	background-color: #69b599;
 	border: 1px solid #69b599;
-	margin-top: 10%;
+	margin-top: 2%;
 	line-height: 1.8;
+	transition-duration: 1s;
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+.show_btn_su{
+	transform: translateY(0px);
+	opacity: 1;
+	background-color: #d04242;
+	border-color: #d04242;
+}
+
+.show_btn_si{
+	transform: translateY(0px);
+	opacity: 1;
 }
 
 .option-choice{
