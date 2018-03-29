@@ -1,0 +1,212 @@
+.content-appear-up{
+opacity: 0;
+-webkit-animation-name: appearUpContent;
+		animation-name: appearUpContent;
+-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;		
+}
+
+/*==========================================*/
+/* STARTER ANIMATION FOR INTRODUCTION
+/*==========================================*/
+.name-appear-up{
+	opacity: 0;
+	-webkit-animation-name: appearUp;
+			animation-name: appearUp;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 0.6s;
+			animation-fill-mode: forwards;
+}
+
+.slogan-appear-up{
+	opacity: 0;
+	-webkit-animation-name: appearUp;
+			animation-name: appearUp;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 0.3s;
+			animation-fill-mode: forwards;
+}
+
+.become-member-appear-left{
+	opacity: 0;
+	-webkit-animation-name: appearLeft;
+			animation-name: appearLeft;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 0.9s;
+			animation-fill-mode: forwards;
+}
+
+.join-appear-left{
+	opacity: 0;
+	-webkit-animation-name: appearLeft;
+			animation-name: appearLeft;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 0.9s;
+			animation-fill-mode: forwards;
+}
+
+.social-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+			animation-name: appearBottom;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 1.2s;
+			animation-fill-mode: forwards;	
+}
+
+.facebook-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+			animation-name: appearBottom;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 1.5s;
+			animation-fill-mode: forwards;	
+}
+
+.twitter-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+			animation-name: appearBottom;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 1.7s;
+			animation-fill-mode: forwards;	
+}
+
+.google-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+			animation-name: appearBottom;
+	-webkit-animation-duration: 0.5s;
+			animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
+			animation-delay: 1.9s;
+			animation-fill-mode: forwards;	
+}
+
+/*==========================================*/
+/* STARTER ANIMATION FOR FORM
+/*==========================================*/
+.username-appear-right{
+	opacity: 0;
+	-webkit-animation-name: appearRight;
+	animation-name: appearRight;
+	-webkit-animation-duration: 0.7s;
+	animation-duration: 0.7s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.password-appear-right{
+	opacity: 0;
+	-webkit-animation-name: appearRight;
+	animation-name: appearRight;
+	-webkit-animation-duration: 0.7s;
+	animation-duration: 0.7s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	animation-delay: 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.button-signup-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+	animation-name: appearBottom;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.forgot-appear-bottom{
+	opacity: 0;
+	-webkit-animation-name: appearBottom;
+	animation-name: appearBottom;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	animation-delay: 0.8s;
+	animation-fill-mode: forwards;
+}
+
+/*==========================================*/
+/* KEYFRAME
+/*==========================================*/
+@keyframes appearUp{
+	0%{
+		transform: translateY(-40px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes appearUpContent{
+	0%{
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes appearLeft{
+	0%{
+		transform: translateX(-40px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes appearBottom{
+	0%{
+		transform: translateY(40px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes appearRight{
+	0%{
+		transform: translateX(20px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}

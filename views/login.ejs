@@ -1,62 +1,63 @@
 <% include partials/header %>
 <link rel="stylesheet" href="/stylesheet/authen.css">
+<link rel="stylesheet" href="/stylesheet/authen-animation.css">
 </head>
 <body>
-	<div class="container content">
+	<div class="container content content-appear-up">
 		<div class="customize-md-6">
 			<div class="intro-content">
-				<h1 id="brand-name"><i class="fas fa-book"></i> Kafka</h1>
-				<p class="brand-slogan">Book for everyone</p>
-				<p class="become-member">Don't have account? Want to be a member?</p>
-				<button class="join">Join Us</button>
-				<p class="social-account">Or login via social account</p>
+				<h1 class="brand-name name-appear-up"><i class="fas fa-book"></i> Kafka</h1>
+				<p class="brand-slogan slogan-appear-up">Book for everyone</p>
+				<p class="become-member become-member-appear-left">Don't have account? Want to be a member?</p>
+				<button type="reset" class="join join-appear-left">Join Us</button>
+				<p class="social-account social-appear-bottom">Or login via social account</p>
 				<div id="social-login">
-					<button class="button-facebook"><i class="fab fa-facebook-f social-icon"></i> <span class="social-text">Facebook</span></button>
-					<button class="button-twitter"><i class="fab fa-twitter social-icon"></i> <span class="social-text">Twitter</span></button>
-					<button class="button-google"><i class="fab fa-google social-icon"></i> <span class="social-text">Google</span></button>
+					<button class="button-facebook facebook-appear-bottom"><i class="fab fa-facebook-f social-icon"></i> <span class="social-text">Facebook</span></button>
+					<button class="button-twitter twitter-appear-bottom"><i class="fab fa-twitter social-icon"></i> <span class="social-text">Twitter</span></button>
+					<button class="button-google google-appear-bottom"><i class="fab fa-google social-icon"></i> <span class="social-text">Google</span></button>
 				</div>
 			</div>
 		</div>
 		<div class="customize-md-6">
 			<div class="register-form">
 				<div class="type-form">
-					<h2 class="title">Login</h2>
-					<p>Enter your username and password to log on.</p>
+					<h2 class="title name-appear-up">Login</h2>
+					<p class="title-des slogan-appear-up">Enter your username and password to log on.</p>
 					<hr>
-					<form action="/login" method="POST">
-						<div class="form-group">
+					<form action="/login" method="POST" id="authenForm">
+						<div class="form-group username-appear-right">
 							<div class="input-group">
 								<div class="input-group-addon addon-customize"><i class="fas fa-user"></i></div>
-								<input type="text" placeholder="Username" class="field-box" name="username">
+								<input type="text" placeholder="Username" class="field-box" name="username" required>
 							</div>
 						</div>
 						<div class="form-group email">
 							<div class="input-group">
 								<div class="input-group-addon addon-customize"><i class="fas fa-envelope"></i></div>
-								<input type="text" placeholder="Email" class="field-box" name="email">
+								<input type="email" placeholder="Email" class="field-box" name="email" id="email">
 							</div>
 						</div>
 						<div class="form-group re-email">
 							<div class="input-group">
 								<div class="input-group-addon addon-customize"><i class="fas fa-envelope"></i></div>
-								<input type="text" placeholder="Re-enter Email" class="field-box" name="re-email">
+								<input type="email" placeholder="Confirm Email" class="field-box" name="re-email" id="re-email">
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group password-appear-right">
 							<div class="input-group">
 								<div class="input-group-addon addon-customize"><i class="fas fa-key"></i></div>
-								<input type="text" placeholder="Password" class="field-box" name="password">
+								<input type="password" placeholder="Password" pattern=".{3,}" class="field-box" name="password" required title="Your password requires equal to or more than 3 characters" id="password">
 							</div>
 						</div>
 						<div class="form-group re-password">
 							<div class="input-group">
 								<div class="input-group-addon addon-customize"><i class="fas fa-key"></i></div>
-								<input type="text" placeholder="Re-enter Password" class="field-box" name="re-password">
+								<input type="password" placeholder="Confirm Password" class="field-box" name="re-password" id="re-password">
 							</div>
 						</div>
-						<button class="btn btn-primary btn-block button-signup">Sign in</button>
+						<button type="submit" class="btn btn-primary btn-block button-signup button-signup-appear-bottom">Sign in</button>
 					</form>
-					<a href="#" class="option-choice">Forgot your password?</a>
+					<a href="#" class="option-choice forgot-appear-bottom">Forgot your password?</a>
 				</div>
 			</div>			
 		</div>
