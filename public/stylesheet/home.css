@@ -125,6 +125,7 @@ footer {
   font-weight: 300;
   display: block;
   margin-bottom: 5px;
+  color: #dadada;
 }
 
 #search_bar{
@@ -339,12 +340,13 @@ footer {
 /*==========================================*/
 .title-type{
   font-family: Lato;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 8px;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 8%;
   color: #555;
+  margin-bottom: 4%;
 }
 
 .title-des{
@@ -456,19 +458,61 @@ p{
   text-decoration: none;
 }
 
+.tab{
+  display: flex;
+  justify-content: center;
+}
+
+.tablinks{
+  background-color: transparent;
+  border: none;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 4%;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: #000000;
+  line-height: 2.5;
+}
+
+.tablinks.active{
+  border-bottom: 1px solid;
+}
+
 #book{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: white;
+  color: #3c3c3c;
   max-width: 250px;
   font-size: 18px;
+  font-family: Lato;
+  margin-top: 6%;
+  font-weight: lighter;
 }
 
-#price{
-  line-height: 2;
-  color: #56ded9;
+#author{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #a0a0a0;
+  max-width: 250px;
   font-size: 14px;
+  font-family: Lato;
+  margin-top: 3%;
+  font-weight: lighter;
+}
+
+
+#price{
+  /*  line-height: 2;*/
+  color: black;
+  font-size: 14px;
+  margin-top: 3%;
+  font-weight: normal;
+  font-family: Lato;
 }
 
 #sale{
@@ -482,8 +526,10 @@ p{
 }
 
 .arrival-book-model{
-  height: 515px;
-  width: 100%;
+  /*height: 515px;*/
+  height: 290px;
+  width: 80% !important;
+  margin: auto;
 }
 
 .best-book-model{
@@ -508,19 +554,32 @@ p{
 
 .btn_position{
   margin-top: 2%;
-  background-color: transparent;
-  color: #44444494;
-  border: 2px solid #44444475;
-  border-radius: 15px;
-  font-weight: 300;
+  background-color: #555;
+  color: white;
+  border: 2px solid #555;
+  font-weight: normal;
   transition-duration: 0.5s;
+  line-height: 2.5;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  font-family: Lato;
+}
+
+.fas.fa-angle-down.arrow{
+  padding-left: 5px;
+  top: 0;
+  bottom: 0;
+  font-size: 20px;
+  vertical-align: sub;
 }
 
 .btn_position:hover,
 .btn_position:focus,
 .btn_position:active{
   background-color: transparent;
-  border: 2px solid #444444c7;
+  border: none;
+  border-bottom: 2px solid #555;
   color: #444444c7;
 }
 
@@ -755,28 +814,3 @@ footer{
 .copyright{
   color: gray;
 }
-
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 99;
-    cursor: pointer;
-}
-
-#text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
-
