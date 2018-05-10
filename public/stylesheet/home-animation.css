@@ -9,6 +9,19 @@
 	        animation-timing-function: linear;
 }
 
+.fadeInDown_recommend{
+	-webkit-animation-name: fadeInDown_custom;
+	        animation-name: fadeInDown_custom;
+	-webkit-animation-duration: 0.3s;
+	        animation-duration: 0.3s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	        /*animation-delay: 0.2s;*/
+	        animation-fill-mode: forwards;
+}
+
 .fadeInLeft_custom{
 	opacity: 0;
 	-webkit-animation-name: fadeInLeft_custom;
@@ -19,7 +32,7 @@
 	        animation-iteration-count: 1;
 	-webkit-animation-timing-function: linear;
 	        animation-timing-function: linear;
-	        animation-delay: 1s;
+	        animation-delay: 0.5s;
 	        animation-fill-mode: forwards;
 }
 
@@ -34,6 +47,48 @@
 	-webkit-animation-timing-function: linear;
 	        animation-timing-function: linear;
 	        animation-delay: 1s;
+	        animation-fill-mode: forwards;
+}
+
+.fadeInUp_recommend{
+	opacity: 0;
+	-webkit-animation-name: fadeInUp_custom;
+	        animation-name: fadeInUp_custom;
+	-webkit-animation-duration: 0.3s;
+	        animation-duration: 0.3s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	        animation-delay: 1s;
+	        animation-fill-mode: forwards;
+}
+
+.fadeInRight_recommend_b1{
+	opacity: 0;
+	-webkit-animation-name: fadeInRight_custom;
+	        animation-name: fadeInRight_custom;
+	-webkit-animation-duration: 0.3s;
+	        animation-duration: 0.3s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	        animation-delay: 0.4s;
+	        animation-fill-mode: forwards;
+}
+
+.fadeInRight_recommend_b2{
+	opacity: 0;
+	-webkit-animation-name: fadeInRight_custom;
+	        animation-name: fadeInRight_custom;
+	-webkit-animation-duration: 0.3s;
+	        animation-duration: 0.3s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	        animation-delay: 0.8s;
 	        animation-fill-mode: forwards;
 }
 
@@ -57,12 +112,24 @@
 @keyframes fadeInLeft_custom{
 	0%{
 		opacity: 0;
-		transform: translateX(-20px);
+		transform: translateX(-30px);
 	}
 
 	40%{
 		opacity: 0.4;
 		transform: translateX(-10px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes fadeInRight_custom{
+	0%{
+		opacity: 0;
+		transform: translateX(30px);
 	}
 
 	100%{
