@@ -40,6 +40,10 @@ app.get("/", function(req, res){
 	res.render("landing");
 });
 
+app.get("/store", function(req, res){
+	res.render("store");
+})
+
 //REGISTER ROUTE - POST
 app.post("/register", function(req, res){
 	var newUser = new User({

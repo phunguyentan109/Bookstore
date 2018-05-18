@@ -8,61 +8,67 @@
 
 </head>
 <body>
-  <div class="container-fluid main">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+  <div class="bg-color">
+    <div class="container-fluid">
+      <nav class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <i class="fas fa-book brand_logo"></i>
-            <div id="logo">
+            <div class="logo">
               <span class="logo_p1">Kafka</span>
               <span class="logo_p2">Book for everyone</span>  
             </div>
           </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/store">Store</a></li>
+            <li><a href="#">Author</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <form class="search-form">
+                <input type="text" class="search-bar" placeholder="Enter book or author for searching..." name="search">
+                <button class="search-btn" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Store</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#" class="authen"><i class="fas fa-user authentication"></i></a></li>
-            <li><a href="#" class="authen"><i class="fas fa-shopping-cart authentication"></i></a></li>
+
+            <li><a href="#">Cart</a></li>
+            <li><a href="#">|</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign In</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
+  </div>
 
+  <div class="container-fluid">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
       <div class="carousel-content">
         <span class="slogan_welcome fadeInDown_custom">Welcome to Kafka,</span>
         <span class="slogan fadeInLeft_custom">New, cheap books with quality service.</span>
         <span class="slogan fadeInLeft_custom">Kafka proud to be one of the best service in bringing knowledge closer to people's life.</span>
-        <div class="form-group search_bar fadeInUp_custom">
-          <input type="text" class="form-control input-lg" placeholder="Type any name of books, author for searching..." id="search_bar" id="input_large">  
-        </div>
-        <span class="fadeInUp_custom" id="search_filter"><span id="search">Recently searched: </span>The Hunger Games, Philip K. Dick</span>
       </div>
 
-      <div class="carousel-inner" role="listbox">
-
+      <div class="carousel-inner">
         <div class="item active">
-          <img src="/image/carousel.jpg" class="ca3" alt="Image">
-        </div>
-
-        <div class="item">
-          <img src="/image/carousel4.jpg" alt="Image">
-        </div>
-
-        <div class="item">
-          <img src="/image/carousel5.jpg" alt="Image">
+          <img src="\image\landing-img2.jpg" alt="Chania">
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="container-fluid main">
     <div class="benefit_bg">
       <div class="container">
         <div class="row">
@@ -324,28 +330,70 @@
       <p class="title-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit ante tempor lectus.</p>
 
       <div class="bgimg">
+        <img src="/image/dependEvent.jpg" alt="" class="img-responsive event-img">
         <div class="opa-bg">
-          <div class="topleft logo_event">
+          <div class="logo_event">
             <i class="fas fa-book icon_event_owner"></i>
             <h3 class="logo_event_owner">Kafka</h3>
           </div>
           <div class="middle">
-            <h1>HAPPY INDEPENDENCE DAY CEREMONY</h1>
+            <h1 class="event-name">HAPPY INDEPENDENCE DAY CEREMONY</h1>
             <p>Discount 40% for Historic & Memoir</p>
-            <hr>
+            <hr class="event">
             <p id="demo" style="font-size:30px"></p>
           </div>
-          <!-- <div class="bottomleft">
-            <p>Some text</p>
-          </div> -->
         </div>
       </div>
+
+      <div class="upcoming">
+        <img src="/image/kidEvent.jpg" alt="" class="img-responsive upcoming-img">
+        <div class="upcoming-bg">
+          <div class="upcoming-owner">
+            <i class="fas fa-angle-up arrow upcoming-icon"></i>
+            <h3 class="upcoming-title">Upcoming 25 days</h3>
+          </div>
+          <div class="middle">
+            <h1 class="event-name upcoming-event-name">INTERNATIONAL CHILDREN DAY</h1>
+            <p class="upcoming-discount">Discount 40% for Historic & Memoir</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="container text-center">
       <h2 class="title-type deal-title">Daily deals</h2>
       <p class="title-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit ante tempor lectus.</p>
-      
+
+      <!-- <div class="row rowDaily">
+        <div class="col-md-9 review-book">
+          <img src="/image/book10.jpg" class="review-book-img" alt="Image">
+          <div class="hot-daily-content">
+            <p id="price"><span id="discount">45% | </span>85.000đ <span id="sale">105.000</span></p>
+            <h3 class="hot-daily-name">Dune</h3>
+            <h4 class="hot-daily-author">by Frank Herbert</h4>
+            <p>"Unique among SF novels…I know nothing comparable to it except Lord of the Rings"</p>
+            <button class="takeALook">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book9.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">A Brave New World</p>
+            <p id="author">Aldous Huxley</p>
+            <p id="price">100.000đ</p>
+          </div> 
+        </div>
+      </div> -->
+
       <div class="row rowDaily">
         <div class="col-sm-3">
           <div class="book-info">
