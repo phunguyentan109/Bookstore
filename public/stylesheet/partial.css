@@ -1,0 +1,108 @@
+/*==========================================*/
+/* FOOTER
+/*==========================================*/
+footer{
+  background-color: #1f1f1f;
+  padding: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-title{
+  margin: 0px;
+  margin-bottom: 12px;
+  color: #656565;
+  font-weight: bold;
+}
+
+.footer-select{
+  list-style-type: none;
+  padding-left: 0px;
+  line-height: 2;
+}
+
+.footer-select li a{
+  color: gray;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.footer-select li a:hover,
+.footer-select li a:focus{
+  color: black;
+}
+
+.social{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28px;
+  justify-content: flex-start;
+}
+
+.social_icon{
+  padding-top: 8px;
+  color: white;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  border-radius: 60%;
+  margin-right: 3%;
+}
+
+.form-news{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.type_email{
+  border: none;
+  border-bottom: 1px solid #6969698f;
+  color: #696969;
+  background-color: transparent;
+  outline: none;
+  margin-left: 1%;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.btn_submit{
+  color: #f7f7f7;
+  border: none;
+  outline: none;
+  margin-left: 1%;
+  padding: 10px;
+  background-color: #4a4949;
+  border-radius: 10px;
+}
+
+.bold-store-info{
+  font-weight: bold;
+  color: #4a4949;
+}
+
+.detail-info{
+  color: gray;
+}
+
+.row-brand{
+  margin-bottom: 6%;
+}
+
+/*==========================================*/
+/* FINAL BAR
+/*==========================================*/
+.final-bar{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #2d2d2d;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: white;
+}
+
+.copyright{
+  color: gray;
+}
