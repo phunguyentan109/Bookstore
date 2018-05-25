@@ -161,8 +161,6 @@
 /* CATEGORY CSS
 /*==========================================*/
 .content{
-/*  padding-left: 12%;
-  padding-right: 12%;*/
   margin-top: 3%;
 }
 
@@ -171,7 +169,7 @@
 }
 
 .category{
-  color: #3e3e3e;
+  color: #5f5f5f;
   text-transform: uppercase;
   background-color: white;
   margin: 0;
@@ -181,7 +179,7 @@
   padding-bottom: 15px;
   border-top: 1px solid #d6d6d6;
   font-family: Lato;
-  font-weight: 100;
+  font-weight: bold;
   border-bottom: 1px solid #d6d6d6;
 }
 
@@ -194,6 +192,7 @@
   padding-bottom: 15px;
   list-style-type: none;
   padding-left: 15px;
+  margin-bottom: 0px;
 }
 
 .listGenre li a{
@@ -337,7 +336,6 @@ hr.event {
 
 .rowBook{
   margin-top: 3%;
-  margin-bottom: 3%;
 }
 
 p{
@@ -434,31 +432,29 @@ p{
   text-decoration: none;
 }
 
-#book{
+.book{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   color: #3c3c3c;
-  /*max-width: 250px;*/
   font-size: 18px;
   font-family: Lato;
   margin-top: 6%;
   font-weight: lighter;
 }
 
-#author{
+.author{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   color: #a0a0a0;
-  /*max-width: 250px;*/
   font-size: 14px;
   font-family: Lato;
   margin-top: 3%;
   font-weight: lighter;
 }
 
-#price{
+.price{
   color: black;
   font-size: 14px;
   margin-top: 3%;
@@ -466,13 +462,13 @@ p{
   font-family: Lato;
 }
 
-#sale{
+.sale{
   font-size: 12px;
   color: gray;
   text-decoration: line-through;
 }
 
-#discount{
+.discount{
   color: #e83935;
 }
 
@@ -480,4 +476,131 @@ p{
   height: 310px;
   width: 85% !important;
   margin: auto;
+}
+
+/*==========================================*/
+/* PRICE CSS
+/*==========================================*/
+.price-filter{
+  /*margin-top: 7%;*/
+  /*margin-bottom: 7%;*/
+  /*margin-left: 15px;*/
+  padding-left: 15px;
+  margin-right: 15px;
+  font-weight: bold;
+  color: #949494;
+  line-height: 3;
+  background-color: white;
+  border-radius: 5px;
+  /*border: 2px solid #e7dfd3;*/
+}
+
+/*.start, .end{
+  color: #424242;
+}*/
+
+.price-range{
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  margin-bottom: 5%;
+  padding-right: 15px;
+  margin-top: 10%;
+}
+
+.toPrice{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.price-bar{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 8%;
+  /*line-height: 2.5;*/
+  margin-top: 4%;
+}
+
+.form-group{
+  margin-bottom: 0px;
+}
+
+.range-button{
+  display: block;
+  width: 90%;
+  margin: auto;
+  background-color: #80afae;
+  margin-bottom: 8%;
+  line-height: 2;
+  margin-top: 8%;
+  border-radius: 5px;
+  border: 1px solid #87adac;
+  color: white;
+  font-weight: 700;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  background-color: #000000a3;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  border: 1px solid #9a9a9a !important;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.ui-widget{
+  font-size: 9px !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle{
+  top: -0.4em !important;
+}
+
+/*==========================================*/
+/* COMPARE CSS
+/*==========================================*/
+
+.no-compare{
+  margin-top: 15%;
+  margin-bottom: 15%;
+  text-align: center;
+  color: #c6c6c6;
+  font-size: 13px;
+  font-family: Lato;
+}
+
+/*==========================================*/
+/* PAGINATION CSS
+/*==========================================*/
+
+.listPage{
+  display: flex;
+  list-style-type: none;
+  padding-left: 0px;
+  justify-content: flex-end;
+  margin-bottom: 6%;
+  margin-top: 2%;
+}
+
+.page{
+  border: 1px solid #b0b1b1;
+  padding: 7px 12px;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.page.active{
+  background-color: #80afae;
+  border-color: #80afae;
+}
+
+.page a{
+  color: #777;
+}
+
+.active a{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }

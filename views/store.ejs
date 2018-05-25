@@ -1,5 +1,8 @@
 <% include partials/header %>
 <link rel="stylesheet" href="/stylesheet/store.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/storeJS.js"></script>
 </head>
 <body>
 	<div class="bg-color">
@@ -84,7 +87,6 @@
 				</nav>
 			</div>
 		</div>
-
 	</div>
 
 	<!-- <div class="container">
@@ -139,37 +141,30 @@
 		          <li><a href="#">Biographies & Memoirs</a></li>
         		</ul>
 
-        		<!-- <h4 class="category"><i class="fas fa-list-ul cate-icon"></i> Book Category</h4>
-				
-				<ul class="listGenre">
-		          <li><a href="#">All</a></li>
-		          <li><a href="#">Fantasy & Sci-Fi</a></li>
-		          <li><a href="#">Art & Photography</a></li>
-		          <li><a href="#">Cooking, Food & Wine</a></li>
-		          <li><a href="#">Literature & Fiction</a></li>
-		          <li><a href="#">Science & Education</a></li>
-		          <li><a href="#">Audiobooks</a></li>
-		          <li><a href="#">Business</a></li>
-		          <li><a href="#">Childer's Book</a></li>
-		          <li><a href="#">Biographies & Memoirs</a></li>
-        		</ul> -->
+        		<h4 class="category"><i class="far fa-eye cate-icon"></i> Book Comparison</h4>
+        		<p class="no-compare">You have no item to compare</p>
 
-        		<h4 class="category"><i class="fas fa-list-ul cate-icon"></i> Book Price Range</h4>
-				
-				<ul class="listGenre">
-		          <li><a href="#">All</a></li>
-		          <li><a href="#">Fantasy & Sci-Fi</a></li>
-		          <li><a href="#">Art & Photography</a></li>
-		          <li><a href="#">Cooking, Food & Wine</a></li>
-		          <li><a href="#">Literature & Fiction</a></li>
-		          <li><a href="#">Science & Education</a></li>
-		          <li><a href="#">Audiobooks</a></li>
-		          <li><a href="#">Business</a></li>
-		          <li><a href="#">Childer's Book</a></li>
-		          <li><a href="#">Biographies & Memoirs</a></li>
-        		</ul>
 
-        		<h4 class="category"><i class="fas fa-chart-line"></i> Top Rated Books</h4>
+        		<h4 class="category"><i class="fas fa-hand-holding-usd cate-icon"></i> Book Price Range</h4>
+        		<p class="price-filter">Range: <span class="start">0.00</span> - <span class="end">0.00</span></p>
+				
+				<div class="price-bar">
+					<div id="slider-range"></div>	
+				</div>
+
+				<form class="price-range">
+					<div class="form-group">
+						<input type="text" name="start" placeholder="0" class="form-control">
+					</div>
+					<p class="toPrice"> - </p>
+					<div class="form-group">
+						<input type="text" name="end" placeholder="0" class="form-control">
+					</div>
+				</form>
+
+				<button class="range-button"><i class="far fa-check-circle"></i> Confirm</button>
+
+				<h4 class="category"><i class="fas fa-hand-holding-usd cate-icon"></i> Tags cloud</h4>
 			</div>
 		</div>	
 
@@ -189,9 +184,9 @@
 	                		</div>
 	                		<img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -205,9 +200,9 @@
 	                		</div>
 	                		<img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -221,9 +216,9 @@
 	                		</div>
 	                		<img src="/image/book3.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -237,9 +232,9 @@
 	                		</div>
 	                		<img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -253,9 +248,9 @@
 	                		</div>
 	                		<img src="/image/book5.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -269,9 +264,9 @@
 	                		</div>
 	                		<img src="/image/book6.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -285,9 +280,9 @@
 	                		</div>
 	                		<img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -301,9 +296,9 @@
 	                		</div>
 	                		<img src="/image/book8.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
 	          	</div>
 
@@ -317,12 +312,70 @@
 	                		</div>
 	                		<img src="/image/book9.jpg" class="img-responsive arrival-book-model" alt="Image">
 	              		</div>
-	              		<p id="book">Go Set A Watchman</p>
-	              		<p id="author">Harper Lee</p>
-	              		<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
 	            	</div>
-	          	</div>	                 
-      		</div>              
+	          	</div>
+
+	          	<div class="col-sm-6 col-md-4">
+	            	<div class="book-info">
+	              		<div class="onBook">
+	                		<div class="interact">
+	                  			<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+	                  			<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+	                  			<button class="btn_wishList"><i class="far fa-heart"></i></button>
+	                		</div>
+	                		<img src="/image/book10.jpg" class="img-responsive arrival-book-model" alt="Image">
+	              		</div>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
+	            	</div>
+	          	</div>
+
+	          	<div class="col-sm-6 col-md-4">
+	            	<div class="book-info">
+	              		<div class="onBook">
+	                		<div class="interact">
+	                  			<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+	                  			<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+	                  			<button class="btn_wishList"><i class="far fa-heart"></i></button>
+	                		</div>
+	                		<img src="/image/book11.jpg" class="img-responsive arrival-book-model" alt="Image">
+	              		</div>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
+	            	</div>
+	          	</div>
+
+	          	<div class="col-sm-6 col-md-4">
+	            	<div class="book-info">
+	              		<div class="onBook">
+	                		<div class="interact">
+	                  			<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+	                  			<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+	                  			<button class="btn_wishList"><i class="far fa-heart"></i></button>
+	                		</div>
+	                		<img src="/image/book9.jpg" class="img-responsive arrival-book-model" alt="Image">
+	              		</div>
+	              		<p class="book">Go Set A Watchman</p>
+	              		<p class="author">Harper Lee</p>
+	              		<p class="price">85.000đ <span class="sale">105.000</span> <span class="discount">-20%</span></p>
+	            	</div>
+	          	</div>	          		                 
+      		</div>
+
+      		<hr>
+
+      		<ul class="listPage">
+			  	<li class="page active"><a href="#">1</a></li>
+			  	<li class="page"><a href="#">2</a></li>
+			  	<li class="page"><a href="#">3</a></li>
+			  	<li class="page"><a href="#">4</a></li>
+			  	<li class="page"><a href="#">5</a></li>
+			</ul>            
     	</div>
 	</div>
 
