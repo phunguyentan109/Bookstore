@@ -54,20 +54,20 @@
 
   <div class="container-fluid">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-content">
-        <span class="slogan_welcome fadeInDown_custom">Welcome to Kafka,</span>
-        <span class="slogan fadeInLeft_custom">New, cheap books with quality service.</span>
-        <span class="slogan fadeInLeft_custom">Kafka proud to be one of the best service in bringing knowledge closer to people's life.</span>
-      </div>
 
       <div class="carousel-inner">
         <div class="item active">
-          <img src="\image\landing-img1.jpg" alt="Chania">
-        </div>
-        <div class="item">
-          <img src="\image\landing-img.jpg" alt="Chania">
+          <div class="carousel-content">
+            <img src="\image\landing.jpg" alt="Chania">
+            <div class="container event-first">
+              <div class="slogan_welcome fadeInDown_custom">Welcome to Kafka,</div>
+              <div class="slogan fadeInLeft_custom">New, cheap books with quality service.</div>
+              <div class="slogan fadeInLeft_custom">Kafka proud to be one of the best service in bringing knowledge closer to people's life.</div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -99,268 +99,269 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container recommend">
-      <h2 class="title-type">Featured Books</h2>
-      <div class="row">
-        <div class="col-md-4 content-align">
-          <h4 class="recommended-title fadeInDown_recommend">Recommended Book</h4>
-          <h1 class="recommended-name fadeInLeft_custom">Journey To the center of the Earth</h1>
-          <h4 class="recommended-author fadeInLeft_custom">Jules Verne</h4>
-          <p class="recommended-description fadeInLeft_custom">From advanced selectors to generated content to web fonts, and from gradients, shadows, and rounded corners to elegant animations, CSS3 hold a universe of creative possibilities. No one can better guide you through these galaxies than Dan Cederholm.</p>
-          <button class="takeALook fadeInUp_recommend">Get one now</button>
+  <div class="container recommend">
+    <h2 class="title-type">Featured Books</h2>
+    <div class="row">
+      <div class="col-md-4 content-align">
+        <h4 class="recommended-title fadeInDown_recommend">Recommended Book</h4>
+        <h1 class="recommended-name fadeInLeft_custom">Journey To the center of the Earth</h1>
+        <h4 class="recommended-author fadeInLeft_custom">Jules Verne</h4>
+        <p class="recommended-description fadeInLeft_custom">From advanced selectors to generated content to web fonts, and from gradients, shadows, and rounded corners to elegant animations, CSS3 hold a universe of creative possibilities. No one can better guide you through these galaxies than Dan Cederholm.</p>
+        <button class="takeALook fadeInUp_recommend">Get one now</button>
+      </div>
+      <div class="col-md-4 content-align fadeInRight_recommend_b1">
+        <img src="/image/book11.jpg" alt="" class="recommended-book">
+      </div>
+      <div class="col-md-4 content-align fadeInRight_recommend_b2">
+        <img src="/image/back11.png" alt="" class="recommended-book">
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="tab">
+      <button class="tablinks active" id="newArrival">New Arrival</button>
+      <button class="tablinks" id="bestSeller">Best Seller</button>
+      <button class="tablinks" id="recommended">Recommended</button>
+    </div>
+
+    <div class="owl-carousel owl-theme owl-width">
+      <div class="row rowBook">
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Go Set A Watchman</p>
+            <p id="author">Harper Lee</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+          </div>
         </div>
-        <div class="col-md-4 content-align fadeInRight_recommend_b1">
-          <img src="/image/book11.jpg" alt="" class="recommended-book">
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">A Brave New World</p>
+            <p id="author">Aldous Huxley</p>
+            <p id="price">100.000đ</p>
+          </div> 
         </div>
-        <div class="col-md-4 content-align fadeInRight_recommend_b2">
-          <img src="/image/back11.png" alt="" class="recommended-book">
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <a href="#"><p id="book">The Murder On The Orient Express</p></a>
+            <p id="author">Agatha Christie</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
+          </div> 
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Nineteen Eighty-Four</p></a>
+            <p id="author">George Orwell</p>
+            <p id="price">85.000đ <span id="sale">105.000</span></p>
+          </div> 
+        </div>              
+      </div>
+
+      <div class="row rowBook">
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Go Set A Watchman</p>
+            <p id="author">Harper Lee</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">A Brave New World</p>
+            <p id="author">Aldous Huxley</p>
+            <p id="price">100.000đ</p>
+          </div> 
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <a href="#"><p id="book">The Murder On The Orient Express</p></a>
+            <p id="author">Agatha Christie</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
+          </div> 
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Nineteen Eighty-Four</p></a>
+            <p id="author">George Orwell</p>
+            <p id="price">85.000đ <span id="sale">105.000</span></p>
+          </div> 
+        </div>              
+      </div>
+
+      <div class="row rowBook">
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Go Set A Watchman</p>
+            <p id="author">Harper Lee</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">A Brave New World</p>
+            <p id="author">Aldous Huxley</p>
+            <p id="price">100.000đ</p>
+          </div> 
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <a href="#"><p id="book">The Murder On The Orient Express</p></a>
+            <p id="author">Agatha Christie</p>
+            <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
+          </div> 
+        </div>
+
+        <div class="col-sm-3">
+          <div class="book-info">
+            <div class="onBook">
+              <div class="interact">
+                <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+                <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn_wishList"><i class="far fa-heart"></i></button>
+              </div>
+              <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
+            </div>
+            <p id="book">Nineteen Eighty-Four</p></a>
+            <p id="author">George Orwell</p>
+            <p id="price">85.000đ <span id="sale">105.000</span></p>
+          </div> 
+        </div>              
+      </div>
+    </div>
+    <form action="/store">
+      <button class="btn_position">View More <i class="fas fa-angle-down arrow"></i></button>
+    </form>
+  </div>    
+
+  <div class="container">
+    <h2 class="event-title">Ongoing Events</h2>
+    <p class="title-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit ante tempor lectus.</p>
+
+    <div class="bgimg">
+      <img src="/image/dependEvent.jpg" alt="" class="img-responsive event-img">
+      <div class="opa-bg">
+        <div class="logo_event">
+          <i class="fas fa-book icon_event_owner"></i>
+          <h3 class="logo_event_owner">Kafka</h3>
+        </div>
+        <div class="middle">
+          <h1 class="event-name">HAPPY INDEPENDENCE DAY CEREMONY</h1>
+          <p>Discount 40% for Historic & Memoir</p>
+          <hr class="event">
+          <p id="demo" style="font-size:30px"></p>
         </div>
       </div>
     </div>
 
-    <div class="container text-center">
-      <div class="tab">
-        <button class="tablinks active" id="newArrival">New Arrival</button>
-        <button class="tablinks" id="bestSeller">Best Seller</button>
-        <button class="tablinks" id="recommended">Recommended</button>
-      </div>
-      
-      <div class="owl-carousel owl-theme owl-width">
-        <div class="row rowBook">
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Go Set A Watchman</p>
-              <p id="author">Harper Lee</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">A Brave New World</p>
-              <p id="author">Aldous Huxley</p>
-              <p id="price">100.000đ</p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <a href="#"><p id="book">The Murder On The Orient Express</p></a>
-              <p id="author">Agatha Christie</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Nineteen Eighty-Four</p></a>
-              <p id="author">George Orwell</p>
-              <p id="price">85.000đ <span id="sale">105.000</span></p>
-            </div> 
-          </div>              
+    <div class="upcoming">
+      <img src="/image/kidEvent.jpg" alt="" class="img-responsive upcoming-img">
+      <div class="upcoming-bg">
+        <div class="upcoming-owner">
+          <i class="fas fa-angle-up arrow upcoming-icon"></i>
+          <h3 class="upcoming-title">Upcoming 25 days</h3>
         </div>
-
-        <div class="row rowBook">
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Go Set A Watchman</p>
-              <p id="author">Harper Lee</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">A Brave New World</p>
-              <p id="author">Aldous Huxley</p>
-              <p id="price">100.000đ</p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <a href="#"><p id="book">The Murder On The Orient Express</p></a>
-              <p id="author">Agatha Christie</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Nineteen Eighty-Four</p></a>
-              <p id="author">George Orwell</p>
-              <p id="price">85.000đ <span id="sale">105.000</span></p>
-            </div> 
-          </div>              
+        <div class="middle">
+          <h1 class="event-name upcoming-event-name">INTERNATIONAL CHILDREN DAY</h1>
+          <p class="upcoming-discount">Discount 40% for Historic & Memoir</p>
         </div>
-
-        <div class="row rowBook">
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book1.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Go Set A Watchman</p>
-              <p id="author">Harper Lee</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book2.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">A Brave New World</p>
-              <p id="author">Aldous Huxley</p>
-              <p id="price">100.000đ</p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book7.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <a href="#"><p id="book">The Murder On The Orient Express</p></a>
-              <p id="author">Agatha Christie</p>
-              <p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
-            </div> 
-          </div>
-
-          <div class="col-sm-3">
-            <div class="book-info">
-              <div class="onBook">
-                <div class="interact">
-                  <p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
-                  <button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
-                  <button class="btn_wishList"><i class="far fa-heart"></i></button>
-                </div>
-                <img src="/image/book4.jpg" class="img-responsive arrival-book-model" alt="Image">
-              </div>
-              <p id="book">Nineteen Eighty-Four</p></a>
-              <p id="author">George Orwell</p>
-              <p id="price">85.000đ <span id="sale">105.000</span></p>
-            </div> 
-          </div>              
-        </div>
-      </div>
-      <form action="/store">
-        <button class="btn_position">View More <i class="fas fa-angle-down arrow"></i></button>
-      </form>
-    </div>    
-
-    <div class="container">
-      <h2 class="event-title">Ongoing Events</h2>
-      <p class="title-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit ante tempor lectus.</p>
-
-      <div class="bgimg">
-        <img src="/image/dependEvent.jpg" alt="" class="img-responsive event-img">
-        <div class="opa-bg">
-          <div class="logo_event">
-            <i class="fas fa-book icon_event_owner"></i>
-            <h3 class="logo_event_owner">Kafka</h3>
-          </div>
-          <div class="middle">
-            <h1 class="event-name">HAPPY INDEPENDENCE DAY CEREMONY</h1>
-            <p>Discount 40% for Historic & Memoir</p>
-            <hr class="event">
-            <p id="demo" style="font-size:30px"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="upcoming">
-        <img src="/image/kidEvent.jpg" alt="" class="img-responsive upcoming-img">
-        <div class="upcoming-bg">
-          <div class="upcoming-owner">
-            <i class="fas fa-angle-up arrow upcoming-icon"></i>
-            <h3 class="upcoming-title">Upcoming 25 days</h3>
-          </div>
-          <div class="middle">
-            <h1 class="event-name upcoming-event-name">INTERNATIONAL CHILDREN DAY</h1>
-            <p class="upcoming-discount">Discount 40% for Historic & Memoir</p>
-          </div>
         </div
       </div>
 

@@ -12,7 +12,7 @@ hr.style-blog{
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 /*==========================================*/
-/* CAROUSEL AND NAV BAR CSS
+/* NAV BAR CSS
 /*==========================================*/
 .container-fluid{
   padding-right: 0px;
@@ -36,7 +36,7 @@ hr.style-blog{
 
 .navbar {
   /*background-color: #000000a3;*/
-  /*position: absolute;*/
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -126,11 +126,6 @@ hr.style-blog{
   color: white;
 }
 
-.container-fluid.main{
-  position: relative;
-  padding: 0;
-}
-
 .logo{
   display: flex;
   flex-direction: column;
@@ -152,16 +147,31 @@ hr.style-blog{
   color: gray;
 }
 
+/*==========================================*/
+/* CAROUSEL CSS
+/*==========================================*/
+
 .carousel-content{
+  position: relative;
+}
+
+.event-first{
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  top: 0;
   right: 0;
   left: 0;
-  z-index: 20;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+  padding-top: 5%;
+
   color: white;
   font-family: Lato;
   font-weight: 700;
-  margin: 10% 0 0 0;
-  padding: 0 15%;
   text-align: left;
 }
 
@@ -178,23 +188,54 @@ hr.style-blog{
   color: #dadada;
 }
 
-@media only screen and (max-width: 600px)  {
-  .carousel-content{
-    margin: 20% 0 0 0;
-  }
+.event-first-content h4{
+  color: darkgray;
+  font-family: Lato;
+}
 
-  .slogan_welcome{
-    font-size: 30px;
-    display: block;
-  }
+.event-first-content h2{
+  font-family: Lato;
+  font-weight: lighter;
+  color: white;
+}
 
-  .slogan{
-    font-size: 16px;
-  }
+.event-first-content button{
+  line-height: 2.5;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-family: Lato;
+  text-transform: capitalize;
+  margin-top: 3%;
+}
 
-  .fas.fa-book.brand_logo{
-    font-size: 30px;
-  }
+.book-first{
+  width: 270px;
+  height: 400px;
+  margin-right: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.book-first.second{
+  margin-right: 0px;
+}
+
+.event-first-content h3{
+  color: white;
+}
+
+.first-sale{
+  font-size: 18px;
+  color: #bfbfbf;
+  text-decoration: line-through;
+}
+
+.first-discount{
+  color: #e83935;
 }
 
 /*==========================================*/
