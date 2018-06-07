@@ -1,0 +1,85 @@
+<% include partials/header %>
+
+<link rel="stylesheet" type="text/css" href="/stylesheet/cart.css">
+</head>
+<body>
+	<% include partials/navbar%>
+	<div class="crumbread-bg">
+		<div class="container">	
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Store</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container all-content">
+		<div class="row">
+			<div class="col-md-8">
+				<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Your cart</h4>
+				<div class="row cheader">
+					<div class="col-md-6">Books</div>
+					<div class="col-md-3">Price</div>
+					<div class="col-md-3">Amount</div>
+				</div>
+				<div class="row book-row">
+					<div class="col-md-6 detail-content">
+						<img src="/image/book1.jpg" class="cart-img">
+						<div>
+							<h4 class="name">Go Set A Watchman</h4>
+							<p class="author">Harper Lee</p>
+							<p class="delivery">
+								<!-- <span class="type standard"><i class="fas fa-truck space-icon"></i>Standard</span> -->
+								<span class="type fast"><i class="fas fa-rocket space-icon"></i>Fast Delivery</span>
+							</p>
+							<p class="option">
+								<a href="#">Wishlist</a>
+								<a href="#">Remove</a>
+							</p>
+						</div>	
+					</div>
+					<div class="col-md-3">
+						<h4 class="price">85.000đ</h4>
+						<p class="unit">(unit) 85.000đ</p>
+						<p class="old-price">110.000đ</p>
+						<p class="discount">-20%</p>	
+					</div>
+					<div class="col-md-3">
+						<div class="amountEdit">
+							<button class="btn btn-default" id="sub"><i class="fas fa-minus icon-amount"></i></button>
+							<p>0</p>
+							<button class="btn btn-default" id="add"><i class="fas fa-plus icon-amount"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Order Detail</h4>
+				<form class="horizon">
+					<input type="text" name="" placeholder="Type discount code here...">
+					<button>Apply</button>
+				</form>
+				<p class="applied"><i class="far fa-check-circle"></i> BADC1123423 is used</p>
+				<p class="apply-dis"></p>
+				<div class="notional">
+					<p>Notional Price</p> 
+					<p>60.000đ</p>
+				</div>
+				<div class="subtotal">
+					<p>Total Price</p> 
+					<p>60.000đ</p>
+				</div>	
+			</div>
+		</div>
+
+		<h4 class="content-title wishlist-title">Your wishlist</h4>
+		
+	</div>
+
+	<div class="footer-content">
+		<% include partials/footer %>
+	</div>
+</body>
+</html>

@@ -1,4 +1,147 @@
 /*==========================================*/
+/* NAVBAR CSS
+/*==========================================*/
+.container-fluid{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.bg-color{
+  background-color: #242424;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar-default{
+  background-color: transparent;
+  border-color: #faebd700;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-brand{
+  color: #e4e4e4;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+  color: white;
+}
+
+.fas.fa-book.brand_logo.brand_logo_fixed{
+  font-size: 30px;
+  color: white;
+}
+
+.fas.fa-book.brand_logo{
+  font-size: 40px;
+  color: white;
+}
+
+.authentication{
+  font-size: unset;
+}
+
+.navbar-default .navbar-nav>li>a.authen:hover{
+  border-radius: 60%;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: #dadada;
+  font-family: Lato;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus{
+  outline: none;
+  border-color: none;
+  border-radius: 10%;
+  background-color: #9999994f;
+  color: white;
+}
+
+.container-fluid.main{
+  position: relative;
+  padding: 0;
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.logo_p1{
+  font-family: 'Montserrat';
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.logo_p2{
+  font-size: 14px;
+  color: gray;
+}
+
+.search-form{
+  position: relative;
+  padding-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 300px;
+  display: flex;
+  transition-duration: 0.5s;
+}
+
+.search-form:hover{
+  width: 500px;
+}
+
+.search-bar{
+  height: 40px;
+  width: 100%;
+  padding-left: 30px;
+  border-radius: 20px;
+  border: 2px solid #dadada;
+  background-color: transparent;
+  color: #9c9c9c;
+  outline: none;
+}
+
+.search-btn{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  color: #9c9c9c;
+  border: 1px solid transparent;
+  padding-left: 20px;
+}
+
+/*==========================================*/
 /* FOOTER
 /*==========================================*/
 footer{

@@ -1,0 +1,283 @@
+/*==========================================*/
+/* NAVBAR CSS
+/*==========================================*/
+.navbar {  
+  position: initial;
+}
+
+.navbar-default{
+  background-color: transparent;
+}
+
+/*==========================================*/
+/* BELOW CONTENT CSS
+/*==========================================*/
+.crumbread-bg{
+  background-color: #343434;
+  margin-bottom: 2%;
+}
+
+/*==========================================*/
+/* CRUMBREAD CSS
+/*==========================================*/
+.breadcrumb a{
+  color: #777777;
+}
+
+.breadcrumb>.active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.breadcrumb{
+  border-radius: 0px;
+  line-height: 3.5;
+  background-color: transparent;
+  padding: 0;
+  font-family: Lato;
+  margin-bottom: 0px;
+}
+
+/*==========================================*/
+/* CONTENT CSS
+/*==========================================*/
+.content-title{
+  color: #5f5f5f;
+  text-transform: uppercase;
+  background-color: white;
+  margin: 0;
+  padding-left: 10px;
+  margin-bottom: 1%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #d6d6d6;
+  font-family: Lato;
+  font-weight: bold;
+  border-bottom: 1px solid #d6d6d6;
+  margin-top: 5px;
+}
+
+.cate-icon{
+  margin-right: 10px;
+}
+
+/*==========================================*/
+/* BOOK CSS
+/*==========================================*/
+.cheader{
+  line-height: 3;
+  border-bottom: 1px solid #8080802e;
+  color: #808080b3;
+  font-size: 12px;
+  margin: 2% 0 0 0;
+}
+
+.book-row{
+  margin-top: 3%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 5%;
+}
+
+.detail-content{
+  display: flex;
+}
+
+.detail-content div{
+  display: flex;
+  flex-direction: column;
+  font-family: Lato;
+  margin-left: 5%;
+}
+
+.name{
+  margin-bottom: 8px;
+  color: #000000b0;
+}
+
+.author{
+  color: gray;
+  margin-bottom: 12px;
+}
+
+.type{
+  width: fit-content;
+  padding: 3px 10px;
+}
+
+.fast{
+  background-color: #0080008a;
+  color: white;
+}
+
+.standard{
+  background-color: #8080804a;
+  color: #0000008f;
+}
+
+.cart-img{
+  width: 100px;
+  height: 140px;
+}
+
+.space-icon{
+  margin-right: 5px;
+}
+
+.option{
+  margin-bottom: 12px;
+  margin-top: 2px;
+}
+
+.option a{
+  color: gray;
+  font-size: 15px;
+  font-weight: lighter;
+  margin-right: 10px;
+}
+
+.price, .old-price, .discount{
+  font-family: Lato;
+  color: #000000b0;
+}
+
+.unit{
+  color: gray;
+  font-size: 13px;
+  font-family: lato;
+}
+
+.old-price{
+  font-size: 12px;
+  text-decoration: line-through;
+  color: gray;
+}
+
+.discount{
+  color: red;
+}
+
+.wishlist-title{
+  font-weight: normal;
+  color: #808080a8;
+}
+
+.amountEdit{
+  display: flex;
+  align-items: center;
+}
+
+.amountEdit p{
+  padding: 0 10px;
+  margin: 0;
+}
+
+.amountEdit button{
+  padding: 10px 15px;
+}
+
+.icon-amount{
+  font-size: 10px;
+}
+
+/*==========================================*/
+/* CHECKOUT CSS
+/*==========================================*/
+.horizon{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.horizon p{
+  margin: 0;
+}
+
+.horizon input{
+  border-radius: 5px;
+  border: 1px solid #80808036;
+  width: 260px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.horizon button{
+  border-radius: 5px;
+  background-color: #609a8d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+}
+
+.applied{
+  font-weight: bold;
+  margin: 5px 10px;
+  padding: 10px;
+  color: gray;
+  background-color: #c46f0229;
+  border-radius: 5px;
+}
+
+.notional{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: Lato;
+  margin-top: 5px;
+}
+
+.notional p:first-child{
+  color: gray;
+  font-size: 15px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.notional p:last-child{
+  font-size: 18px;
+  color: #5c5c5c;
+  margin: 0;
+}
+
+.subtotal{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: Lato;
+  margin-top: 5px;
+  border-top: 1px solid #8080802e;
+}
+
+.subtotal p:first-child{
+  color: gray;
+  font-size: 15px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.subtotal p:last-child{
+  font-size: 30px;
+  color: #5c5c5c;
+  margin: 0;
+}
+
+/*==========================================*/
+/* FOOTER CSS
+/*==========================================*/
+html{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  min-height: 100%;
+}
+
+.footer-content{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
