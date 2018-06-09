@@ -1,27 +1,28 @@
 // =============================================================
 // REQUIREMENT
 // =============================================================
+require('dotenv').config()
 var express 				= require("express"),
 	app 					= express(),
 	bodyParser 				= require("body-parser"),
-	mongoose				= require("mongoose"),
 	passport				= require("passport"),
-	LocalStrategy 			= require("passport-local"),
-	passportLocalMongoose 	= require("passport-local-mongoose"),
-	User 					= require("./models/userModel");
+	seedDB					= require("./seedDB");
+
+var storeRoutes = require("./routes/storeRoute"),
+	webappRoutes = require("./routes/webappRoute");	
 
 // =============================================================
 // CONFIGURATION
 // =============================================================
-// DATABASE CONNECTION
-mongoose.connect("mongodb://localhost/bookstore");
-
-// GENERAL CONFIGURATION
+// General Configuration
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-// AUTHENTICATION
+// Load data
+seedDB();
+
+// Authentication
 app.use(require("express-session")({
 	secret: "me",
 	resave: false,
@@ -29,56 +30,13 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 // =============================================================
 // ROUTES
 // =============================================================
-app.get("/", function(req, res){
-	res.render("landing");
-});
+app.use("/", storeRoutes);
+app.use("/books", storeRoutes);
 
-app.get("/store", function(req, res){
-	res.render("store");
-})
-
-app.get("/cart", function(req, res){
-	res.render("cart");
-});
-
-//REGISTER ROUTE - POST
-app.post("/register", function(req, res){
-	var newUser = new User({
-		username: req.body.username,
-		email: req.body.email
-	});
-	User.register(newUser, req.body.password, function(err, user){
-		if(err)
-			return res.redirect("/register");
-		passport.authenticate("local")(req, res, function(){
-			console.log("Register successfully!");
-			res.redirect("/");
-		});
-	})
-})
-
-//LOGIN ROUTE - GET
-app.get("/login", function(req, res){
-	res.render("login");
-})
-
-//LOGIN ROUTE - POST
-app.post("/login", passport.authenticate("local", {
-	successRedirect: "/",
-	failureRedirect: "/login"
-}));
-
-app.listen(3000, function(req, res){
+app.listen(process.env.LOCALHOST_SERVER, function(req, res){
 	console.log("Server is running...");
 });
-
-// =============================================================
-// END
-// =============================================================
