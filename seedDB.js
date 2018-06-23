@@ -1,5 +1,10 @@
-var mongoose = require("mongoose");
-var Book = require("./models/bookModel");
+var db = require("./models"),
+	passport = require("passport"),
+	LocalStrategy = require("passport-local");
+
+passport.use(new LocalStrategy(db.User.authenticate()));
+passport.serializeUser(db.User.serializeUser());
+passport.deserializeUser(db.User.deserializeUser());	
 
 var bookList = [
 	{
@@ -15,7 +20,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531521/book14.jpg",
@@ -30,7 +36,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531479/book2.jpg",
@@ -45,7 +52,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531483/book3.jpg",
@@ -60,7 +68,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531495/book4.jpg",
@@ -75,7 +84,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531500/book5.jpg",
@@ -90,7 +100,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531502/book6.jpg",
@@ -105,7 +116,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531512/book8.jpg",
@@ -120,7 +132,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531514/book9.jpg",
@@ -135,7 +148,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531516/book10.jpg",
@@ -150,7 +164,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531517/book11.jpg",
@@ -165,7 +180,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531518/book12.jpg",
@@ -180,7 +196,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531518/book13.jpg",
@@ -195,7 +212,8 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: true
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528524059/t2djtqki9wroko3to3cx.jpg",
@@ -210,26 +228,56 @@ var bookList = [
 		pageNumber: "278",
 		cover: "Hardcover",
 		publishDate: "July 14th 2015",
-		language: "English"
+		language: "English",
+		deliveryFast: false
 	}
 ];
 
 function loadData(){
-	Book.remove({}, function(err){
+	db.Book.remove({}, function(err){
 		if(err){
 			console.log(err);
 		} else {
-			console.log("Remove books!");
 			bookList.forEach(function(book){
-				Book.create(book, function(err){
+				db.Book.create(book, function(err){
 					if(err){
 						console.log(err);
 					}
 				})
-				console.log("Load data done");
 			})
+			console.log("DONE LOADING BOOK DATA!");
 		}
 	});
+
+	db.User.remove({}, function(err){
+		if(err){
+			console.log(err);
+		} else {
+			//load user
+			var newUser = new db.User({
+				username: "phu",
+				email: "phu@"
+			});
+			var password = "phu";
+			db.User.register(newUser, password, function(err, user){
+				if(err){
+					console.log(err);
+				} else {
+					console.log("DONE LOADING USER DATA!");
+				}
+			});
+		}
+	})
+
+	db.Cart.remove({}, function(err){
+		if(err){
+			console.log(err);
+		} else {
+			console.log("DONE REMOVING CART DATA!");
+		}
+	});
+
+	console.log("THE APP'S READY TO WORK!");
 }
 
 module.exports = loadData;

@@ -5,8 +5,8 @@ var bookSchema = new mongoose.Schema({
 	name: String,
 	author: String,
 	isbn: String,
-	price: String,
-	discount: String,
+	price: Number,
+	discount: Number,
 	discountPrice: String,
 	rating: String,
 	comment: String,
@@ -16,7 +16,8 @@ var bookSchema = new mongoose.Schema({
 	publishDate: String,
 	language: String,
 	dateCreated: String,
-	dateModified: String
+	dateModified: String,
+	deliveryFast: Boolean
 });
 
 module.exports = mongoose.model("Book", bookSchema);

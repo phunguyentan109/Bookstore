@@ -150,7 +150,7 @@
 						<div class="onBook">
 							<div class="interact">
 								<p class="rate"><i class="fas fa-star"></i> <%=book.rating%>/5</p>
-								<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+								<button class="btn_cart" onClick="addToCart('<%=book._id%>')"><i class="fas fa-shopping-cart"></i></button>
 								<button class="btn_wishList"><i class="far fa-heart"></i></button>
 							</div>
 							<img src="<%=book.image%>" class="img-responsive arrival-book-model" alt="Image">

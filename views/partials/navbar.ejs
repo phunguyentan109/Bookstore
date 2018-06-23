@@ -32,9 +32,11 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/cart">Cart</a></li>
-					<!-- <li><a href="#">|</a></li> -->
-					<li><a href="/login">Login</a></li>
-					<li><a href="#">Sign In</a></li>
+					<% if(!currentUser){ %>
+					<li><a href="/login">Account</a></li>
+					<% } else {%>
+					<li><a href="#"><%=currentUser.username%></a></li>
+					<%}%>
 				</ul>
 			</div>
 		</nav>

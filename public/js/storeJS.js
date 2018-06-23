@@ -16,3 +16,14 @@ $(function() {
     $(".each-watched").toggleClass("hide-watched");
   })
 });
+
+function addToCart(id){
+  $.post("/api/cart/new", {bookID: id, quantity: 1})
+  .then(function(newCart){
+    console.log(newCart);
+  })
+  .catch(function(err){
+    console.log(err);
+  });
+}
+

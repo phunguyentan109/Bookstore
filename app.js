@@ -9,7 +9,8 @@ var express 				= require("express"),
 	seedDB					= require("./seedDB");
 
 var storeRoutes = require("./routes/storeRoute"),
-	webappRoutes = require("./routes/webappRoute");	
+	webappRoutes = require("./routes/webappRoute"),
+	cartAPIRoutes = require("./routes/cartAPIRoute");
 
 // =============================================================
 // CONFIGURATION
@@ -30,12 +31,17 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(req, res, next){
+	res.locals.currentUser = req.user;
+	next();
+});
 
 // =============================================================
 // ROUTES
 // =============================================================
 app.use("/", storeRoutes);
 app.use("/books", storeRoutes);
+app.use("/api/cart", cartAPIRoutes);
 
 app.listen(process.env.LOCALHOST_SERVER, function(req, res){
 	console.log("Server is running...");

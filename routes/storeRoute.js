@@ -5,7 +5,8 @@ var express 				= require("express"),
 	router 					= express.Router(),
 	db 						= require("../models"),
 	passport				= require("passport"),
-	LocalStrategy 			= require("passport-local");
+	LocalStrategy 			= require("passport-local"),
+	passportLocalMongoose 	= require("passport-local-mongoose");
 
 // =============================================================
 // CONFIGURATION
@@ -56,7 +57,7 @@ router.get("/store", function(req, res){
 		if(err){
 			console(err);
 		} else {
-			res.render("store", {list: list_books});	
+			res.render("store", {list: list_books});
 		}
 	});
 });
