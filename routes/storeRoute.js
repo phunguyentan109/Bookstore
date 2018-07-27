@@ -21,6 +21,10 @@ passport.deserializeUser(db.User.deserializeUser());
 // =============================================================
 // Landing - GET
 router.get("/", function(req, res){
+	res.render("newlanding");
+});
+
+router.get("/old", function(req, res){
 	res.render("landing");
 });
 
