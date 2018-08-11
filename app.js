@@ -40,7 +40,7 @@ app.use(function(req, res, next){
 // ROUTES
 // =============================================================
 app.use("/", storeRoutes);
-app.use("/books", storeRoutes);
+// app.use("/books", storeRoutes);
 app.use("/api/cart", cartAPIRoutes);
 
 app.listen(process.env.LOCALHOST_SERVER, function(req, res){

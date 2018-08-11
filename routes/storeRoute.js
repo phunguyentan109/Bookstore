@@ -71,4 +71,13 @@ router.get("/cart", function(req, res){
 	res.render("cart");
 });
 
+//Book Detail - GET
+router.get("/id", function(req, res){
+	res.render("bookDetail");
+})
+
+router.get("/newid", function(req, res){
+	res.render("bookDetail2");
+})
+
 module.exports = router;

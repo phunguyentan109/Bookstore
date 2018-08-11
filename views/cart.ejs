@@ -1,5 +1,5 @@
 <% include partials/header %>
-
+<link rel="stylesheet" href="/stylesheet/partial.css">
 <link rel="stylesheet" type="text/css" href="/stylesheet/cart.css">
 <link rel="stylesheet" type="text/css" href="/stylesheet/navbar-color.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
@@ -22,10 +22,43 @@
 
 		<div class="row checkoutPage">
 			<div class="col-md-8 listCart">
+				<h4 class="content-title" id="bookListHeader"><i class="fas fa-list-ul cate-icon"></i> Your cart</h4>
+				<div class="row cheader">
+					<div class="col-md-6">Books</div>
+					<div class="col-md-3">Price</div>
+					<div class="col-md-3">Amount</div>
+				</div>
+			</div>
+			<div class="col-md-4 totalContent">
+				<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Order Detail</h4>
+				<form class="horizon">
+					<input type="text" name="" placeholder="Type discount code here...">
+					<button>Apply</button>
+				</form>
+				<p class="applied"><i class="far fa-check-circle"></i> BADC1123423 is used</p>
+				<p class="apply-dis"></p>
+				<div class="notional">
+					<p>Notional Price</p>
+					<p id="notional">0</p>
+				</div>
+				<div class="subtotal">
+					<p>Total Price</p>
+					<p id="subtotal">0</p>
+				</div>	
 			</div>
 		</div>
 
 		<div class="noBookPlace">
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Your cart</h4>
+					<div class="no-item">
+						<i class="fas fa-cart-arrow-down fa-6x"></i>
+						<p>You have no book in your cart. Continue shopping?</p>
+						<a href="/store">Back to store</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<h4 class="content-title wishlist-title">Your wishlist</h4>

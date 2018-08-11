@@ -8,11 +8,11 @@ passport.deserializeUser(db.User.deserializeUser());
 
 var bookList = [
 	{
-		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528526079/qjn5w9qvkmoyrnfmyhgr.jpg",
-		name: "Murder On The Orient Express",
-		author: "Agatha Christie",
+		image: "https://res.cloudinary.com/kyle1998/image/upload/v1533973343/book15.jpg",
+		name: "The Fault In Our Stars",
+		author: "John Green",
 		isbn: "0062409859",
-		price: "85000",
+		price: "60",
 		discount: "20",
 		discountPrice: "60000",
 		rating: "5",
