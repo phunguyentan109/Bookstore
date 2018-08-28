@@ -5,12 +5,16 @@ require('dotenv').config()
 var express 				= require("express"),
 	app 					= express(),
 	bodyParser 				= require("body-parser"),
-	passport				= require("passport"),
+	passport				= require("passport");
 	seedDB					= require("./seedDB");
 
-var storeRoutes = require("./routes/storeRoute"),
-	webappRoutes = require("./routes/webappRoute"),
-	cartAPIRoutes = require("./routes/cartAPIRoute");
+var storeRoutes 	= require("./routes/storeRoute"),
+	webappRoutes 	= require("./routes/webappRoute"),
+	cartAPI			= require("./routes/cartAPIRoute"),
+	commentAPI 		= require("./routes/commentAPIRoute"),
+	bookAPI			= require("./routes/bookAPIRoute"),
+	authorAPI		= require("./routes/authorAPIRoute"),
+	appRoute 		= require("./routes/appRoute");
 
 // =============================================================
 // CONFIGURATION
@@ -40,9 +44,14 @@ app.use(function(req, res, next){
 // ROUTES
 // =============================================================
 app.use("/", storeRoutes);
-// app.use("/books", storeRoutes);
-app.use("/api/cart", cartAPIRoutes);
+app.use("/app", appRoute);
+
+//API ROUTE
+app.use("/api/book", bookAPI);
+app.use("/api/cart", cartAPI);
+app.use("/api/comment", commentAPI);
+app.use("/api/author", authorAPI);
 
 app.listen(process.env.LOCALHOST_SERVER, function(req, res){
-	console.log("Server is running...");
+	console.log("SERVER IS INITIALIZING...");
 });

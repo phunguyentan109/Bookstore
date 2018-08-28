@@ -1,0 +1,331 @@
+<% include partials/header %>
+<link rel="stylesheet" href="/stylesheet/partial.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/detail.css">
+<script type="text/javascript" src="/js/detailJS.js"></script>
+</head>
+<body>
+	<div class="backgroundImg" style="background-image: url(/image/authorBg.jpg);">
+		<% include partials/navbar%>
+		<div class="container introContent">
+			<h1 class="introPage">Book Detail</h1>
+			<p class="slogan">New, cheap books with quality service.</p>
+			<p class="slogan">Kafka proud to be one of the best service in bringing knowledge closer to people's life.</p>	
+		</div>
+	</div>
+	<div class="crumbread-bg">
+		<div class="container">
+			<div class="below-content">
+				<h4 class="btn-watched">Watched Books <i class="fas fa-angle-down view-icon"></i></h4>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Store</li>
+					</ol>
+				</nav>
+			</div>
+			<div class="col-md-2 each-watched hide-watched">
+				<img src="/image/book1.jpg" class="watched-book ">
+			</div>
+			<div class="col-md-2 each-watched hide-watched">
+				<img src="/image/book2.jpg" class="watched-book ">
+			</div>
+			<div class="col-md-2 each-watched hide-watched">
+				<img src="/image/book3.jpg" class="watched-book">
+			</div>
+		</div>
+	</div>
+
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-3 category-design">
+				<div class="category-list">
+					<h4 class="category"><i class="fas fa-list-ul cate-icon"></i> Book Category</h4>
+
+					<ul class="listGenre">
+						<li><a href="#">All</a></li>
+						<li><a href="#">Fantasy & Sci-Fi</a></li>
+						<li><a href="#">Art & Photography</a></li>
+						<li><a href="#">Cooking, Food & Wine</a></li>
+						<li><a href="#">Literature & Fiction</a></li>
+						<li><a href="#">Science & Education</a></li>
+						<li><a href="#">Audiobooks</a></li>
+						<li><a href="#">Business</a></li>
+						<li><a href="#">Childer's Book</a></li>
+						<li><a href="#">Biographies & Memoirs</a></li>
+						<li><a href="">Young Adult Fiction</a></li>
+						<li><a href="">Romance Novel</a></li>
+						<li><a href="#">Historical Novel</a></li>
+						<li><a href="#">Horror Fiction</a></li>
+						<li><a href="#">Thriller</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4 imgGallery">
+				<img src="<%=book.image%>" class="img-responsive bigImg">
+				<div class="listImg">
+					<img src="<%=book.image%>" class="img-responsive imgThumbnail active">
+					<%book.moreImage.forEach(val => {%>
+					<img src="<%=val%>" class="img-responsive imgThumbnail">
+					<%})%>
+				</div>
+			</div>
+			<div class="col-md-5 bookDetail">
+				<p class="genre">Literature & Fiction</p>
+				<h2 class="name"><%=book.name%></h2>
+				<p class="best">The <b>15th</b> place in top of <i>world's best seller book this month</i></p>
+				<p>
+					<b>Availibility:</b>
+					<%if(book.amount > 5){%>
+					<b>In stock</b>
+					<%} else {%>
+					<b>Only <%=book.amount%> left</b>
+					<%}%> 
+				</p>
+				<p>$<%=(book.price*book.discount/100).toFixed(2)%> <del>$<%=book.price%></del></p>
+				<hr class="divide">
+				<p class="typeTitle"><b>Author:</b> <%=book.author.name%></p>
+				<p class="typeTitle"><b>Format:</b> <%=book.cover%></p>
+				<hr class="divide">
+				<p class="typeTitle"><b>Description</b></p>
+				<p><%=paraPlot%>...<a href="#describe"><b> More detail</b></a></p>
+				<hr class="divide">
+				<p class="typeTitle"><b>Quantity & Order</b></p>
+				<div class="doTrade">
+					<div class="amountEdit">
+						<button class="subAdd">+</button>
+						<input type="text" value="1" class="inputQuantity">
+						<button class="subAdd edit">-</button>
+					</div>
+					<button class="addCart">Add to cart</button>
+				</div>
+				<div class="otherInter">
+					<p><a href="#"><i class="fas fa-heart"></i> Add to Wishlist</a></p>
+					<p><a href="#"><i class="fas fa-clock"></i> Buy Used books</a></p>	
+				</div>
+			</div>
+		</div>
+
+		<h4 class="detailContent subContent">Other Books of this author</h4>
+
+		<div class="row rowDaily text-center">
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book5.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">Go Set A Watchman</p>
+					<p id="author">Harper Lee</p>
+					<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book6.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">A Brave New World</p>
+					<p id="author">Aldous Huxley</p>
+					<p id="price">100.000đ</p>
+				</div> 
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book9.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<a href="#"><p id="book">The Murder On The Orient Express</p></a>
+					<p id="author">Agatha Christie</p>
+					<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
+				</div> 
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book8.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">Nineteen Eighty-Four</p></a>
+					<p id="author">George Orwell</p>
+					<p id="price">85.000đ <span id="sale">105.000</span></p>
+				</div>    
+			</div>
+		</div>
+
+		<h4 class="detailContent subContent introduct">Book introduction</h4>
+		<div id="describe" class="row rowDes">
+			<div class="col-md-9 move-left">
+				<%book.description.forEach(function(val, index){%>
+				<%if(index == val.position)%>
+				<p class="description"><%=val.content%></p>
+				<%})%>
+			</div>
+			<div class="col-md-3 otherInfo">
+				<p class="typeTitle"><b>Publish Date:</b> <%=book.publishDate%></p>
+				<p class="typeTitle"><b>Publisher:</b> <%=book.publisher%></p>
+				<p class="typeTitle"><b>Page Number:</b> <%=book.pageNumber%></p>
+				<p class="typeTitle"><b>Language:</b> <%=book.language%></p>
+				<p class="typeTitle"><b>ISBN:</b> <%=book.isbn%></p>
+			</div>
+		</div>
+
+		<h4 class="detailContent subContent">Community reviews
+			<%if(currentUser){%> 
+			<span class="btnWrite" id="writeCmt"><i class="far fa-edit"></i> Rate & write review</span>
+			<%} else {%>
+			<a href="/login" class="btnWrite"><i class="far fa-edit"></i> Login To Write Review</a>
+			<%}%>
+		</h4>
+		<p class="rateDetail"><i class="far fa-caret-square-down"></i> Rating Details</p>
+		<div class="row comment writeCmt hideInput" id="cmtInput">
+			<div class="col-md-1 text-center ava hideInput" id="avaImg">
+				<i class="fas fa-book-reader readerImg"></i>
+			</div>
+			<div class="col-md-10 hideInput" id="placeWrite">
+				<p>Your Rate -
+					<i class="fas fa-star check uncheck" id="s0"></i>
+					<i class="fas fa-star check uncheck" id="s1"></i>
+					<i class="fas fa-star check uncheck" id="s2"></i>
+					<i class="fas fa-star check uncheck" id="s3"></i>
+					<i class="fas fa-star check uncheck" id="s4"></i>
+					 - <b class="noRate" id="rateColor"><span id="rateVal">0</span>/5 star(s)</b> 
+				</p>
+				<textarea rows="1" class="areaModify" placeholder="Write your title here..." id="titleValue"></textarea>
+				<textarea id="reviewValue" rows="3" placeholder="Review of this book..."></textarea>
+				<%if(currentUser) {%>
+				<input type="hidden" value="<%=currentUser._id%>">
+				<%} else {%>
+				<input type="hidden" value="">
+				<%}%>
+				<button id="send">Send review</button><button id="cancel">Cancel</button>
+			</div>
+		</div>
+		<div class="row comment" id="listCmt">
+			<%if(book.comment.length <= 0){%>
+				<p class="noReview" id="noReview">There is no user review for this book yet.</p>
+			<%} else {%>
+				<%book.comment.forEach(val => {%>
+				<div class="col-md-1 text-center ava">
+					<i class="fas fa-book-reader readerImg"></i>
+				</div>
+				<div class="col-md-10 commentator">
+					<div class="cmtInfo">
+						<p><b><%=val.user.username%></b> has rated it
+							<%for(var i = 0; i < 5; i++) {%>
+								<%if(i < val.rate){%> 
+								<i class="fas fa-star get"></i>
+								<%} else {%>
+								<i class="fas fa-star not"></i>
+								<%}%>
+							<%}%>
+						</p>
+						<p class="time">Feb 10th, 2016</p>	
+					</div>
+					<h4><b><%val.title%></b></h4>
+					<p class="review"><%=val.review%></p>
+					<!-- <h4><b>One of the most should-read books!</b></h4>
+					<p class="review">Never in my entire life have I been so attached to a book, every sentence you read you can't stop to do anything you just need to know what comes next. First published in 1906, White Fang wrote by Jack London is one of his popular books retelling the life and struggles during the Klondike. London’s writing style is descriptive, and naturalistic.</p> -->
+					<span class="useful">This review is useful, isn't it?</span><button class="thanks"><i class="far fa-thumbs-up"></i> Likes (10)</button>
+				</div>
+				<%})%>
+			<%}%>
+			
+		</div>
+
+		<h4 class="detailContent subContent config">Other Books in this Genre</h4>
+
+		<div class="row rowDaily text-center">
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book4.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">Go Set A Watchman</p>
+					<p id="author">Harper Lee</p>
+					<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-20%</span></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book10.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">A Brave New World</p>
+					<p id="author">Aldous Huxley</p>
+					<p id="price">100.000đ</p>
+				</div> 
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book11.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<a href="#"><p id="book">The Murder On The Orient Express</p></a>
+					<p id="author">Agatha Christie</p>
+					<p id="price">85.000đ <span id="sale">105.000</span> <span id="discount">-25%</span></p>
+				</div> 
+			</div>
+
+			<div class="col-sm-3">
+				<div class="book-info">
+					<div class="onBook">
+						<div class="interact">
+							<p class="rate"><i class="fas fa-star"></i> 4.5/5</p>
+							<button class="btn_cart"><i class="fas fa-shopping-cart"></i></button>
+							<button class="btn_wishList"><i class="far fa-heart"></i></button>
+						</div>
+						<img src="/image/book12.jpg" class="img-responsive feature-book-model" alt="Image">
+					</div>
+					<p id="book">Nineteen Eighty-Four</p></a>
+					<p id="author">George Orwell</p>
+					<p id="price">85.000đ <span id="sale">105.000</span></p>
+				</div>    
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+
+<% include partials/footer %>	
+</body>
+</html>
+

@@ -250,7 +250,6 @@
 /*==========================================*/
 /* BOOK CSS
 /*==========================================*/
-
 .rowBook{
   margin-top: 3%;
 }
@@ -349,6 +348,11 @@ p{
   text-decoration: none;
 }
 
+a.bookLink:hover,
+a.bookLink:focus{
+  text-decoration: none;
+}
+
 .book{
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -358,6 +362,11 @@ p{
   font-family: Lato;
   margin-top: 6%;
   font-weight: lighter;
+}
+
+.book:hover,
+.book:focus{
+  color: #3e8f95;
 }
 
 .author{

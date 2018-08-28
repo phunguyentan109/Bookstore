@@ -156,9 +156,9 @@
 							</div>
 							<img src="<%=book.image%>" class="img-responsive arrival-book-model" alt="Image">
 						</div>
-						<p class="book"><%=book.name%></p>
+						<a href="/store/<%=book._id%>" class="bookLink"><p class="book"><%=book.name%></p></a>
 						<p class="author"><%=book.author%></p>
-						<p class="price"><%=book.price%>đ
+						<p class="price">$<%=book.price%>
 							<% if(book.discount != "0"){ %>
 							<span class="sale">105.000</span> 
 							<span class="discount">-20%</span>	

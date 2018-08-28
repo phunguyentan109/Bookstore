@@ -3,21 +3,44 @@ var mongoose = require("mongoose");
 var bookSchema = new mongoose.Schema({
 	image: String,
 	name: String,
-	author: String,
+	author: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Author"
+	},
 	isbn: String,
+	description: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Plot"
+		}
+	],
 	price: Number,
 	discount: Number,
 	discountPrice: String,
 	rating: String,
-	comment: String,
-	publisher: String,
+	comment: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Comment"
+		}
+	],
+	supplier: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Supplier"
+	},
+	publisher: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Publisher"
+	},
 	pageNumber: String,
 	cover: String,
 	publishDate: String,
 	language: String,
 	dateCreated: String,
 	dateModified: String,
-	deliveryFast: Boolean
+	deliveryFast: Boolean,
+	amount: Number,
+	moreImage: []
 });
 
 module.exports = mongoose.model("Book", bookSchema);

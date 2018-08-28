@@ -14,7 +14,7 @@ var express 				= require("express"),
 // Passport config
 passport.use(new LocalStrategy(db.User.authenticate()));
 passport.serializeUser(db.User.serializeUser());
-passport.deserializeUser(db.User.deserializeUser());	
+passport.deserializeUser(db.User.deserializeUser());
 
 // =============================================================
 // ROUTE
@@ -72,12 +72,19 @@ router.get("/cart", function(req, res){
 });
 
 //Book Detail - GET
-router.get("/id", function(req, res){
-	res.render("bookDetail");
-})
-
-router.get("/newid", function(req, res){
-	res.render("bookDetail2");
-})
+router.get("/store/:id", async(req, res) => {
+	try {
+		var data = await db.Book.findById(req.params.id).populate("description").populate("author").populate("comment").populate({path: "comment", populate:{path: "user"}}).exec();
+		if(data.description.length > 0){
+		let para = data.description[0].content.split(" ");
+		var short = para.length > 30 ? para.filter((val, index) => index <= 30).join(" ") : para.filter((val, index) => index <= para.length/2).join(" ");
+		} else {
+			var short = "There is no description."
+		}
+		res.render("detail", {book: data, paraPlot: short});
+	} catch(err){
+		console.log(err);
+	}
+});
 
 module.exports = router;
