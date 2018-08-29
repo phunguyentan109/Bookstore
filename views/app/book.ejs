@@ -67,195 +67,185 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 												<div class="genreList" id="genres">
 												</div>
 												<div class="input-group">
-													<div class="input-group-btn">
-														<button class="btn pushGenre"><i class="fas fa-angle-double-up"></i>
-														</div>
-														<select class="form-control select2" style="width: 100%;">
-															<option selected="selected">Option 1</option>
-															<option>Option 2</option>
-															<option>Option 3</option>
-															<option>Option 4</option>
-														</select>
-													</div>
+													<span class="input-group-btn">
+														<button type="button" class="btn pushGenre" id="addGenre">
+															<i class="fas fa-angle-double-up"></i>
+														</button>
+													</span>
+													<select class="form-control select2" style="width: 100%;" id="genreList">
+													</select>
 												</div>
-												<div class="row">
-													<div class="col-xs-6">
-														<label>Price</label>
-														<div class="input-group">
-															<span class="input-group-addon">
-																<i class="fa fa-dollar"></i>
-															</span>
-															<input type="text" placeholder="Enter the price here..." class="form-control">
-														</div>
-													</div>
-													<div class="col-xs-6">
-														<label>Discount</label>
-														<div class="input-group">
-															<span class="input-group-addon">
-																<i class="fas fa-percentage"></i>
-															</span>
-															<input type="text" placeholder="Enter the discount here..." class="form-control">
-														</div>
-													</div>
-												</div>
-												<div class="form-group deliveryType">
-													<label>Delivery</label>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<label>Price</label>
 													<div class="input-group">
-														<select class="form-control">
-															<i class="fas fa-truck"></i>
-															<option> Normal Delivery</option>
-															<option> Fast Delivery</option>
-														</select>
-														<div class="input-group-addon">
-															<i class="fas fa-shipping-fast"></i>
-														</div>
+														<span class="input-group-addon">
+															<i class="fa fa-dollar"></i>
+														</span>
+														<input type="text" placeholder="Enter the price here..." class="form-control" id="price">
 													</div>
 												</div>
-												<div class="form-group deliveryType">
-													<label>Supplier</label>
+												<div class="col-xs-6">
+													<label>Discount</label>
 													<div class="input-group">
-														<select class="form-control">
-															<i class="fas fa-truck"></i>
-															<option> Normal Delivery</option>
-															<option> Fast Delivery</option>
-														</select>
-														<div class="input-group-addon">
-															<i class="fas fa-box-open"></i>
-														</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-xs-6">
-														<div class="form-group">
-															<label>Publisher</label>
-															<div class="input-group">
-																<select class="form-control">
-																	<option>HarperCollins</option>
-																	<option>Fast Delivery</option>
-																</select>
-																<div class="input-group-addon">
-																	<i class="fas fa-globe-asia"></i>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-xs-6">
-														<label>Publish Date</label>
-														<div class="input-group">
-															<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy">
-															<span class="input-group-addon">
-																<i class="far fa-calendar-alt"></i>
-															</span>
-														</div>
+														<span class="input-group-addon">
+															<i class="fas fa-percentage"></i>
+														</span>
+														<input type="text" placeholder="Enter the discount here..." class="form-control" id="discount">
 													</div>
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<label>Description</label>
-													<textarea class="form-control" rows="22" placeholder="Enter description here..."></textarea>	
+											<div class="form-group deliveryType">
+												<label>Delivery</label>
+												<div class="input-group">
+													<select class="form-control" id="delivery">
+														<option value="false">Normal Delivery</option>
+														<option value="true">Fast Delivery</option>
+													</select>
+													<div class="input-group-addon">
+														<i class="fas fa-shipping-fast"></i>
+													</div>
 												</div>
-												<div class="row">
-													<div class="col-xs-6">
-														<div class="form-group">
-															<label>Cover</label>
-															<div class="form-group">
-																<select class="form-control">
-																	<option>Hardcover</option>
-																	<option>Paperpack</option>
-																</select>
+											</div>
+											<div class="form-group deliveryType">
+												<label>Supplier</label>
+												<div class="input-group">
+													<select class="form-control" id="supplier"></select>
+													<div class="input-group-addon">
+														<i class="fas fa-box-open"></i>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label>Publisher</label>
+														<div class="input-group">
+															<select class="form-control" id="publisher"></select>
+															<div class="input-group-addon">
+																<i class="fas fa-globe-asia"></i>
 															</div>
 														</div>
 													</div>
-													<div class="col-xs-6">
-														<div class="form-group">
-															<label>Amount</label>
-															<input type="text" placeholder="Enter amount..." class="form-control">
-														</div>
-													</div>
 												</div>
-												<div class="form-group">
-													<label>Language</label>
-													<input type="text" name="" placeholder="Enter book language here..." class="form-control">	
+												<div class="col-xs-6">
+													<label>Publish Date</label>
+													<div class="input-group">
+														<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy" id="publishDate">
+														<span class="input-group-addon">
+															<i class="far fa-calendar-alt"></i>
+														</span>
+													</div>
 												</div>
 											</div>
 										</div>
-
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Description</label>
+												<textarea class="form-control" rows="22" placeholder="Enter description here..." id="description"></textarea>	
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label>Cover</label>
+														<div class="form-group">
+															<select class="form-control" id="cover">
+																<option value="Hardcover">Hardcover</option>
+																<option value="Paperpack">Paperpack</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label>Amount</label>
+														<input type="text" placeholder="Enter amount..." class="form-control" id="amount">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Language</label>
+												<input type="text" name="" placeholder="Enter book language here..." class="form-control" id="language">	
+											</div>
+										</div>
 									</div>
+
 								</div>
 							</div>
-							<div class="confirm-content text-right">
-								<button class="save">Save changes</button>
-								<button class="cancel" id="cancel">Cancel</button>
-							</div>
+						</div>
+						<div class="confirm-content text-right">
+							<button class="save">Save changes</button>
+							<button class="cancel" id="cancel">Cancel</button>
 						</div>
 					</div>
-				</div>	
+				</div>
+			</div>	
 
-				<section class="content-header">
-					<h1>Manage Books</h1>
-					<ol class="breadcrumb">
-						<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-						<li><a href="#">Tables</a></li>
-						<li class="active">Data tables</li>
-					</ol>
-				</section>
-
-				<section class="content">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="box">
-								<div class="box-header">
-									<h3 class="box-title">Hover Data Table</h3>
-								</div>
-								<div class="box-body table-responsive">
-									<table id="example2" class="table table-bordered table-hover">
-										<thead>
-											<tr>
-												<th>Image</th>
-												<th>Name</th>
-												<th>Genre</th>
-												<th>Author</th>
-												<th>Price</th>
-												<th>Discount</th>
-												<th>Delivery</th>
-												<th>Option</th>
-											</tr>
-										</thead>
-										<tbody>
-										</tbody>
-										<tfoot>
-											<tr>
-												<th>Image</th>
-												<th>Name</th>
-												<th>Genre</th>
-												<th>Author</th>
-												<th>Price</th>
-												<th>Discount</th>
-												<th>Delivery</th>
-												<th>Option</th>
-											</tr>
-										</tfoot>
-									</table>
-								</div>
-							</div>	
-						</div>
-					</div>
-				</section>
+			<section class="content-header">
+				<h1>Manage Books</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Tables</a></li>
+					<li class="active">Data tables</li>
+				</ol>
 			</section>
 
-			<%include partials/main-footer%>
+			<section class="content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<div class="box-header">
+								<h3 class="box-title">Hover Data Table</h3>
+							</div>
+							<div class="box-body table-responsive">
+								<table id="example2" class="table table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>Image</th>
+											<th>Name</th>
+											<th>Genre</th>
+											<th>Author</th>
+											<th>Price</th>
+											<th>Discount</th>
+											<th>Delivery</th>
+											<th>Option</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>Image</th>
+											<th>Name</th>
+											<th>Genre</th>
+											<th>Author</th>
+											<th>Price</th>
+											<th>Discount</th>
+											<th>Delivery</th>
+											<th>Option</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>
+		</section>
 
-			<%include partials/control-sidebar%>
-		</div>
+		<%include partials/main-footer%>
 
-		<%include partials/app-script%>
-		<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-		<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-		<script src="../../plugins/iCheck/icheck.min.js"></script>
-		<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
-		<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-		<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
-		<script type="text/javascript" src="/js/app/book.js"></script>
-	</body>
+		<%include partials/control-sidebar%>
+	</div>
+
+	<%include partials/app-script%>
+	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<script type="text/javascript" src="/js/app/book.js"></script>
+</body>

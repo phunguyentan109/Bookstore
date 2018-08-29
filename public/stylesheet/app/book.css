@@ -255,3 +255,6 @@ label{
 	color: #45c0b3;
 }
 
+.input-group-btn:first-child>.btn{
+	margin-right: 0px !important;
+}

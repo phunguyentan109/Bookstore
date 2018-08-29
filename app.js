@@ -14,6 +14,9 @@ var storeRoutes 	= require("./routes/storeRoute"),
 	commentAPI 		= require("./routes/commentAPIRoute"),
 	bookAPI			= require("./routes/bookAPIRoute"),
 	authorAPI		= require("./routes/authorAPIRoute"),
+	genreAPI		= require("./routes/genreAPIRoute"),
+	supplierAPI		= require("./routes/supplierAPIRoute"),
+	publisherAPI	= require("./routes/publisherAPIRoute"),
 	appRoute 		= require("./routes/appRoute");
 
 // =============================================================
@@ -51,6 +54,9 @@ app.use("/api/book", bookAPI);
 app.use("/api/cart", cartAPI);
 app.use("/api/comment", commentAPI);
 app.use("/api/author", authorAPI);
+app.use("/api/genre", genreAPI);
+app.use("/api/publisher", publisherAPI);
+app.use("/api/supplier", supplierAPI);
 
 app.listen(process.env.LOCALHOST_SERVER, function(req, res){
 	console.log("SERVER IS INITIALIZING...");

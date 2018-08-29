@@ -16,8 +16,8 @@ var bookList = [
 		discountPrice: "60000",
 		rating: "5",
 		pageNumber: "278",
-		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		cover: "Paperpack",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10,
@@ -36,7 +36,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -51,7 +51,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -66,7 +66,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -81,7 +81,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -96,7 +96,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -111,7 +111,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -126,7 +126,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -141,7 +141,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -156,7 +156,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -171,7 +171,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -186,7 +186,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -201,7 +201,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
 		amount: 10
@@ -216,7 +216,7 @@ var bookList = [
 		rating: "5",
 		pageNumber: "278",
 		cover: "Hardcover",
-		publishDate: "July 14th 2015",
+		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
 		amount: 10
@@ -404,6 +404,44 @@ var descriptionList = [
 	}
 ];
 
+const supplierList = [
+	{
+		name: "Baker & Taylor",
+		description: ""
+	},
+	{
+		name: "Publisher Group West",
+		description: ""
+	},
+	{
+		name: "America West Books",
+		description: ""
+	},
+	{
+		name: "Independent Publishers Group",
+		description: ""
+	}
+];
+
+const publisherList = [
+	{
+		name: "Pearson",
+		description: ""
+	},
+	{
+		name: "Read Elsevier",
+		description: ""
+	},
+	{
+		name: "Thompson Reuters",
+		description: ""
+	},
+	{
+		name: "Random House",
+		description: ""
+	}
+]
+
 var supplierOne = {
 	name: "Bella Distribution",
 	description: ""
@@ -423,14 +461,18 @@ async function loadData(){
 		await db.Book.remove({});
 		await db.Plot.remove({});
 		await db.Author.remove({});
+		await db.Supplier.remove({});
+		await db.Publisher.remove({});
+
+		//add book
 		var newSup = await db.Supplier.create(supplierOne);
 		var newPub = await db.Publisher.create(pubOne);
+		var firstDes = await db.Plot.create(descriptionList[0]);
+		var secDes = await db.Plot.create(descriptionList[1]);
 		bookList.forEach(async(book, index) =>{
 			var newbook = await db.Book.create(book);
-			for(var i = 0; i < descriptionList.length; i++){
-				if(book.name === "The Fault In Our Stars")
-				newbook.description.push((await db.Plot.create(descriptionList[i]))._id);
-			}
+			newbook.description.push(firstDes._id);
+			newbook.description.push(secDes._id);
 			var newAuthor = await db.Author.create(authorList[index]);
 			newbook.author = newAuthor._id;
 			newbook.supplier = newSup._id;
@@ -455,11 +497,21 @@ async function loadData(){
 		await db.BookGenre.remove({});
 		createGenre();
 		await loadGenre();
+		createSupplier();
+		createPublisher();
 
 		console.log("THE APP'S READY TO WORK!");
 	} catch(err){
 		console.log(err);
 	}
+}
+
+function createSupplier(){
+	supplierList.forEach(async(val) => db.Supplier.create(val));
+}
+
+function createPublisher(){
+	publisherList.forEach(async(val) => db.Publisher.create(val));
 }
 
 function createGenre(){
