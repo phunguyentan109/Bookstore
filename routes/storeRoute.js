@@ -74,9 +74,9 @@ router.get("/cart", function(req, res){
 //Book Detail - GET
 router.get("/store/:id", async(req, res) => {
 	try {
-		var data = await db.Book.findById(req.params.id).populate("description").populate("author").populate("comment").populate({path: "comment", populate:{path: "user"}}).exec();
+		var data = await db.Book.findById(req.params.id).populate("author").populate("comment").populate({path: "comment", populate:{path: "user"}}).exec();
 		if(data.description.length > 0){
-		let para = data.description[0].content.split(" ");
+		let para = data.description[0].split(" ");
 		var short = para.length > 30 ? para.filter((val, index) => index <= 30).join(" ") : para.filter((val, index) => index <= para.length/2).join(" ");
 		} else {
 			var short = "There is no description."

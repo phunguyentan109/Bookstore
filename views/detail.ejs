@@ -176,9 +176,8 @@
 		<h4 class="detailContent subContent introduct">Book introduction</h4>
 		<div id="describe" class="row rowDes">
 			<div class="col-md-9 move-left">
-				<%book.description.forEach(function(val, index){%>
-				<%if(index == val.position)%>
-				<p class="description"><%=val.content%></p>
+				<%book.description.forEach(function(val){%>
+				<p class="description"><%=val%></p>
 				<%})%>
 			</div>
 			<div class="col-md-3 otherInfo">

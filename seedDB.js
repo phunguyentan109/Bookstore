@@ -24,6 +24,10 @@ var bookList = [
 		moreImage: [
 			"https://res.cloudinary.com/kyle1998/image/upload/v1535407823/book15Back.jpg", 
 			"https://res.cloudinary.com/kyle1998/image/upload/v1535407828/book15Page.jpg"
+		],
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
 		]
 	},
 	{
@@ -39,7 +43,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531479/book2.jpg",
@@ -54,7 +62,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531483/book3.jpg",
@@ -69,7 +81,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531495/book4.jpg",
@@ -84,7 +100,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531500/book5.jpg",
@@ -99,7 +119,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531502/book6.jpg",
@@ -114,7 +138,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531512/book8.jpg",
@@ -129,7 +157,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531514/book9.jpg",
@@ -144,7 +176,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531516/book10.jpg",
@@ -159,7 +195,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531517/book11.jpg",
@@ -174,7 +214,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531518/book12.jpg",
@@ -189,7 +233,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528531518/book13.jpg",
@@ -204,7 +252,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: true,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	},
 	{
 		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528524059/t2djtqki9wroko3to3cx.jpg",
@@ -219,7 +271,11 @@ var bookList = [
 		publishDate: "14/6/2015",
 		language: "English",
 		deliveryFast: false,
-		amount: 10
+		amount: 10,
+		description: [
+			"Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten.",
+			"Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
+		]
 	}
 ];
 
@@ -393,17 +449,6 @@ var authorList = [
 	}
 ];
 
-var descriptionList = [
-	{
-		position: 0,
-		content: "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel's story is about to be completely rewritten."
-	},
-	{
-		position: 1,
-		content: "Insightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning author John Green's most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love."
-	}
-];
-
 const supplierList = [
 	{
 		name: "Baker & Taylor",
@@ -454,53 +499,50 @@ var pubOne = {
 
 async function loadData(){
 	try{
-		//remove & add books
-		await db.Publisher.remove({});
-		await db.Supplier.remove({});
-		await db.Comment.remove({});
-		await db.Book.remove({});
-		await db.Plot.remove({});
-		await db.Author.remove({});
-		await db.Supplier.remove({});
-		await db.Publisher.remove({});
+		// deleteMany & add books
+		await db.Publisher.deleteMany({}).exec();
+		await db.Supplier.deleteMany({}).exec();
+		await db.Comment.deleteMany({}).exec();
+		await db.Book.deleteMany({}).exec();
+		await db.Author.deleteMany({}).exec();
+		await db.Supplier.deleteMany({}).exec();
+		await db.Publisher.deleteMany({}).exec();
+		await db.User.deleteMany({}).exec();
+		await db.Cart.deleteMany({}).exec();
+		await db.Genre.deleteMany({}).exec();
+		await db.BookGenre.deleteMany({}).exec();
 
-		//add book
+		createGenre();
+		console.log("DONE LOADING GENRE DATA");
+		
+		createSupplier();
+		console.log("DONE LOADING SUPPLIER DATA");
+
+		createPublisher();
+		console.log("DONE LOADING PUBLISHER DATA");
+
+
+		// add book
 		var newSup = await db.Supplier.create(supplierOne);
 		var newPub = await db.Publisher.create(pubOne);
-		var firstDes = await db.Plot.create(descriptionList[0]);
-		var secDes = await db.Plot.create(descriptionList[1]);
-		bookList.forEach(async(book, index) =>{
-			var newbook = await db.Book.create(book);
-			newbook.description.push(firstDes._id);
-			newbook.description.push(secDes._id);
-			var newAuthor = await db.Author.create(authorList[index]);
+		for(let i = 0; i < bookList.length; i++){
+			var newbook = await db.Book.create(bookList[i]);
+			var newAuthor = await db.Author.create(authorList[i]);
 			newbook.author = newAuthor._id;
 			newbook.supplier = newSup._id;
 			newbook.publisher = newPub._id;
 			newbook.save();
-		});
-
+		};
 		console.log("DONE LOADING BOOK DATA");
 
-		//remove & add users
-		await db.User.remove({});
+		//Add users
 		var newUser = new db.User({username: "phu", email: "phu"});
 		db.User.register(newUser, "phu");
 		console.log("DONE LOADING USER DATA");
-
-		//remove cart
-		await db.Cart.remove({});
-		console.log("DONE REMOVING CART DATA");
 		
-		//Create Genre & save in book
-		await db.Genre.remove({});
-		await db.BookGenre.remove({});
-		createGenre();
-		await loadGenre();
-		createSupplier();
-		createPublisher();
-
-		console.log("THE APP'S READY TO WORK!");
+		loadGenreBook();
+		console.log("DONE LOADING BOOK-GENRE DATA");
+		console.log("#=== THE APP'S READY TO WORK! ===#");
 	} catch(err){
 		console.log(err);
 	}
@@ -518,140 +560,129 @@ function createGenre(){
 	genreList.forEach(async(val) => await db.Genre.create(val));
 }
 
-async function loadGenre(){
-	var data = await db.Book.find({});
-	data.forEach(async(val) => {
-		try{
-			if(val.name == "The Fault In Our Stars"){
-				var genre = await db.Genre.findOne({name: "Young Adult Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "And Then There Were None"){
-				var genre = await db.Genre.findOne({name: "Crime"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Mystery"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Psychological Thriller"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Horror Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "A Brave New World"){
-				var genre = await db.Genre.findOne({name: "Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "The Ultimate Hihitchker's Guide To The Galaxy"){
-				var genre = await db.Genre.findOne({name: "Comedy Science Fiction"});
-				doLink(val.id, genre._id);
-			}
-
-			if(val.name == "Nineteen Eighty Four"){
-				var genre = await db.Genre.findOne({name: "Social Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Political Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
-				doLink(val._id, genre._id)
-			}
-
-			if(val.name == "Farenheit 451"){
-				var genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "The Hunger Games"){
-				var genre = await db.Genre.findOne({name: "Adventure Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "The Complete Sherlock Holmes"){
-				var genre = await db.Genre.findOne({name: "Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Mystery"});
-				doLink(val._id, genre._id);			
-			}
-
-			if(val.name == "Everything, Everything"){
-				var genre = await db.Genre.findOne({name: "Young Adult Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "Dune"){
-				var genre = await db.Genre.findOne({name: "Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Adventure Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Soft Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Conspiracy Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Planetary Romance"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Fantasy Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Military Science Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "Journey To The Center Of The Earth"){
-				var genre = await db.Genre.findOne({name: "Science Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Adventure Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "The Fellowship Of The Ring"){
-				var genre = await db.Genre.findOne({name: "Fantasy Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "So You Don't Get Lost In The Neighborhood"){
-				var genre = await db.Genre.findOne({name: "Mystery"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Psychological Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Literary Fiction"});
-				doLink(val._id, genre._id);
-			}
-
-			if(val.name == "Go Set A Watchman"){
-				var genre = await db.Genre.findOne({name: "Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Literary Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Historical Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Political Fiction"});
-				doLink(val._id, genre._id);
-				genre = await db.Genre.findOne({name: "Adventure Fiction"});
-				doLink(val._id, genre._id);		
-			}	
-		}catch(err){
-			console.log(err);
+async function loadGenreBook(){
+	var data = await db.Book.find({}).exec();
+	for(var val of data){
+		if(val.name == "The Fault In Our Stars"){
+			var genre = await db.Genre.findOne({name: "Young Adult Fiction"});
+			doLink(val._id, genre._id);
 		}
-		
-	});
-	console.log("DONE LOADING GENRE DATA");
+
+		if(val.name == "And Then There Were None"){
+			var genre = await db.Genre.findOne({name: "Crime"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Mystery"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Psychological Thriller"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Horror Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "A Brave New World"){
+			var genre = await db.Genre.findOne({name: "Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "The Ultimate Hihitchker's Guide To The Galaxy"){
+			var genre = await db.Genre.findOne({name: "Comedy Science Fiction"});
+			doLink(val.id, genre._id);
+		}
+
+		if(val.name == "Nineteen Eighty Four"){
+			var genre = await db.Genre.findOne({name: "Social Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Political Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
+			doLink(val._id, genre._id)
+		}
+
+		if(val.name == "Farenheit 451"){
+			var genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "The Hunger Games"){
+			var genre = await db.Genre.findOne({name: "Adventure Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Dystopian-Utopian Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "The Complete Sherlock Holmes"){
+			var genre = await db.Genre.findOne({name: "Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Mystery"});
+			doLink(val._id, genre._id);			
+		}
+
+		if(val.name == "Everything, Everything"){
+			var genre = await db.Genre.findOne({name: "Young Adult Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "Dune"){
+			var genre = await db.Genre.findOne({name: "Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Adventure Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Soft Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Conspiracy Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Planetary Romance"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Fantasy Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Military Science Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "Journey To The Center Of The Earth"){
+			var genre = await db.Genre.findOne({name: "Science Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Adventure Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "The Fellowship Of The Ring"){
+			var genre = await db.Genre.findOne({name: "Fantasy Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "So You Don't Get Lost In The Neighborhood"){
+			var genre = await db.Genre.findOne({name: "Mystery"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Psychological Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Literary Fiction"});
+			doLink(val._id, genre._id);
+		}
+
+		if(val.name == "Go Set A Watchman"){
+			var genre = await db.Genre.findOne({name: "Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Literary Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Historical Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Political Fiction"});
+			doLink(val._id, genre._id);
+			genre = await db.Genre.findOne({name: "Adventure Fiction"});
+			doLink(val._id, genre._id);		
+		}	
+	};
 }
 
 function doLink(bookid, genreid){
-	db.BookGenre.create({book: bookid, genre: genreid});
-}
-
-async function removeCmt(){
-	await db.Comment.remove({});
-	console.log("DONE REMOVING DATA");
+	db.BookGenre.create({book: bookid, genre: genreid});	
 }
 
 module.exports = loadData;

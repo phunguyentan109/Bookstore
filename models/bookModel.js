@@ -8,12 +8,7 @@ var bookSchema = new mongoose.Schema({
 		ref: "Author"
 	},
 	isbn: String,
-	description: [
-		{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Plot"
-		}
-	],
+	description: [],
 	price: Number,
 	discount: Number,
 	discountPrice: String,

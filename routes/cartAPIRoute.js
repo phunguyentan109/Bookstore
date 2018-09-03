@@ -60,7 +60,6 @@ router.post("/new", function(req, res){
 });
 
 router.put("/:cartId", function(req, res){
-	console.log(req.body.amount);
 	db.Cart.findByIdAndUpdate(req.params.cartId, {quantity: req.body.amount})
 	.then(function(updateCart){
 		res.json(updateCart);
