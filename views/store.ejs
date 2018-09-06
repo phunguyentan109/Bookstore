@@ -15,7 +15,7 @@
 			<div class="carousel-inner">
 				<div class="item active">
 					<div class="carousel-content">
-						<img src="\image\recommend2.jpg" alt="Chania">
+						<img src="\image\recommend2.jpg" class="imgSlider" alt="Chania">
 						<div class="container event-first">
 							<div class="event-first-content">
 								<h4 class="fadeInDown_recommend">Agatha Christie</h4>
@@ -157,11 +157,11 @@
 							<img src="<%=book.image%>" class="img-responsive arrival-book-model" alt="Image">
 						</div>
 						<a href="/store/<%=book._id%>" class="bookLink"><p class="book"><%=book.name%></p></a>
-						<p class="author"><%=book.author%></p>
-						<p class="price">$<%=book.price%>
+						<p class="author"><%=book.author.name%></p>
+						<p class="price">$<%=(book.price*(100 - book.discount)/100).toFixed(2)%>
 							<% if(book.discount != "0"){ %>
-							<span class="sale">105.000</span> 
-							<span class="discount">-20%</span>	
+							<span class="sale"><%=book.price%></span> 
+							<span class="discount">-<%=book.discount%>%</span>	
 							<% } %> 
 						</p>
 					</div>

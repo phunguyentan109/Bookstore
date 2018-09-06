@@ -2,6 +2,14 @@
   margin-right: 5px;
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
 /*==========================================*/
 /* CAROUSEL CSS
 /*==========================================*/
@@ -30,7 +38,7 @@
 }
 
 .slogan_welcome{
-  font-size: 50px;
+  font-size: 45px;
   display: block;
 }
 

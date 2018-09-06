@@ -259,7 +259,7 @@ var bookList = [
 		]
 	},
 	{
-		image: "https://res.cloudinary.com/kyle1998/image/upload/v1528524059/t2djtqki9wroko3to3cx.jpg",
+		image: "https://res.cloudinary.com/kyle1998/image/upload/v1536068374/book1.jpg",
 		name: "Go Set A Watchman",
 		isbn: "0062409859",
 		price: "24",
@@ -497,6 +497,27 @@ var pubOne = {
 	description: ""
 }
 
+var customerList = [
+	{
+		username: "tuan",
+		email: "tuan@gmail.com",
+		viewname: "Tuan Minh",
+		role: 1
+	},
+	{
+		username: "phu",
+		email: "kyleharris815490@gmail.com",
+		viewname: "Phu Nguyen",
+		role: 1
+	},
+	{
+		username: "nam",
+		email: "nam@gmail.com",
+		viewname: "Nam Lam",
+		role: 1
+	}
+]
+
 async function loadData(){
 	try{
 		// deleteMany & add books
@@ -512,15 +533,14 @@ async function loadData(){
 		await db.Genre.deleteMany({}).exec();
 		await db.BookGenre.deleteMany({}).exec();
 
-		createGenre();
+		await createGenre();
 		console.log("DONE LOADING GENRE DATA");
 		
-		createSupplier();
+		await createSupplier();
 		console.log("DONE LOADING SUPPLIER DATA");
 
-		createPublisher();
+		await createPublisher();
 		console.log("DONE LOADING PUBLISHER DATA");
-
 
 		// add book
 		var newSup = await db.Supplier.create(supplierOne);
@@ -535,12 +555,15 @@ async function loadData(){
 		};
 		console.log("DONE LOADING BOOK DATA");
 
-		//Add users
-		var newUser = new db.User({username: "phu", email: "phu"});
-		db.User.register(newUser, "phu");
-		console.log("DONE LOADING USER DATA");
-		
-		loadGenreBook();
+		//Create Admin
+		await createAdmin();
+		console.log("DONE LOADING ADMIN DATA");
+
+		//Create Customer
+		await createCustomer();
+		console.log("DONE LOADING CUSTOMER DATA");
+
+		await loadGenreBook();
 		console.log("DONE LOADING BOOK-GENRE DATA");
 		console.log("#=== THE APP'S READY TO WORK! ===#");
 	} catch(err){
@@ -548,16 +571,33 @@ async function loadData(){
 	}
 }
 
-function createSupplier(){
-	supplierList.forEach(async(val) => db.Supplier.create(val));
+async function createAdmin(){
+	var newAdmin = new db.User({username: "admin", email: "admin", viewname: "Jesus", role: 0});
+	await db.User.register(newAdmin, "admin");
 }
 
-function createPublisher(){
-	publisherList.forEach(async(val) => db.Publisher.create(val));
+async function createCustomer(){
+	for(let customer of customerList){
+		await db.User.register(customer, customer.username);
+	}
 }
 
-function createGenre(){
-	genreList.forEach(async(val) => await db.Genre.create(val));
+async function createSupplier(){
+	for(let val of supplierList){
+		await db.Supplier.create(val);
+	}
+}
+
+async function createPublisher(){
+	for(let val of publisherList){
+		await db.Publisher.create(val);
+	}
+}
+
+async function createGenre(){
+	for(let val of genreList){
+		await db.Genre.create(val);
+	}
 }
 
 async function loadGenreBook(){

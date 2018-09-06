@@ -9,7 +9,6 @@ var express 				= require("express"),
 	seedDB					= require("./seedDB");
 
 var storeRoutes 	= require("./routes/storeRoute"),
-	webappRoutes 	= require("./routes/webappRoute"),
 	cartAPI			= require("./routes/cartAPIRoute"),
 	commentAPI 		= require("./routes/commentAPIRoute"),
 	bookAPI			= require("./routes/bookAPIRoute"),
@@ -28,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 // Load data
-seedDB();
+// seedDB();
 
 // Authentication
 app.use(require("express-session")({

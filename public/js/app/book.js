@@ -1,5 +1,4 @@
 $(async function(){
-	// resetForm();
 	$('.select2').select2();
 
 	var list = await getBooks();
@@ -33,6 +32,8 @@ $(async function(){
 
     $("#clickMainUpload").on("click", () => $("#mainUploader").click());
 
+    $(".addImg").on("click", (e) => $(e.target).closest(".addImg").find(".subUploader")[0].click());
+
     $("#addNew").on("click", async() => {
     	await resetForm();
     	$("#save").html(`Confirm`);
@@ -42,6 +43,8 @@ $(async function(){
     $("#genres").on("click", ".removeSign", (e) => {
     	if(confirm("Remove this genre?")) $(e.target).closest(".removeSign").parents(".wrapGenre").remove()
     });
+
+    $(".fas.fa-file-excel").on("click", (e) => removeSubImg($(e.target).closest(".fas.fa-file-excel").closest(".col-md-4")));
 })
 
 //==================================================================================
@@ -61,12 +64,12 @@ async function createBook(book){
 		var newB = await $.ajax({
 			method: "POST",
 			url: "/api/book/new",
-			processData: false,
-			contentType: false,
 			data: book
 		});
+		await uploadMainImg(newB._id);
+		await uploadSubImg(newB._id);
 		let newBook = await $.getJSON("/api/book/" + newB._id);
-		console.log(newBook);
+		addRow(newBook);
 	} catch(err){
 		console.log(err);
 	}
@@ -77,13 +80,55 @@ async function updateBook(bookid, book){
 		await $.ajax({
 			method: "PUT",
 			url: "/api/book/" + bookid,
-			processData: false,
-	    	contentType: false,
 			data: book
 		});
+		await uploadMainImg(bookid);
+		await uploadSubImg(bookid);
 		let updateData = await $.getJSON("/api/book/" + bookid);
-		console.log(updateData);
 		updateRow(updateData);
+	}catch(err){
+		console.log(err);
+	}
+}
+
+async function uploadMainImg(bookid){
+	try{
+		let imgFile = $("#mainUploader")[0].files[0];
+		let fd = new FormData();
+		fd.append("bookid", bookid);
+		fd.append("image", imgFile);
+		
+		await $.ajax({
+			method: "PUT",
+			url: "/api/book/mainImg",
+			processData: false,
+	    	contentType: false,
+	    	cache: false,
+			data: fd
+		});
+	}catch(err){
+		console.log(err);
+	}
+}
+
+async function uploadSubImg(bookid){
+	try{
+		let fd = new FormData();
+		fd.append("bookid", bookid);
+		let listImg = getMoreImage();
+		let listChanges = getChangesMoreImage();
+		for (var i = 0; i < listImg.length; i++) {
+			fd.append("subImg", listImg[i]);
+		}
+		fd.append("changes", JSON.stringify(listChanges));
+		await $.ajax({
+			method: "PUT",
+			url: "/api/book/subImg",
+			processData: false,
+	    	contentType: false,
+	    	cache: false,
+			data: fd
+		});
 	}catch(err){
 		console.log(err);
 	}
@@ -95,7 +140,6 @@ async function deleteBook(book){
 			method: "DELETE",
 			url: "/api/book/" + book.data("id")
 		});
-		console.log(del);
 		$('#bookTable').DataTable().row(book).remove().draw(true);
 		fillMsg("Delete book's information successfully!", "far fa-trash-alt");
 	}catch(err){
@@ -109,7 +153,6 @@ async function deleteBook(book){
 async function fillData(row){
 	var book = row.data("content");
 	$("#overlayContent").data("row", row);
-	
 	//bind data
 	$("#overlayContent").data("content", book);
 	$("#isbn").val(book.isbn);
@@ -132,22 +175,17 @@ async function fillData(row){
 	$("#cover").val(book.cover);
 	$("#amount").val(book.amount);
 	$("#language").val(book.language);
-	$("#addImg").empty();
-	for(let i = 0; i < book.moreImage.length; i++){
-		$("#addImg").append(`<div class="col-md-4">
-								<div class="hasImg">
-									<img src=${book.moreImage[i]} class="moreImg">
-									<div class="opaBG"></div>
-									<i class="fas fa-file-excel"></i>
-								</div>
-							</div>`);
-	}
-	for(let i = 0; i < 3 - book.moreImage.length; i++){
-		$("#addImg").append(`<div class="col-md-4">
-								<div class="addImg">
-									<i class="fas fa-plus-circle addMoreImg"></i>
-								</div>
-							</div>`);
+	var arrMoreImg = Array.from($(".moreImg"));
+	for(let i = 0; i < arrMoreImg.length; i++){
+		if(i < book.moreImage.length){
+			$(arrMoreImg[i]).attr("src", book.moreImage[i]);
+			$($(".hasImg")[i]).removeClass("hide");
+			$($(".addImg")[i]).addClass("hide");
+		} else {
+			$(arrMoreImg[i]).attr("src", "");
+			$($(".hasImg")[i]).addClass("hide");
+			$($(".addImg")[i]).removeClass("hide");	
+		}
 	}
 	$("#overlay").toggleClass("hide");
 }
@@ -179,13 +217,13 @@ async function resetForm(){
 		let item = $(`<option value=${val._id}>${val.name}</option>`);
 		$("#publisher").append(item);
 	})
-	$("#addImg").empty();
+	var arrMoreImg = Array.from($(".moreImg"));
 	for(let i = 0; i < 3; i++){
-		$("#addImg").append(`<div class="col-md-4">
-								<div class="addImg">
-									<i class="fas fa-plus-circle addMoreImg"></i>
-								</div>
-							</div>`);
+		$(arrMoreImg[i]).attr("src", "");
+		if($(".subUploader")[i].files.length > 0)
+			$($(".subUploader")[i]).replaceWith($(".subUploader").val('').clone(true));
+		$($(".hasImg")[i]).addClass("hide");
+		$($(".addImg")[i]).removeClass("hide");
 	}
 	$("#description").val("");
 	$("#amount").val("");
@@ -196,41 +234,50 @@ async function resetForm(){
 	$("#mainUploader").replaceWith($("#mainUploader").val('').clone(true));
 }
 
+function isInputValid(){
+	return getUpdateGenre().length > 0;
+}
+
 function gatherData(){
-	let mode = $("#save").html();
-	if(mode === "Save changes") animateButton("Saving...");
-	else animateButton("Creating...");
-	let para = $("#description").val().split("\n");
-	let fd = new FormData();
-	let old = $("#overlayContent").data("content");
-	fd.append("book[isbn]", $("#isbn").val());
-	fd.append("book[name]", $("#name").val());
-	fd.append("book[author]", $("#author").val());
-	fd.append("book[price]", $("#price").val());
-	fd.append("book[discount]", $("#discount").val());
-	fd.append("book[deliveryFast]", $("#delivery").val());
-	fd.append("book[supplier]", $("#supplier").val());
-	fd.append("book[publisher]", $("#publisher").val());
-	fd.append("book[publishDate]", $("#publishDate").val());
-	fd.append("book[cover]", $("#cover").val());
-	fd.append("book[amount]", $("#amount").val());
-	fd.append("book[language]", $("#language").val());
-	fd.append("book[description]", para);
-	fd.append("image", $("#mainUploader")[0].files[0]);
-	fd.append("genre", JSON.stringify(getUpdateGenre()));
-	if(mode === "Save changes") updateBook($("#overlayContent").data("content")._id, fd);
-	else createBook(fd);
+	if(isInputValid()){
+		let mode = $("#save").html();
+		if(mode === "Save changes") animateButton("Saving...");
+		else animateButton("Creating...");
+		let para = $("#description").val().split("\n");
+		let book = {
+			isbn: $("#isbn").val(),
+			name: $("#name").val(),
+			author: $("#author").val(),
+			price: $("#price").val(),
+			discount: $("#discount").val(),
+			deliveryFast: $("#delivery").val(),
+			supplier: $("#supplier").val(),
+			publisher: $("#publisher").val(),
+			publishDate: $("#publishDate").val(),
+			cover: $("#cover").val(),
+			amount: $("#amount").val(),
+			language: $("#language").val(),
+			description: para,
+			genre: JSON.stringify(getUpdateGenre())
+		}
+		if(mode === "Save changes") updateBook($("#overlayContent").data("content")._id, book);
+		else createBook(book);
+	} else {
+		alert("Please enter valid data to complete!");
+	}
 }
 
 function updateRow(data){
 	let row = $("#overlayContent").data("row");
+	let className = data.deliveryFast ? "delivery" : "no-delivery";
 	row.find("#imageRow").attr("src", data.image);
 	row.find("#nameRow").text(data.name);
 	row.find("#isbnRow").text(data.isbn);
 	row.find("#authorRow").text(data.author.name);
 	row.find("#priceRow").text(data.price);
 	row.find("#discountRow").text(data.discount);
-	row.find("#deliveryRow").text(data.deliveryFast);
+	row.find("#deliveryRow").html(`<b>${data.deliveryFast}</b>`);
+	row.find("#deliveryRow").attr("class", className);
 	row.find("#genreRow").html(getGenre(data.genre));
 	row.data("id", data._id);
 	row.data("content", data);
@@ -239,6 +286,46 @@ function updateRow(data){
 	resetForm();
 	
 	fillMsg("Update book's information successfully!");
+}
+
+function addRow(data){
+	let optionCol = `<button class="btn btn-success btn-sm edit">Edit</button>
+					<button class="btn btn-danger btn-sm delete">Delete</button>`;
+	let row = [`<td class="img"><img src="${data.image}" class="image" id="imageRow"></td>`, data.name, data.isbn, getGenre(data.genre), data.author.name, data.price, data.discount, getDelivery(data.deliveryFast), optionCol];
+	$("#bookTable").DataTable().row.add(row).draw();
+	prependRow(data);
+}
+
+function prependRow(data){
+	let table = $("#bookTable").DataTable();
+	let length = table.data().length - 1;
+	let newRow = table.row(length).data();
+
+	//add css class for newly created row
+	$(table.row(length).node()).find("td:nth-child(1)").addClass("img");
+
+	for(let i = length; i > 0; i--){
+		let className = $(table.row(i-1).node()).children("td:nth-child(8)").attr("class");
+		let temp = table.row(i-1).data();
+		let rowID = $(table.row(i-1).node()).data("id");
+		let rowContent = $(table.row(i-1).node()).data("content");
+		table.row(i-1).data(newRow);
+		table.row(i).data(temp);
+		$(table.row(i).node()).children("td:nth-child(8)").attr("class", className);
+		$(table.row(i).node()).data("id", rowID);
+		$(table.row(i).node()).data("content", rowContent);
+	}
+	let newClass = $(table.row(0).node()).children("td:nth-child(8)").text() === "true" ? "delivery" : "no-delivery"; 
+	$(table.row(0).node()).find("td:nth-child(8)").attr("class", newClass);
+	$(table.row(0).node()).data("id", data._id);
+	$(table.row(0).node()).data("content", data);
+	table.page(table.page()).draw(false);
+
+	//finish creating
+	stopAnimateButton("Confirm");
+	$("#overlay").toggleClass("hide");
+	resetForm();
+	fillMsg("Create new book successfully!");
 }
 
 //==================================================================================
@@ -264,7 +351,7 @@ function createRow(book){
 	return row;
 }
 
-const getDelivery = (delivery) => delivery ? `<td class="delivery"><b>${delivery}</b></td>` : `<td class="no-delivery"><b>${delivery}</b></td>`;
+const getDelivery = (delivery) => delivery ? `<td class="delivery" id="deliveryRow"><b>${delivery}</b></td>` : `<td class="no-delivery" id="deliveryRow"><b>${delivery}</b></td>`;
 
 function createGenreOption(name, id){
 	if(!getUpdateGenre().includes(id)){
@@ -291,6 +378,14 @@ function stopAnimateButton(btnName){
 	$("#save").html(btnName);
 }
 
+function removeSubImg(imgPlace){
+	imgPlace.children(".hasImg").addClass("hide");
+	imgPlace.children(".addImg").removeClass("hide");
+	imgPlace.children(".hasImg").children(".moreImg").attr("src", "");
+	imgPlace.children(".subUploader").replaceWith($(".subUploader").val('').clone(true));
+}
+
+
 //==================================================================================
 // SUPPORT METHODS 
 //==================================================================================
@@ -310,10 +405,30 @@ function getUpdateGenre(){
 	return arr.map(val => $(val).data("genreid"));
 }
 
+function getMoreImage(){
+	let fileUpload = Array.from($(".subUploader")).filter(val => val.files.length > 0);
+	return fileUpload.map(val => val.files[0]);
+}
+
+function getChangesMoreImage(){
+	let blob = "blob:";
+	let listChanges = Array.from($(".moreImg")).filter(val => $(val).attr("src") !== "" && !$(val).attr("src").includes(blob));
+	return listChanges.map(val => $(val).attr("src"));
+}
+
 function changeMainImg(){
 	const _url = window.URL || window.webkitURL;
 	const file = $("#mainUploader")[0].files[0];
 	$("#no-image").addClass("hide");
 	$("#image").removeClass("hide");
 	$("#image").attr("src", _url.createObjectURL(file));
+}
+
+function changeSubImg(uploader){
+	const _url = window.URL || window.webkitURL;
+	const file = $(uploader)[0].files[0];
+	$(uploader).parents(".col-md-4").children(".hasImg").children(".moreImg").attr("src", _url.createObjectURL(file));
+
+	$(uploader).parents(".col-md-4").children(".hasImg").removeClass("hide");
+	$(uploader).parents(".col-md-4").children(".addImg").addClass("hide");
 }

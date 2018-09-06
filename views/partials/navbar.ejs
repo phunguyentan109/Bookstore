@@ -31,12 +31,41 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/cart">Cart</a></li>
+					<li class="phoneNum">
+						<i class="fas fa-phone"></i> 
+						<div class="phone">
+							<p>0902-761-143</p>
+							<small>Call for ordering</small>
+						</div>
+					</li>
 					<% if(!currentUser){ %>
-					<li><a href="/login">Account</a></li>
+					<li>
+						<a href="/login" class="userLogin">
+							<i class="fas fa-user-circle"></i> 
+							<div class="profile">
+								<p>Account</p>
+								<small>Login</small>
+							</div>
+						</a>
+					</li>
 					<% } else {%>
-					<li><a href="#"><%=currentUser.username%></a></li>
+					<li class="dropdownBtn">
+						<div class="user">
+							<i class="fas fa-user-circle"></i> 
+							<div class="profile">
+								<p><%=currentUser.viewname%></p>
+								<small>Profile</small>
+							</div>
+							<i class="fas fa-angle-down"></i>
+						</div>
+						<div class="dropdown-content">
+							<a href="#">My order</a>
+							<a href="#">Notifications</a>
+							<a href="/logout">Logout</a>
+						</div>
+					</li>
 					<%}%>
+					<li><a href="/cart" class="cart"><i class="fas fa-shopping-basket"></i> Cart <span>0</span></a></li>
 				</ul>
 			</div>
 		</nav>

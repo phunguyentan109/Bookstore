@@ -31,7 +31,40 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 									<input type="file" onchange="changeMainImg()" id="mainUploader" accept="image/*">
 									<h4 class="mainDes upperSpace">More Image</h4>
 									<p class="note">This is these additional image of this book</p>
-									<div class="row rowImg" id="addImg">
+									<div class="row rowImg">
+										<div class="col-md-4">
+											<div class="hasImg">
+												<img src="" class="moreImg">
+												<div class="opaBG"></div>
+												<i class="fas fa-file-excel" id="removeImg"></i>
+											</div>
+											<div class="addImg hide" id="addImg">
+												<i class="fas fa-plus-circle addMoreImg"></i>
+												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="hasImg">
+												<img src="" class="moreImg">
+												<div class="opaBG"></div>
+												<i class="fas fa-file-excel" id="removeImg"></i>
+											</div>
+											<div class="addImg hide" id="addImg">
+												<i class="fas fa-plus-circle addMoreImg"></i>
+												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="hasImg">
+												<img src="" class="moreImg">
+												<div class="opaBG"></div>
+												<i class="fas fa-file-excel" id="removeImg"></i>
+											</div>
+											<div class="addImg hide">
+												<i class="fas fa-plus-circle addMoreImg"></i>
+												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="col-md-8">
@@ -41,7 +74,7 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>ISBN</label>
-												<input type="text" name="" placeholder="Enter book ISBN here..." class="form-control" id="isbn">	
+												<input type="number" placeholder="Enter book ISBN here..." class="form-control" id="isbn">	
 											</div>
 											<div class="form-group">
 												<label>Book Name</label>

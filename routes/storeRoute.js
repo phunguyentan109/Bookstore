@@ -19,27 +19,20 @@ passport.deserializeUser(db.User.deserializeUser());
 // =============================================================
 // ROUTE
 // =============================================================
-// Landing - GET
+
 router.get("/", function(req, res){
 	res.render("newlanding");
 });
 
-router.get("/old", function(req, res){
-	res.render("landing");
-});
-
-// Login - GET
 router.get("/login", function(req, res){
 	res.render("login");
 });
 
-// Login - POST
 router.post("/login", passport.authenticate("local", {
 	successRedirect: "/",
 	failureRedirect: "/login"
 }));
 
-// Register - POST
 router.post("/register", function(req, res){
 	var newUser = new db.User({
 		username: req.body.username,
@@ -55,23 +48,22 @@ router.post("/register", function(req, res){
 	})
 })
 
-// Store - GET
-router.get("/store", function(req, res){
-	db.Book.find({}, function(err, list_books){
-		if(err){
-			console(err);
-		} else {
-			res.render("store", {list: list_books});
-		}
-	});
+router.get("/logout", function(req, res){
+   req.logout();
+   res.redirect("/login");
 });
 
-// Cart - GET
+router.get("/store", async(req, res) => {
+	try{
+		let listBook = await db.Book.find({}).populate("author").exec();
+		res.render("store", {list: listBook});
+	} catch (err) { console.log(err); }
+});
+
 router.get("/cart", function(req, res){
 	res.render("cart");
 });
 
-//Book Detail - GET
 router.get("/store/:id", async(req, res) => {
 	try {
 		var data = await db.Book.findById(req.params.id).populate("author").populate("comment").populate({path: "comment", populate:{path: "user"}}).exec();

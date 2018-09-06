@@ -50,10 +50,9 @@ router.get("/:id", async(req,res) =>{
 	}
 })
 
-router.post("/new", upload.single("image"), async(req, res) => {
+router.post("/new", async(req, res) => {
 	try {
-		req.body.book.image = (await cloudinary.uploader.upload(req.file.path)).secure_url;
-		var newBook = await db.Book.create(req.body.book);
+		var newBook = await db.Book.create(req.body);
 		let genreList = JSON.parse(req.body.genre);
 		for(let val of genreList){
 			let bookgenre = {book: newBook._id, genre: val}
@@ -65,13 +64,42 @@ router.post("/new", upload.single("image"), async(req, res) => {
 	}
 })
 
-router.put("/:id", upload.single("image"), async(req, res) => {
-	try{
+router.put("/mainImg", upload.single("image"), async(req, res) => {
+	try {
+		let book = await db.Book.findById(req.body.bookid);
 		if(req.file){
-			var result = await cloudinary.uploader.upload(req.file.path);
-			req.body.book.image = result.secure_url;	
+			book.image = (await cloudinary.uploader.upload(req.file.path)).secure_url;
+			book.save();
 		}
-		await db.Book.findByIdAndUpdate(req.params.id, req.body.book, {new: true});
+		res.status(201).json("Upload main image successfully!");
+	} catch(err) {
+		res.send(err);
+	}
+});
+
+router.put("/subImg", upload.array("subImg", 3), async(req, res) => {
+	try {
+		let changes = JSON.parse(req.body.changes);
+		let book = await db.Book.findById(req.body.bookid);
+		book.moreImage = [];
+		if(changes){
+			changes.forEach(val => book.moreImage.push(val));
+		}
+		if(req.files){
+			for(let img of req.files){
+				book.moreImage.push((await cloudinary.uploader.upload(img.path)).secure_url);
+			}
+		}
+		book.save();
+		res.status(201).json("Upload sub image successfully!");
+	} catch(err) {
+		res.send(err);
+	}
+});
+
+router.put("/:id", async(req, res) => {
+	try{
+		await db.Book.findByIdAndUpdate(req.params.id, req.body, {new: true});
 		await db.BookGenre.deleteMany({book: req.params.id});
 		let genreList = JSON.parse(req.body.genre);
 		for(let each of genreList){
