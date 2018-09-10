@@ -71,12 +71,17 @@ router.get("/store/:id", async(req, res) => {
 		let para = data.description[0].split(" ");
 		var short = para.length > 30 ? para.filter((val, index) => index <= 30).join(" ") : para.filter((val, index) => index <= para.length/2).join(" ");
 		} else {
-			var short = "There is no description."
+			var short = "There is no description.";
 		}
 		res.render("detail", {book: data, paraPlot: short});
 	} catch(err){
 		console.log(err);
 	}
 });
+
+router.get("/cart/order", async(req, res) => {
+	let userInfo = await db.User.findById(req.user._id).populate("otherAddress").exec();
+	res.render("order", {user: userInfo});
+})
 
 module.exports = router;

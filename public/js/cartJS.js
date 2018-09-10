@@ -54,7 +54,7 @@ function retrieveAmount(target, num){
 
 function addTotal(sum){
 	$("#notional").text(`$${sum}`);
-	$("#subtotal").text(`$${sum}`);
+	$("#subtotal").text(`$${Number(sum)+15}`);
 }
 
 //==================================================================================

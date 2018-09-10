@@ -502,18 +502,27 @@ var customerList = [
 		username: "tuan",
 		email: "tuan@gmail.com",
 		viewname: "Tuan Minh",
+		address: "224 Pham Van Chi",
+		city: "Ho Chi Minh",
+		country: "Vietnam",
 		role: 1
 	},
 	{
 		username: "phu",
 		email: "kyleharris815490@gmail.com",
 		viewname: "Phu Nguyen",
+		address: "113 Truong Quang Trong",
+		city: "Quang Ngai",
+		country: "Vietnam",
 		role: 1
 	},
 	{
 		username: "nam",
 		email: "nam@gmail.com",
 		viewname: "Nam Lam",
+		address: "325 Hai Ba Trung",
+		city: "Vo Tung",
+		country: "Vietnam",
 		role: 1
 	}
 ]
@@ -577,8 +586,17 @@ async function createAdmin(){
 }
 
 async function createCustomer(){
-	for(let customer of customerList){
-		await db.User.register(customer, customer.username);
+	for(let cust of customerList){
+		let address = {
+			receiver: cust.viewname,
+			address: cust.address,
+			city: cust.city,
+			country: cust.country
+		}
+		let newAddress = await db.Address.create(address);
+		let newCustomer = await db.User.register(cust, cust.username);
+		newCustomer.otherAddress.push(newAddress._id);
+		newCustomer.save();
 	}
 }
 

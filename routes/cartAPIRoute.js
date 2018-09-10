@@ -15,7 +15,6 @@ router.get("/", async(req, res) => {
 //addInOne
 router.post("/new", async(req, res) => {
 	try {
-		console.log(req.body);
 		let newCart = new db.Cart({user: req.user, book: req.body.bookID, quantity: req.body.quantity});
 		let listCart = await db.Cart.find({user: req.user._id}).populate("book").exec();
 		if(listCart.length == 0){

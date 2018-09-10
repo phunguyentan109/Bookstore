@@ -1,22 +1,14 @@
 <% include partials/header %>
-<link rel="stylesheet" href="/stylesheet/partial.css">
-<link rel="stylesheet" type="text/css" href="/stylesheet/cart.css">
-<link rel="stylesheet" type="text/css" href="/stylesheet/navbar-color.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<script src="/js/cartJS.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="/stylesheet/partials/partial.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/cart.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/navbar-color.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/partials/pricePanel.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/partials/crumbread.css">
+	<script src="/js/cartJS.js" type="text/javascript"></script>
 </head>
 <body>
 	<% include partials/navbar%>
-	<div class="crumbread-bg">
-		<div class="container">	
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Store</li>
-				</ol>
-			</nav>
-		</div>
-	</div>
+	<% include partials/crumbread%>
 
 	<div class="container all-content">
 
@@ -30,21 +22,11 @@
 				</div>
 			</div>
 			<div class="col-md-4 totalContent">
-				<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Order Detail</h4>
-				<form class="horizon">
-					<input type="text" name="" placeholder="Type discount code here...">
-					<button>Apply</button>
-				</form>
-				<p class="applied"><i class="far fa-check-circle"></i> BADC1123423 is used</p>
-				<p class="apply-dis"></p>
-				<div class="notional">
-					<p>Notional Price</p>
-					<p id="notional">0</p>
+				<% include partials/pricePanel %>
+				<div class="orderTask">
+					<a href="/cart/order" class="btnOrder"><i class="fas fa-shopping-cart"></i> Create order</a>
+					<a href="#" class="btnOrder btnRemove" id="btnRemove">Remove</a>	
 				</div>
-				<div class="subtotal">
-					<p>Total Price</p>
-					<p id="subtotal">0</p>
-				</div>	
 			</div>
 		</div>
 

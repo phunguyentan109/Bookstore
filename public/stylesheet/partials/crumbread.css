@@ -1,0 +1,22 @@
+.crumbread-bg{
+  background-color: #343434;
+  margin-bottom: 2%;
+}
+
+.breadcrumb a{
+  color: #777777;
+}
+
+.breadcrumb>.active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.breadcrumb{
+  border-radius: 0px;
+  line-height: 3.5;
+  background-color: transparent;
+  padding: 0;
+  font-family: Lato;
+  margin-bottom: 0px;
+}

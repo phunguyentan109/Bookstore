@@ -6,7 +6,7 @@ var express 				= require("express"),
 	app 					= express(),
 	bodyParser 				= require("body-parser"),
 	passport				= require("passport");
-	seedDB					= require("./seedDB");
+	// seedDB					= require("./seedDB");
 
 var storeRoutes 	= require("./routes/storeRoute"),
 	cartAPI			= require("./routes/cartAPIRoute"),
