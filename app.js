@@ -57,6 +57,6 @@ app.use("/api/genre", genreAPI);
 app.use("/api/publisher", publisherAPI);
 app.use("/api/supplier", supplierAPI);
 
-app.listen(process.env.PORT || 3000, function(req, res){
+app.listen(process.env.PORT || process.env.LOCALSERVER, function(req, res){
 	console.log("SERVER IS INITIALIZING...");
 });

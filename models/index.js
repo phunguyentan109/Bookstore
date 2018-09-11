@@ -1,10 +1,7 @@
 var mongoose = require("mongoose");
 
-// console.log(process.env.DATABASEURL)
-// mongoose.connect("mongodb://localhost/bookstore", { useNewUrlParser: true });
+console.log(`Here: ${process.env.DATABASEURL}`)
 mongoose.connect(process.env.DATABASEURL || process.env.LOCALDATABASEURL, { useNewUrlParser: true });
-// mongoose.connect("mongodb://kyle:kyle123@ds251902.mlab.com:51902/bookstore", { useNewUrlParser: true });
-// mongodb://kyle:kyle123@ds251902.mlab.com:51902/bookstore
 mongoose.Promise = Promise;
 
 module.exports.User = require("./userModel");
