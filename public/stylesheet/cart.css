@@ -1,4 +1,36 @@
 /*==========================================*/
+/* LOADING CSS
+/*==========================================*/
+.content-loading{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 7px solid #d9d9d9;
+  border-top: 7px solid #91aca6;
+  animation: spin 2s linear infinite;
+}
+
+.content-loading p{
+  color: gray;
+  margin-top: 20px;
+  font-family: Lato;
+  font-size: 15px;
+}
+
+@keyframes spin{
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+/*==========================================*/
 /* NOBOOK CSS
 /*==========================================*/
 .no-item{
@@ -161,84 +193,6 @@
 /*==========================================*/
 /* CHECKOUT CSS
 /*==========================================*/
-/*.horizon{
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-content: center;
-}
-
-.horizon p{
-  margin: 0;
-}
-
-.horizon input{
-  border-radius: 5px;
-  border: 1px solid #80808036;
-  width: 260px;
-  padding-left: 10px;
-  outline: none;
-}
-
-.horizon button{
-  border-radius: 5px;
-  background-color: #609a8d;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-}
-
-.applied{
-  font-weight: bold;
-  margin: 5px 10px;
-  padding: 10px;
-  color: gray;
-  background-color: #c46f0229;
-  border-radius: 5px;
-}
-
-.notional{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  font-family: Lato;
-  margin-top: 5px;
-}
-
-.notional p:first-child{
-  color: gray;
-  font-size: 15px;
-  margin: 0;
-  font-weight: lighter;
-}
-
-.notional p:last-child{
-  font-size: 18px;
-  color: #5c5c5c;
-  margin: 0;
-}
-
-.subtotal{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  font-family: Lato;
-  margin-top: 5px;
-  border-top: 1px solid #8080802e;
-}
-
-.subtotal p:first-child{
-  color: gray;
-  font-size: 15px;
-  margin: 0;
-  font-weight: lighter;
-}
-
-.subtotal p:last-child{
-  font-size: 30px;
-  color: #5c5c5c;
-  margin: 0;
-}*/
 
 .orderTask{
   display: flex;

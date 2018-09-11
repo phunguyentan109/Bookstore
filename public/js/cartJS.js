@@ -1,6 +1,9 @@
 $(async() => {
 	$(".checkoutPage").hide();
+	$(".noBookPlace").hide();
+	$(".content-loading").show();
 	let carts = await getCartList();
+	$(".content-loading").hide();
 	if(carts.length > 0){
 		$(".noBookPlace").hide();
 		$(".checkoutPage").show();
