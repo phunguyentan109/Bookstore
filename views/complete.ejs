@@ -1,0 +1,99 @@
+<% include partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheet/complete.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/partials/pricePanel.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/partials/crumbread.css">
+<link rel="stylesheet" href="/stylesheet/partials/partial.css">
+</head>
+<body>
+	<% include partials/navbar %>
+	<% include partials/crumbread %>
+
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-8 orderInfo">
+				<h4 class="content-title"><i class="fas fa-list-ul cate-icon"></i> Order information</h4>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="cheader"><i class="fas fa-caret-down"></i> Shipping address</p>
+						<div class="row rowAddress">
+							<%user.address.forEach((val, index) => { %>
+							<div class="col-md-6">
+								<div class="address-container unselectAdd">
+									<%if(index == 0){ %>
+									<h5>Default address</h5>
+									<% } else { %>
+									<h5>Alternative address</h5>
+									<% } %>
+									<h3><%=val.receiver%></h3>
+									<p><b>Address:</b> <%=val.address%>, <%=val.city%></p>
+									<p><%=val.country%></p>
+									<div class="useAddress">
+										<%if(index == 0){ %>
+										<button class="selected" id="select" disabled><i class="fas fa-check"></i> Selected</button>
+										<% } else { %>
+										<button class="unselected" id="select">Use this address</button>
+										<% } %>
+										<button class="editBtn">Edit</button>
+										<input type="hidden" value="<%=val._id%>">
+									</div>
+								</div>
+							</div>
+							<% }) %>
+						</div>
+						<p class="diffAdd" id="btnUseOther"><i class="far fa-plus-square"></i> Use another address...</p>
+						
+						<div class="openDiff closeDiff" id="addContent">
+							<p class="cheader rowDelivery hideCheader" id="rowDelivery"><i class="fas fa-caret-down"></i> Add new address</p>
+							<div class="row">
+								<div class="col-md-6 eachForm closeForm">
+									<div class="form-group">
+										<label>Receiver</label>
+										<input type="text" placeholder="Enter the receiver name here..." class="form-control inputValue" id="receiver" required>
+									</div>
+								</div>
+								<div class="col-md-6 eachForm closeForm">
+									<div class="form-group">
+										<label>Address</label>
+										<input type="text" placeholder="Enter the address here..." class="form-control inputValue" id="address" required>
+									</div>
+								</div>
+								<div class="col-md-6 eachForm closeForm">
+									<div class="form-group">
+										<label>City</label>
+										<input type="text" placeholder="Enter the city here..." class="form-control inputValue" id="city" required>
+									</div>
+								</div>
+								<div class="col-md-6 eachForm closeForm">
+									<div class="form-group">
+										<label>Country</label>
+										<input type="text" placeholder="Enter the country here..." class="form-control inputValue" id="country" required>
+									</div>
+								</div>
+							</div>
+							<button class="saveAddress closeBtn" id="another">Use this address</button>
+							<button class="btnCancel closeCancel" id="cancel">Cancel</button>
+						</div>
+						
+						<p class="cheader rowDelivery"><i class="fas fa-caret-down"></i> Delivery methods</p>
+						<div class="row">
+							<div class="col-md-6">
+								<p class="normal"><i class="fas fa-check-square"></i> Normal delivery (Get books in 2- 3 days)</p>
+							</div>
+							<div class="col-md-6">
+								<p class="fast"><i class="fas fa-square"></i> Fast delivery (Get books in 2 hours)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<% include partials/pricePanel %>
+				<button class="submitOrder">Submit Order</button>
+			</div>
+		</div>
+	</div>
+
+	<% include partials/footer %>
+
+	<script type="text/javascript" src="/js/completeJS.js"></script>
+</body>

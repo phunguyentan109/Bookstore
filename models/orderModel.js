@@ -6,7 +6,10 @@ var orderModel = new mongoose.Schema({
 		ref: "User"
 	},
 	money: Number,
-	status: String,
+	status: {
+		type: String,
+		default: "Working"	
+	},
 	dateCreated: {
 		type: Date,
 		default: Date.now

@@ -1,37 +1,20 @@
-$(async() => {
-	let carts = await getCartList();
-	if(carts.length > 0){
-		$(".noBookPlace").hide();
-		$(".checkoutPage").show();
-		var sum = 0;
-		carts.forEach(function(cart){
-			if(cart.book.discount > 0){
-				sum += (cart.book.price*(100-cart.book.discount)/100)*cart.quantity;
-			} else {
-				sum += cart.book.price*cart.quantity;
-			}
-		});
-		addTotal(sum.toFixed(2));
-	}
-
-	$("#btnUseOther").on("click", () => {
-		$("#addContent").toggleClass("closeDiff");
-		$(".eachForm").toggleClass("closeForm");
-		$(".saveAddress").toggleClass("closeBtn");
-	});
+$(function(){
+	$(".section>div>p>span").on("click", (e) => changeFilter($(e.target).closest("span")));
 })
 
-//==================================================================================
-// GET JSON DATA
-//==================================================================================
+function changeFilter(span){
+	console.log("run");
+	removeFilter();
+	let type = span.text().trim();
+	span.attr("class", `filter ${type}`);
+	span.html(`<i class="fas fa-filter"></i> ${type}`)
+}
 
-const getCartList = async() => await $.getJSON("/api/cart");
+function removeFilter(){
+	let spans = $(".section>div>p>span");
+	for(let span of spans){
+		$(span).attr("class", "");
+		$(span).html($(span).text().trim());
+	}
 
-//==================================================================================
-// WORKING WITH DATA ON FRONTEND 
-//==================================================================================
-
-function addTotal(sum){
-	$("#notional").text(`$${sum}`);
-	$("#subtotal").text(`$${Number(sum)+15}`);
 }

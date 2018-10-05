@@ -8,14 +8,16 @@ var express 				= require("express"),
 	passport				= require("passport");
 	// seedDB					= require("./seedDB");
 
-var storeRoutes 	= require("./routes/storeRoute"),
-	cartAPI			= require("./routes/cartAPIRoute"),
-	commentAPI 		= require("./routes/commentAPIRoute"),
-	bookAPI			= require("./routes/bookAPIRoute"),
-	authorAPI		= require("./routes/authorAPIRoute"),
-	genreAPI		= require("./routes/genreAPIRoute"),
-	supplierAPI		= require("./routes/supplierAPIRoute"),
-	publisherAPI	= require("./routes/publisherAPIRoute"),
+var cartAPI			= require("./routes/api/cartAPIRoute"),
+	commentAPI 		= require("./routes/api/commentAPIRoute"),
+	bookAPI			= require("./routes/api/bookAPIRoute"),
+	authorAPI		= require("./routes/api/authorAPIRoute"),
+	genreAPI		= require("./routes/api/genreAPIRoute"),
+	supplierAPI		= require("./routes/api/supplierAPIRoute"),
+	publisherAPI	= require("./routes/api/publisherAPIRoute"),
+	userAPI			= require("./routes/api/userAPIRoute"),
+	addressAPI		= require("./routes/api/addressAPIRoute"),
+	storeRoutes 	= require("./routes/storeRoute"),
 	appRoute 		= require("./routes/appRoute");
 
 // =============================================================
@@ -56,6 +58,8 @@ app.use("/api/author", authorAPI);
 app.use("/api/genre", genreAPI);
 app.use("/api/publisher", publisherAPI);
 app.use("/api/supplier", supplierAPI);
+app.use("/api/address", addressAPI);
+app.use("/api/user", userAPI);
 
 app.listen(process.env.PORT || process.env.LOCALSERVER, function(req, res){
 	console.log("SERVER IS INITIALIZING...");

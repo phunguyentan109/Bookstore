@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 
-console.log(`Here: ${process.env.DATABASEURL}`)
 mongoose.connect(process.env.DATABASEURL || process.env.LOCALDATABASEURL, { useNewUrlParser: true });
 mongoose.Promise = Promise;
 

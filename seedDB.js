@@ -502,28 +502,40 @@ var customerList = [
 		username: "tuan",
 		email: "tuan@gmail.com",
 		viewname: "Tuan Minh",
-		address: "224 Pham Van Chi",
-		city: "Ho Chi Minh",
-		country: "Vietnam",
 		role: 1
 	},
 	{
 		username: "phu",
 		email: "kyleharris815490@gmail.com",
 		viewname: "Phu Nguyen",
-		address: "113 Truong Quang Trong",
-		city: "Quang Ngai",
-		country: "Vietnam",
 		role: 1
 	},
 	{
 		username: "nam",
 		email: "nam@gmail.com",
 		viewname: "Nam Lam",
+		role: 1
+	}
+]
+
+var addressList = [
+	{
+		receiver: "Tuan Minh",
+		address: "224 Pham Van Chi",
+		city: "Ho Chi Minh",
+		country: "Vietnam"
+	},
+	{
+		receiver: "Phu Nguyen",
 		address: "325 Hai Ba Trung",
 		city: "Vo Tung",
-		country: "Vietnam",
-		role: 1
+		country: "Vietnam"
+	},
+	{
+		receiver: "Nam Lam",
+		address: "113 Truong Quang Trong",
+		city: "Quang Ngai",
+		country: "Vietnam"
 	}
 ]
 
@@ -586,16 +598,13 @@ async function createAdmin(){
 }
 
 async function createCustomer(){
-	for(let cust of customerList){
-		let address = {
-			receiver: cust.viewname,
-			address: cust.address,
-			city: cust.city,
-			country: cust.country
-		}
-		let newAddress = await db.Address.create(address);
-		let newCustomer = await db.User.register(cust, cust.username);
-		newCustomer.otherAddress.push(newAddress._id);
+	for(var i = 0; i < customerList.length; i++){	
+		let newAddress = await db.Address.create(addressList[i]);
+		let newAddress2 = await db.Address.create(addressList[i]);
+		console.log(customerList[i].username);
+		let newCustomer = await db.User.register(customerList[i], customerList[i].username);
+		newCustomer.address.push(newAddress._id);
+		newCustomer.address.push(newAddress2._id);
 		newCustomer.save();
 	}
 }

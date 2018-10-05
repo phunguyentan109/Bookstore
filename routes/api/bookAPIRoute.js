@@ -1,7 +1,7 @@
 var express = require("express"),
 	router = express.Router(),
 	bodyParser = require("body-parser"), 
-	db = require("../models");
+	db = require("../../models");
 
 //ENVIRONMENT CONFIG
 require('dotenv').config();

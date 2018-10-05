@@ -7,10 +7,7 @@ var userSchema = new mongoose.Schema({
 	password: String,
 	viewname: String,
 	role: Number,
-	address: String,
-	city: String,
-	country: String,
-	otherAddress: [
+	address: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Address"

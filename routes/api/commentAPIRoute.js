@@ -1,6 +1,6 @@
 var express = require("express"),
 	router	= express.Router(),
-	db 		= require("../models");
+	db 		= require("../../models");
 
 router.post("/new", async(req, res) =>{
 	try{
