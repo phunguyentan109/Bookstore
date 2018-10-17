@@ -10,7 +10,11 @@ var modelbookSchema = new mongoose.Schema({
 		ref: "Book"
 	},
 	quantity: Number,
-	price: Number
+	price: Number,
+	cover: {
+		type: Boolean,
+		default: false
+	}
 })
 
 module.exports = mongoose.model("OrderBook", modelbookSchema);

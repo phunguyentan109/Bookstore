@@ -55,6 +55,11 @@
   margin: 0;
 }
 
+.notional small{
+  font-weight: normal;
+  font-size: 75%;
+}
+
 .subtotal{
   display: flex;
   justify-content: space-between;

@@ -74,13 +74,16 @@
 							<button class="btnCancel closeCancel" id="cancel">Cancel</button>
 						</div>
 						
+						<p class="cheader rowCare"><i class="fas fa-caret-down"></i> Kafka Bookcover</p>
+						<div class="row"></div>
+
 						<p class="cheader rowDelivery"><i class="fas fa-caret-down"></i> Delivery methods</p>
 						<div class="row">
 							<div class="col-md-6">
-								<p class="normal"><i class="fas fa-check-square"></i> Normal delivery (Get books in 2- 3 days)</p>
+								<p class="checkBox"><i name="normal" class="fas fa-check-square"></i> Normal delivery (Get books in 2- 3 days)</p>
 							</div>
 							<div class="col-md-6">
-								<p class="fast"><i class="fas fa-square"></i> Fast delivery (Get books in 2 hours)</p>
+								<p class="checkBox"><i name="fast" class="fas fa-square"></i> Fast delivery (Get books in 2 hours)</p>
 							</div>
 						</div>
 					</div>
@@ -89,6 +92,7 @@
 			<div class="col-md-4">
 				<% include partials/pricePanel %>
 				<button class="submitOrder">Submit Order</button>
+				<a href="/cart"><button class="submitOrder cancelOrder">Back to cart</button></a>
 			</div>
 		</div>
 	</div>

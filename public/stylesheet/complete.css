@@ -1,3 +1,6 @@
+/*==========================================*/
+/* ADDRESS CSS
+/*==========================================*/
 .orderInfo{
 	margin-bottom: 30px
 }
@@ -8,6 +11,11 @@
 	color: #808080b3;
 	font-size: 12px;
 	margin-bottom: 0px;
+	padding-left: 5px;
+}
+
+.cheader>i{
+	margin-right: 5px;
 }
 
 .rowAddress{
@@ -75,7 +83,7 @@
 	border-radius: 5px;
 	margin-right: 5px;
 	color: white;
-	background-color: #727272;
+	background-color: #a3a3a3;
 }
 
 .diffAdd{
@@ -87,26 +95,18 @@
 	cursor: pointer;
 }
 
+/*==========================================*/
+/* ANOTHER ADDRESS CSS
+/*==========================================*/
 .rowDelivery{
 	margin-bottom: 15px;
 }
 
-.normal, .fast{
+.checkBox{
 	display: flex;
 	align-items: center;
 	font-family: Lato;
-}
-
-.normal>i{
-	font-size: 21px;
-	margin-right: 8px;
-	color: #cdd181;
-}
-
-.fast>i{
-	font-size: 21px;
-	margin-right: 8px;
-	color: #cfcfcf;
+	cursor: pointer;
 }
 
 .form-group label{
@@ -122,19 +122,6 @@
 	outline: none;
 	box-shadow: none;
 	border-color: #50a3a3;
-}
-
-.submitOrder{
-	padding: 9px 20px;
-	width: 100%;
-	margin-top: 5px;
-	color: white;
-	font-weight: bold;
-	border-radius: 5px;
-	border: none;
-	background-color: #98aa70;
-	font-family: Lato;
-	font-size: 16px;
 }
 
 .openDiff{
@@ -154,11 +141,11 @@
 
 .saveAddress{
 	padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    font-family: Lato;
-    color: white;
-    background-color: #69b099;
+	border: none;
+	border-radius: 5px;
+	font-family: Lato;
+	color: white;
+	background-color: #69b099;
 
 	max-height: 500px;
 	visibility: visible;
@@ -169,14 +156,14 @@
 
 .btnCancel{
 	padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    font-family: Lato;
-    color: white;
-    background-color: #a4a4a4;
-    margin-left: 2px;
+	border: none;
+	border-radius: 5px;
+	font-family: Lato;
+	color: white;
+	background-color: #a4a4a4;
+	margin-left: 2px;
 
-    max-height: 500px;
+	max-height: 500px;
 	visibility: visible;
 	opacity: 1;
 	transform: translateX(0px);
@@ -221,3 +208,136 @@
 	transition: transform 0.5s 0.3s, opacity 0.3s 0.4s, max-height 0.5s 0.4s, visibility 1s;
 }
 
+/*==========================================*/
+/* BOOKCARE CSS
+/*==========================================*/
+.rowCare{
+	margin-bottom: 23px;
+}
+
+.rowCare + .row{
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+.rowCare + .row>.col-md-2{
+	padding: 0px;
+	margin-right: 10px;
+}
+
+.rowCare + .row>.col-md-2>div{
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+	width: 120px;
+	height: 180px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.rowCare + .row>.col-md-2>.selectCover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transform: scale(1.05);
+	transition: transform .5s;
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(1){
+	position: absolute;
+	background-color: #2f2f2f;
+	color: whitesmoke;
+	margin-bottom: 0px;
+	bottom: 0;
+	right: 0;
+	font-size: 12px;
+	padding: 5px;
+	font-family: Lato;
+	font-weight: bold;
+	cursor: pointer;
+	transition: max-width .2s linear, transform 0.3s linear;
+	width: 100%;
+	max-width: 85px;
+	border-top-left-radius: 10px;
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(1)>i{
+	color: gray;
+	margin-right: 4px;
+	margin-left: 2px;
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(1)>.fas.fa-bookmark{
+	color: #ffff3a;
+	/*color: #84b431;*/
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(2){
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: #69b099;
+	color: white;
+	text-align: center;
+	font-family: Lato;
+	font-size: 11px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	font-weight: bold;
+	transition: transform 0.2s linear;
+	padding: 5px;
+	width: 50px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transform: translateY(-30px);
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(1).coverHor{
+	max-width: 120px;
+	border-radius: 0px;
+}
+
+.rowCare + .row>.col-md-2>div>p:nth-of-type(2).cover{
+	transform: translateY(0px);
+	transition: transform .3s linear;
+}
+
+/*==========================================*/
+/* DELIVERY CSS
+/*==========================================*/
+.checkBox>.fas.fa-check-square{
+	font-size: 21px;
+	margin-right: 8px;
+	color: #8ec8b6;
+}
+
+.checkBox>.fas.fa-square{
+	font-size: 21px;
+	margin-right: 8px;
+	color: #cfcfcf;
+}
+
+/*==========================================*/
+/* SUBMIT ORDER CSS
+/*==========================================*/
+.submitOrder{
+	padding: 9px 20px;
+	width: 100%;
+	/*margin-top: 5px;*/
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	border: none;
+	background-color: #98aa70;
+	font-family: Lato;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.submitOrder + a>.submitOrder{
+	background-color: #efefef;
+	color: gray;
+}
+
+.submitOrder + a{
+	text-decoration: none;
+}

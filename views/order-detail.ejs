@@ -1,23 +1,105 @@
 <% include partials/header %>
 	<link rel="stylesheet" href="/stylesheet/partials/partial.css">
-	<link rel="stylesheet" type="text/css" href="/stylesheet/order.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/order-detail.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheet/navbar-color.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheet/partials/crumbread.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/partials/personMenu.css">
 	<script src="/js/orderJS.js" type="text/javascript"></script>
 </head>
 <body>
 	<% include partials/navbar%>
 	<% include partials/crumbread%>
 
-	<div class="container">
+	<div class="container space">
 		<div class="row">
 			<% include partials/personMenu%>
 			<div class="col-md-9">
-				
+				<div class="section">
+					<h4><i class="fas fa-file"></i> Order KB12346</h4>
+					<p>Status: <b>Completed</b></p>
+				</div>
+				<div class="col-md-8">
+					<div class="row rowHeader">
+						<div class="col-md-8"><p><i class="fas fa-caret-down"></i> Books</p></div>
+						<div class="col-md-4"><p>Price</p></div>
+					</div>
+					<div class="row rowBook">
+						<div class="col-md-8">
+							<div class="book">
+								<div>
+									<img src="/image/book1.jpg">
+									<p>covered!</p>
+								</div>
+								<div>
+									<p><span>Go set a watch man</span></p>
+									<p>Harper Lee</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="price">
+								<p>$280.35 <span>$420</span> <span>-20%</span></p>
+								<p>Unit price - $140 <i class="fab fa-product-hunt"></i></p>	
+							</div>
+						</div>
+					</div>
+					<div class="row rowBook">
+						<div class="col-md-8">
+							<div class="book">
+								<div>
+									<img src="/image/book2.jpg">
+								</div>
+								<div>
+									<p><span>Brave new world</span> <b>(2)</b></p>
+									<p>Harper Lee</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="price">
+								<p>$300.25 <span>$420</span> <span>-20%</span></p>
+								<p>Unit price - $210 <i class="fab fa-product-hunt"></i></p>	
+							</div>
+						</div>
+					</div>
+					<div class="row rowBook">
+						<div class="col-md-8">
+							<div class="book">
+								<div>
+									<img src="/image/book7.jpg">
+									<p>covered!</p>
+								</div>
+								<div>
+									<p><span>Murder on the orient express</span> <b>(2)</b></p>
+									<p>Harper Lee</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="price">
+								<p>$100.25 <span>$220</span> <span>-50%</span></p>
+								<p>Unit price - $50 <i class="fab fa-product-hunt"></i></p>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="receiverAddress">
+						<h5><i class="fas fa-caret-down"></i> Receiver address</h5>
+						<p><i class="fas fa-user"></i> Nguyen Tan Phu</p>
+						<p>Address: 113 Truong Quang Trong, Quang Ngai, Vietnam</p>
+						<p>Phone: 0942608024</p>	
+					</div>
+					<div class="deliveryPayment">
+						<h5><i class="fas fa-caret-down"></i> Delivery & payment</h5>
+						<p>Checkout method: COD</p>
+						<p>Delivery: Normal delivery ($0)</p>
+					</div>
+					<button>View the bill</button>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<% include partials/footer %>
 </body>
 </html>		

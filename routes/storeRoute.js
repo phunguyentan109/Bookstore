@@ -81,11 +81,16 @@ router.get("/store/:id", async(req, res) => {
 
 router.get("/cart/complete", async(req, res) => {
 	let userInfo = await db.User.findById(req.user._id).populate("address").exec();
-	res.render("complete", {user: userInfo});
+	let books = await db.Cart.find({user: req.user._id}).populate("book").exec();
+	res.render("complete", {user: userInfo, books: books});
 })
 
 router.get("/order", async(req, res) => {
 	res.render("order");
+})
+
+router.get("/order/detail", async(req, res) => {
+	res.render("order-detail");
 })
 
 module.exports = router;

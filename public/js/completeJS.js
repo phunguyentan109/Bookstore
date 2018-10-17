@@ -5,12 +5,14 @@ $(async() => {
 	$(".editBtn").on("click", (e) => editAddress(e));
 	$("#cancel").on("click", () => closeEnterAddress());
 	$(".saveAddress").on("click", () => sendFormData());
+	$(".rowCare + .row").on("click", ".clickCover", (e) => toggleCover($(e.target).closest(".clickCover")));
+	$(".checkBox").on("click", (e) => checkBox($(e.target).closest(".checkBox").children("i")));
 })
 
 var open = false;
 
 //==================================================================================
-// WORKING WITH DATA 
+// WORKING WITH DATA & MANIPULATE
 //==================================================================================
 
 async function calculatePrice(){
@@ -25,6 +27,7 @@ async function calculatePrice(){
 			} else {
 				sum += cart.book.price*cart.quantity;
 			}
+		drawCart(cart);
 		});
 		setTotal(sum.toFixed(2));
 	}
@@ -78,13 +81,31 @@ function findAddress(id){
 	return $(hidden[0]).parents(".address-container");
 }
 
+function toggleCover(cover){
+	if(cover.attr("class") !== "clickCover") uncoverBook(cover);
+	else coverBook(cover);
+}
+
 //==================================================================================
 // DRAW HTML
 //==================================================================================
 
 function setTotal(sum){
 	$("#notional").text(`$${sum}`);
+	$("#shipping").text(`$${15}`);
+	$("#cover").text(`$${0}`);
 	$("#subtotal").text(`$${Number(sum)+15}`);
+}
+
+function drawCart(cart){
+	let book = $(`<div class="col-md-2">
+					<div style="background-image: url(${cart.book.image})">
+						<p class="clickCover"><i class="far fa-bookmark"></i> Try cover?</p>
+						<p><i class="fas fa-dollar-sign"></i> 5</p>
+					</div>
+				</div>`);
+	book.data("amount", cart.quantity);
+	$(".rowCare + .row").append(book);			
 }
 
 function addSelect(button){
@@ -148,6 +169,86 @@ function redrawAddress(address){
 	addressHTML.children("h3").text(address.receiver);
 	addressHTML.children("p")["0"].innerHTML = `<b>Address:</b> ${address.address}, ${address.city}</p>`;
 	addressHTML.children("p")["1"].textContent = address.country;
+}
+
+function coverBook(cover){
+	cover.addClass("coverHor");
+	cover.html(`<i class="fas fa-bookmark"></i> Covered!`);
+	cover.parent().children("p:nth-of-type(2)").addClass("cover");
+	cover.parent().addClass("selectCover");
+	
+	let price = 5 * cover.parents(".col-md-2").data("amount");
+	cover.parent().children("p:nth-of-type(2)").html(`<i class="fas fa-dollar-sign"></i> ${price}`);
+	addPrice("#cover", price);
+}
+
+function uncoverBook(cover){
+	cover.removeClass("coverHor");
+	cover.html(`<i class="far fa-bookmark"></i> Try cover?`);
+	cover.parent().children("p:nth-of-type(2)").removeClass("cover");
+	cover.parent().removeClass("selectCover");
+	let price = 5 * cover.parents(".col-md-2").data("amount");
+	subPrice("#cover", price);
+}
+
+function checkBox(e){
+	if(e.attr("class") === "fas fa-square"){
+		removeCheckBox();
+		e.attr("class", "fas fa-check-square");
+		if(e.attr("name") === "fast") addPrice("#shipping", 5);
+		else subPrice("#shipping", 5);	
+	}
+}
+
+function removeCheckBox(){
+	for(var check of $(".fas.fa-check-square")){
+		$(check).attr("class", "fas fa-square");
+	}
+}
+
+function addPrice(selector, number){
+	let current = $(selector).text();
+	$(selector).css("font-weight", "bold");
+	if(current.indexOf("+") === -1){
+		let curNumber = Number(current.substring(1, current.length));
+		$(selector).html(`$${number + curNumber} <small>+${number}</small>`);
+	} else {
+		let addLength = $(`${selector}>small`).text().length + 1;
+		let curNumber = Number(current.substring(1, current.length - addLength));
+		let addNum = Number($(`${selector}>small`).text());
+		$(selector).html(`$${number + curNumber} <small>+${number + addNum}</small>`);
+	}
+	addTotalPrice(number);
+}
+
+function subPrice(selector, number){
+	let current = $(selector).text();
+	let addLength = $(`${selector}>small`).text().length + 1;
+	let curNumber = Number(current.substring(1, current.length - addLength));
+	let left = Number($(`${selector}>small`).text()) - number;
+	if(left <= 0){
+		$(selector).html(`$${curNumber - number}`);
+		$(selector).css("font-weight", "normal");
+	} else {
+		$(selector).html(`$${curNumber - number} <small>+${left}</small>`);
+	}
+	subTotalPrice(number);
+}
+
+function addTotalPrice(number){
+	let current = $("#subtotal").text();
+	let currentNum = Number(current.substring(1, current.length));
+	$("#subtotal").css("font-weight", "bold");
+	$("#subtotal").text(`$${currentNum + number}`);
+}
+
+function subTotalPrice(number){
+	let current = $("#subtotal").text();
+	let currentNum = Number(current.substring(1, current.length));
+	$("#subtotal").text(`$${currentNum - number}`);
+	if($("#cover").text().indexOf("+") === -1 && $("#shipping").text().indexOf("+") === -1){
+		$("#subtotal").css("font-weight", "normal");
+	}
 }
 
 
