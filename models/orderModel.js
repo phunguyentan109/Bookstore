@@ -5,7 +5,15 @@ var orderModel = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "User"
 	},
+	receiver: String,
+	address: String,
+	city: String,
+	country: String,
 	money: Number,
+	deliveryFast: {
+		type: Boolean,
+		default: false
+	},
 	status: {
 		type: String,
 		default: "Working"	

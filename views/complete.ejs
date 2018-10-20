@@ -18,12 +18,13 @@
 						<div class="row rowAddress">
 							<%user.address.forEach((val, index) => { %>
 							<div class="col-md-6">
-								<div class="address-container unselectAdd">
-									<%if(index == 0){ %>
+								<%if(index == 0){ %>
+								<div class="address-container selectAdd">
 									<h5>Default address</h5>
-									<% } else { %>
+								<% } else { %>
+								<div class="address-container unselectAdd">
 									<h5>Alternative address</h5>
-									<% } %>
+								<% } %>
 									<h3><%=val.receiver%></h3>
 									<p><b>Address:</b> <%=val.address%>, <%=val.city%></p>
 									<p><%=val.country%></p>
@@ -91,7 +92,7 @@
 			</div>
 			<div class="col-md-4">
 				<% include partials/pricePanel %>
-				<button class="submitOrder">Submit Order</button>
+				<button class="submitOrder"><i class="fas fa-file"></i> Submit Order</button>
 				<a href="/cart"><button class="submitOrder cancelOrder">Back to cart</button></a>
 			</div>
 		</div>

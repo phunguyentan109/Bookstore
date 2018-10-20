@@ -37,91 +37,36 @@
 						<p>Status</p>
 					</div>
 				</div>
+				<% for(var i = orders.length - 1; i >= 0; i--) {%>
 				<div class="row rowOrder">
 					<div class="col-md-2">
-						<a href="/order/detail">KB12243</a>
+						<a href="/order/<%=orders[i]._id%>">#KB<%=(orders[i]._id).toString().substring(0, 5)%></a>
 					</div>
 					<div class="col-md-4">
-						<p>Brave New World...and 05 other product(s)</p>
+						<p><%=(details[i])[0].book.name%>...and <%=(details[i]).length - 1%> other product(s)</p>
 					</div>
 					<div class="col-md-2">
-						<p>12/05/2018</p>
+						<p><%=orders[i].dateCreated.getDate()%>/<%=orders[i].dateCreated.getMonth()+1%>/<%=orders[i].dateCreated.getFullYear()%></p>
 					</div>
 					<div class="col-md-2">
-						<p>$120</p>
+						<p>$<%=orders[i].money%></p>
 					</div>
-					<div class="col-md-2">
-						<p class="completed"><i class="fas fa-flag-checkered"></i> Completed</p>
-					</div>
-				</div>
-				<div class="row rowOrder">
-					<div class="col-md-2">
-						<a href="#">KB12243</a>
-					</div>
-					<div class="col-md-4">
-						<p>Farenheit 451</p>
-					</div>
-					<div class="col-md-2">
-						<p>12/05/2018</p>
-					</div>
-					<div class="col-md-2">
-						<p>$12.85</p>
-					</div>
+					<%if (orders[i].status === "Working") {%>
 					<div class="col-md-2">
 						<p class="working"><i class="fas fa-truck"></i> Working</p>
 					</div>
-				</div>
-				<div class="row rowOrder">
+					<%} else if(orders[i].status === "Completed") {%>
 					<div class="col-md-2">
-						<a href="#">KB12243</a>
+						<p class="completed"><i class="fas fa-flag-checkered"></i> Completed</p>
 					</div>
-					<div class="col-md-4">
-						<p>The Fountainhead</p>
-					</div>
-					<div class="col-md-2">
-						<p>12/11/2018</p>
-					</div>
-					<div class="col-md-2">
-						<p>$12.85</p>
-					</div>
+					<%} else {%>
 					<div class="col-md-2">
 						<p class="cancelled"><i class="fas fa-ban"></i> Cancelled</p>
 					</div>
+					<%}%>
 				</div>
-				<div class="row rowOrder">
-					<div class="col-md-2">
-						<a href="#">KB12243</a>
-					</div>
-					<div class="col-md-4">
-						<p>The Shining</p>
-					</div>
-					<div class="col-md-2">
-						<p>12/11/2018</p>
-					</div>
-					<div class="col-md-2">
-						<p>$12.85</p>
-					</div>
-					<div class="col-md-2">
-						<p class="cancelled"><i class="fas fa-ban"></i> Cancelled</p>
-					</div>
-				</div>
-				<div class="row rowOrder">
-					<div class="col-md-2">
-						<a href="#">KB12243</a>
-					</div>
-					<div class="col-md-4">
-						<p>Leaving The World</p>
-					</div>
-					<div class="col-md-2">
-						<p>12/11/2018</p>
-					</div>
-					<div class="col-md-2">
-						<p>$12.85</p>
-					</div>
-					<div class="col-md-2">
-						<p class="cancelled"><i class="fas fa-ban"></i> Cancelled</p>
-					</div>
-				</div>
+				<%}%>
+				<% if(orders.length > 5){ %>
 				<ul class="listPage">
 					<li class="page active"><a href="#">1</a></li>
 					<li class="page"><a href="#">2</a></li>
@@ -129,8 +74,10 @@
 					<li class="page"><a href="#">4</a></li>
 					<li class="page"><a href="#">5</a></li>
 				</ul>
+				<%}%>
 			</div>
 		</div>
+		<div class="space"></div>
 	</div>
 
 	<% include partials/footer %>

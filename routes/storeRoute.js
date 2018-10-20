@@ -1,70 +1,21 @@
-// =============================================================
+//=============================================================
 // REQUIREMENT
-// =============================================================
-var express 				= require("express"),
-	router 					= express.Router(),
-	db 						= require("../models"),
-	passport				= require("passport"),
-	LocalStrategy 			= require("passport-local"),
-	passportLocalMongoose 	= require("passport-local-mongoose");
+//=============================================================
+var express = require("express"),
+	router 	= express.Router(),
+	db 		= require("../models");
 
-// =============================================================
-// CONFIGURATION
-// =============================================================	
-// Passport config
-passport.use(new LocalStrategy(db.User.authenticate()));
-passport.serializeUser(db.User.serializeUser());
-passport.deserializeUser(db.User.deserializeUser());
-
-// =============================================================
-// ROUTE
-// =============================================================
-
-router.get("/", function(req, res){
-	res.render("newlanding");
-});
-
-router.get("/login", function(req, res){
-	res.render("login");
-});
-
-router.post("/login", passport.authenticate("local", {
-	successRedirect: "/",
-	failureRedirect: "/login"
-}));
-
-router.post("/register", function(req, res){
-	var newUser = new db.User({
-		username: req.body.username,
-		email: req.body.email
-	});
-	db.User.register(newUser, req.body.password, function(err, user){
-		if(err)
-			return res.redirect("/register");
-		passport.authenticate("local")(req, res, function(){
-			console.log("Register successfully!");
-			res.redirect("/");
-		});
-	})
-})
-
-router.get("/logout", function(req, res){
-   req.logout();
-   res.redirect("/login");
-});
-
-router.get("/store", async(req, res) => {
+//=============================================================
+// ROUTES
+//=============================================================
+router.get("/", async(req, res) => {
 	try{
 		let listBook = await db.Book.find({}).populate("author").exec();
 		res.render("store", {list: listBook});
 	} catch (err) { console.log(err); }
 });
 
-router.get("/cart", function(req, res){
-	res.render("cart");
-});
-
-router.get("/store/:id", async(req, res) => {
+router.get("/:id", async(req, res) => {
 	try {
 		var data = await db.Book.findById(req.params.id).populate("author").populate("comment").populate({path: "comment", populate:{path: "user"}}).exec();
 		if(data.description.length > 0){
@@ -78,19 +29,5 @@ router.get("/store/:id", async(req, res) => {
 		console.log(err);
 	}
 });
-
-router.get("/cart/complete", async(req, res) => {
-	let userInfo = await db.User.findById(req.user._id).populate("address").exec();
-	let books = await db.Cart.find({user: req.user._id}).populate("book").exec();
-	res.render("complete", {user: userInfo, books: books});
-})
-
-router.get("/order", async(req, res) => {
-	res.render("order");
-})
-
-router.get("/order/detail", async(req, res) => {
-	res.render("order-detail");
-})
 
 module.exports = router;

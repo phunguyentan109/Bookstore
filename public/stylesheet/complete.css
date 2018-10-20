@@ -34,7 +34,7 @@
 }
 
 .selectAdd{
-	border: 1px solid #caa387c9;
+	border: 1px solid lightgray;
 }
 
 .address-container>h5{
@@ -322,7 +322,6 @@
 .submitOrder{
 	padding: 9px 20px;
 	width: 100%;
-	/*margin-top: 5px;*/
 	color: white;
 	font-weight: bold;
 	border-radius: 5px;
@@ -340,4 +339,8 @@
 
 .submitOrder + a{
 	text-decoration: none;
+}
+
+.submitOrder>i{
+	margin-right: 5px;
 }

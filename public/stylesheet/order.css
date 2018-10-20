@@ -1,3 +1,6 @@
+.space{
+  margin-bottom: 70px;
+}
 /*==========================================*/
 /* INFORMATION PAGE CSS
 /*==========================================*/
@@ -96,6 +99,7 @@
 
 .rowOrder>.col-md-2:nth-of-type(1)>a{
   color: #389ea6;
+  text-transform: uppercase;
 }
 
 .rowOrder>.col-md-2:nth-of-type(5)>p{

@@ -9,6 +9,7 @@ var modelbookSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "Book"
 	},
+	discount: Number,
 	quantity: Number,
 	price: Number,
 	cover: {

@@ -65,7 +65,15 @@
 						</div>
 					</li>
 					<%}%>
-					<li><a href="/cart" class="cart"><i class="fas fa-shopping-basket"></i> Cart <span>0</span></a></li>
+					<li>
+						<a href="/cart" class="cart"><i class="fas fa-shopping-basket"></i> Cart 
+						<%if(cartSession){%>
+						<span><%=cartSession%></span>
+						<% } else { %>
+						<span>0</span>
+						<%}%>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>

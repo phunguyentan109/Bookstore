@@ -7,6 +7,7 @@ $(async() => {
 	$(".saveAddress").on("click", () => sendFormData());
 	$(".rowCare + .row").on("click", ".clickCover", (e) => toggleCover($(e.target).closest(".clickCover")));
 	$(".checkBox").on("click", (e) => checkBox($(e.target).closest(".checkBox").children("i")));
+	$(".submitOrder").on("click", () => submitOrder());
 })
 
 var open = false;
@@ -16,7 +17,7 @@ var open = false;
 //==================================================================================
 
 async function calculatePrice(){
-	let carts = await AJUtil.getJSON("/api/cart");
+	let carts = await $.getJSON("/api/cart");
 	if(carts.length > 0){
 		$(".noBookPlace").hide();
 		$(".checkoutPage").show();
@@ -27,7 +28,7 @@ async function calculatePrice(){
 			} else {
 				sum += cart.book.price*cart.quantity;
 			}
-		drawCart(cart);
+		drawCover(cart);
 		});
 		setTotal(sum.toFixed(2));
 	}
@@ -86,6 +87,35 @@ function toggleCover(cover){
 	else coverBook(cover);
 }
 
+async function submitOrder(){
+	if($(".selected").length > 0){
+		let addressId = $(".selected").parent().children("input").val();
+		let address = await AJUtil.getSingleJSON("/api/address", addressId);
+		let total = $("#subtotal").text();
+		let order = {...address};
+		order.money = Number($("#subtotal").text().substring(1, total.length));
+		if($(".fas.fa-check-square").attr("name") === "fast") order.deliveryFast = true;
+		let orderId = await $.post("/api/order/new", order);
+		let listCover = $(".rowCare + .row>.col-md-2");
+		for(let cover of listCover){
+			let item = $(cover).data("info");
+			let bookOrder = {
+				order: orderId,
+				book: item.book._id,
+				price: item.book.price,
+				discount: item.book.discount,
+				quantity: item.quantity
+			}
+			if($(cover).children("div").attr("class") === "selectCover") bookOrder.cover = true;
+			await $.post("/api/orbook/new", bookOrder);
+		}
+		await $.post("/api/cart/clear");
+		window.location.href = "/order/" + orderId;
+	} else {
+		alert("Please select the address for shipment!");
+	}
+}
+
 //==================================================================================
 // DRAW HTML
 //==================================================================================
@@ -97,7 +127,7 @@ function setTotal(sum){
 	$("#subtotal").text(`$${Number(sum)+15}`);
 }
 
-function drawCart(cart){
+function drawCover(cart){
 	let book = $(`<div class="col-md-2">
 					<div style="background-image: url(${cart.book.image})">
 						<p class="clickCover"><i class="far fa-bookmark"></i> Try cover?</p>
@@ -105,6 +135,7 @@ function drawCart(cart){
 					</div>
 				</div>`);
 	book.data("amount", cart.quantity);
+	book.data("info", cart);
 	$(".rowCare + .row").append(book);			
 }
 
@@ -250,6 +281,8 @@ function subTotalPrice(number){
 		$("#subtotal").css("font-weight", "normal");
 	}
 }
+
+
 
 
 

@@ -13,7 +13,7 @@
 
 function AJUtil(){};
 
-AJUtil.getJSON = async(path) => await $.getJSON(path);
+// AJUtil.getJSON = async(path) => await $.getJSON(path);
 
 AJUtil.getSingleJSON = async(path, id) => await $.getJSON(`${path}/${id}`);
 

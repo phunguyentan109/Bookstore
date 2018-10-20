@@ -9,10 +9,11 @@ router.get("/", async(req, res) => {
 			let listCart = await db.Cart.find({user: req.user._id}).populate({path:"book", populate: {path: "author"}}).exec()
 			res.json(listCart);
 		}
-	} catch(err){console.log(err);}
+	} catch(err){
+		res.send(err);
+	}
 });
 
-//addInOne
 router.post("/new", async(req, res) => {
 	try {
 		let newCart = new db.Cart({user: req.user, book: req.body.bookID, quantity: req.body.quantity});
@@ -32,21 +33,36 @@ router.post("/new", async(req, res) => {
 				await db.Cart.create(newCart);
 			}
 		}
-	} catch(err) {console.log(err);}
+	} catch(err) {
+		res.send(err);
+	}
 });
 
 router.put("/:cartId", async(req, res) => {
 	try{
 		await db.Cart.findByIdAndUpdate(req.params.cartId, {quantity: req.body.amount});
 		res.json("Update cart successfully!");
-	}catch(err){console.log(err);}
+	}catch(err){
+		res.send(err);
+	}
 });
 
 router.delete("/:cartId", async(req, res) => {
 	try{
 		await db.Cart.findByIdAndRemove(req.params.cartId);
 		res.json("Remove cart successfully!");
-	} catch(err){console.log(err);}
+	} catch(err){
+		res.send(err);
+	}
+});
+
+router.post("/clear", async(req, res) => {
+	try {
+		await db.Cart.deleteMany({});
+		res.json("Clear");
+	} catch(err) {
+		res.send(err);
+	}
 });
 
 module.exports = router;
