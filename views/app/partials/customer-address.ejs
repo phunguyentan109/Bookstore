@@ -1,0 +1,133 @@
+<%include partials/header%>
+	<link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/app/customer.css">
+	<link rel="stylesheet" href="../../plugins/iCheck/all.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheet/app/snackbar.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<%include partials/main-header%>
+		<%include partials/main-sidebar%>
+
+		<section class="content-wrapper displayBound">
+
+			<div class="overlay hide" id="overlay">
+				<div class="overlay-display">
+					<div class="overlay-content" id="overlayContent">
+						<h2>Update customer's information</h2>
+						<div class="input-content">
+							<div class="row">
+								<div class="col-md-12">
+									<h4 class="bookDes">Address Information</h4>
+									<p class="note">This is all the detail informations of the address</p>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Viewname</label>
+												<input type="text" name="viewname" placeholder="Enter viewname here..." class="form-control enterUser" id="viewname">	
+											</div>
+											<div class="form-group">
+												<label>Email</label>
+												<input type="text" name="email" placeholder="Enter the email here..." class="form-control enterUser" id="email">	
+											</div>
+											<div class="form-group">
+												<label>Username</label>
+												<input type="text" name="username" placeholder="Enter the username here..." class="form-control enterUser" id="username">	
+											</div>
+											<div class="form-group">
+												<label>Address</label>
+												<div class="addressList" id="addresses">
+													<p class="default"><span><i class="fas fa-tag"></i> Kyle Harris</span> <span>113 Truong Quang Trong, Quang Ngai, Vietnam</span> <span>x</span></p>
+													<p><span>Phu Nguyen</span> <span>224 Vo Tung, Quang Ngai, Vietnam</span> <span>x</span></p>
+												</div>
+												<div class="input-group">
+													<span class="input-group-btn">
+														<button type="button" class="btn pushGenre" id="addGenre">
+															<i class="fas fa-angle-double-up"></i>
+														</button>
+													</span>
+													<select class="form-control select2" style="width: 100%;" id="genreList">
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="confirm-content text-right">
+							<button class="save" id="save">Save changes</button>
+							<button class="cancel" id="cancel">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="content-header">
+				<h1>Manage Customers</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Tables</a></li>
+					<li class="active">Data tables</li>
+				</ol>
+			</section>
+
+			<section class="content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<div class="box-header">
+								<div class="addon-header">
+									<h3 class="box-title">Customer Data Tables </h3>
+									<div class="addNew" id="addNew"><i class="fas fa-plus-circle"></i> <span>New...</span></div>
+								</div> 
+							</div>
+							<div class="box-body table-responsive">
+								<table id="userTable" class="table table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>Viewname</th>
+											<th>Email</th>
+											<th>Username</th>
+											<th>Address</th>
+											<th>Option</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>Viewname</th>
+											<th>Email</th>
+											<th>Username</th>
+											<th>Address</th>
+											<th>Option</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>
+			
+		</section>
+
+		<%include partials/snackbar%>	
+		<%include partials/main-footer%>
+		<%include partials/control-sidebar%>
+	</div>
+
+	<%include partials/app-script%>
+	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<script type="text/javascript" src="/js/app/snackbar.js"></script>
+	<script type="text/javascript" src="/js/app/customer.js"></script>
+</body>

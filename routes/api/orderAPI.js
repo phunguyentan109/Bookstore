@@ -6,6 +6,8 @@ router.post("/new", async(req, res) => {
 	try{
 		let order = req.body;
 		order.user = req.user._id;
+		console.log(order.user);
+		debugger;
 		let newOrder = await db.Order.create(order);
 		res.json(newOrder._id);
 	} catch(err){

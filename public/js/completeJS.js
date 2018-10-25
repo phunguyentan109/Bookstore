@@ -70,8 +70,8 @@ function sendFormData(){
 }
 
 async function updateAddress(id){
-	let data = FormUtil.getObjectValues(".inputValue", "receiver", "address", "city", "country");
-	let address = await AJUtil.put(`/api/address/${id}`, data, {new: true});
+	let data = FormUtil.getObject(".inputValue");
+	let address = await $.ajax({method: "PUT", url: `/api/address/${id}`, data: data});
 	redrawAddress(address);
 	closeEnterAddress();
 	clearForm();
@@ -90,7 +90,7 @@ function toggleCover(cover){
 async function submitOrder(){
 	if($(".selected").length > 0){
 		let addressId = $(".selected").parent().children("input").val();
-		let address = await AJUtil.getSingleJSON("/api/address", addressId);
+		let address = await $.getJSON("/api/address/" + addressId);
 		let total = $("#subtotal").text();
 		let order = {...address};
 		order.money = Number($("#subtotal").text().substring(1, total.length));

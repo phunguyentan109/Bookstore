@@ -4,7 +4,8 @@ var addressModel = new mongoose.Schema({
 	receiver: String,
 	address: String,
 	city: String,
-	country: String
+	country: String,
+	phone: String
 })
 
 module.exports = mongoose.model("Address", addressModel);

@@ -10,18 +10,19 @@ var express 				= require("express"),
 	passport				= require("passport");
 	// seedDB					= require("./seedDB");
 
-var cartAPI			= require("./routes/api/cartAPIRoute"),
-	commentAPI 		= require("./routes/api/commentAPIRoute"),
-	bookAPI			= require("./routes/api/bookAPIRoute"),
-	authorAPI		= require("./routes/api/authorAPIRoute"),
-	genreAPI		= require("./routes/api/genreAPIRoute"),
-	supplierAPI		= require("./routes/api/supplierAPIRoute"),
-	publisherAPI	= require("./routes/api/publisherAPIRoute"),
-	userAPI			= require("./routes/api/userAPIRoute"),
-	addressAPI		= require("./routes/api/addressAPIRoute"),
-	orderAPI		= require("./routes/api/orderAPIRoute"),
-	orderBookAPI	= require("./routes/api/orderBookAPIRoute"),
-	appRoute 		= require("./routes/appRoute");
+var cartAPI			= require("./routes/api/cartAPI"),
+	commentAPI 		= require("./routes/api/commentAPI"),
+	bookAPI			= require("./routes/api/bookAPI"),
+	authorAPI		= require("./routes/api/authorAPI"),
+	genreAPI		= require("./routes/api/genreAPI"),
+	supplierAPI		= require("./routes/api/supplierAPI"),
+	publisherAPI	= require("./routes/api/publisherAPI"),
+	userAPI			= require("./routes/api/userAPI"),
+	addressAPI		= require("./routes/api/addressAPI"),
+	orderAPI		= require("./routes/api/orderAPI"),
+	orderBookAPI	= require("./routes/api/orderBookAPI");
+
+var	appRoute 		= require("./routes/app/appRoute");
 
 var	storeRoutes = require("./routes/storeRoute"),
 	baseRoute 	= require("./routes/baseRoute"),
@@ -58,16 +59,16 @@ app.use(async function(req, res, next){
 // ROUTES
 //=============================================================
 
-//WEBSITE ROUTE
+// WEBSITE
 app.use("/", baseRoute);
 app.use("/store", storeRoutes);
 app.use("/order", orderRoute);
 app.use("/cart", cartRoute);
 
-//WEBAPP ROUTE
+// WEBAPP
 app.use("/app", appRoute);
 
-//API ROUTE
+// API
 app.use("/api/book", bookAPI);
 app.use("/api/cart", cartAPI);
 app.use("/api/comment", commentAPI);

@@ -8,33 +8,30 @@
 *************************************************************************************/
 
 //==================================================================================
-// AJAX REFACTOR
-//==================================================================================
-
-function AJUtil(){};
-
-// AJUtil.getJSON = async(path) => await $.getJSON(path);
-
-AJUtil.getSingleJSON = async(path, id) => await $.getJSON(`${path}/${id}`);
-
-AJUtil.put = async(url, data) => await $.ajax({method: "PUT", url: url, data: data});
-
-//==================================================================================
 // FORM ADD-ON FUNCTIONS
 //==================================================================================
 
 function FormUtil(){};
 
-/* 
-	getValues(cssClass) - Used in front-end
-	This method accepts a cssClass and return list of values of inputs which has that cssClass
-*/
 FormUtil.getValues = (cssClass) => Array.from($(cssClass)).map(val => $(val).val());
 
 FormUtil.getObjectValues = (cssClass, ...keys) => {
 	let values = FormUtil.getValues(cssClass);
 	return ObjectUtil.addKeyValue(values, ...keys);
-} 
+}
+
+// used in address.js, user.js
+FormUtil.clearForm = (cssClass) => Array.from($(cssClass)).map(val => $(val).val(""));
+
+// used in address.js, complete.js
+FormUtil.getObject = (cssClass) => {
+	let obj = {};
+	Array.from($(`${cssClass}`)).map(val => {
+		let pair = $(val);
+		obj[pair.attr("name")] = pair.val();
+	})
+	return obj;
+}
 
 //==================================================================================
 // OBJECT ADD-ON FUNCTIONS
