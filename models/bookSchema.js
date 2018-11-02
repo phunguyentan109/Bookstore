@@ -3,6 +3,7 @@ var mongoose = require("mongoose"),
 
 var bookSchema = new mongoose.Schema({
 	image: String,
+	imageId: String,
 	name: String,
 	author: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -36,7 +37,12 @@ var bookSchema = new mongoose.Schema({
 	dateModified: String,
 	deliveryFast: Boolean,
 	amount: Number,
-	moreImage: []
+	moreImage: [
+		{
+			cloudId: String,
+			url: String
+		}
+	]
 });
 
 bookSchema.pre("remove", async function() {

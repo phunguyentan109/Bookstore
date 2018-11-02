@@ -20,13 +20,24 @@ async function confirmData(){
 	let data = gatherData();
 	if(data.raw.genre.length > 0){
 		beginProgress();
-		let bookId = await $.post("/api/book/", data.raw);
-		console.log(bookId);
-		if(data.img) await storeImage(data.img, bookId);
-		if(data.imgs.length > 0) await storeImages(data.imgs, bookId);
+		await storeBook(data);
 		window.location.href = "/app/book";
 	} else {
 		alert("Please select the genre for the book!");
+	}
+}
+
+async function storeBook(book){
+	try{
+		let fd = new FormData();
+		fd.append("book", JSON.stringify(book.raw));
+		fd.append("main", book.img);
+		for (var i = 0; i < book.imgs.length; i++) {
+			fd.append("sub", book.imgs[i]);
+		}
+		await $.ajax({method: "POST", url: "/api/book", processData: false, contentType: false, cache: false, data: fd});
+	}catch(err){
+		console.log(err);
 	}
 }
 
@@ -36,26 +47,6 @@ function gatherData(){
 	let	image = $("#image").data("file"); 
 	let	images = HtmlUtil.get$data(".uploading", "file");
 	return {raw: data, img: image, imgs : images};
-}
-
-async function storeImage(image, id){
-	try{
-		let fd = new FormData();
-		fd.append("bookid", id);
-		fd.append("image", image);
-		await $.ajax({method: "PUT", url: "/api/book/main", processData: false, contentType: false, cache: false, data: fd});
-	}catch(err){
-		console.log(err);
-	}
-}
-
-async function storeImages(images, id){
-	let fd = new FormData();
-	fd.append("book", id);
-	for (var i = 0; i < images.length; i++) {
-		fd.append("images", images[i]);
-	}
-	await $.ajax({method: "PUT", url: "/api/book/sub", processData: false, contentType: false, data: fd});
 }
 
 //==================================================================================

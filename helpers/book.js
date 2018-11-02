@@ -13,13 +13,25 @@ exports.getBooks = async(req, res) => {
 
 exports.createBook = async(req, res) => {
 	try {
-		let newBook = await db.Book.create(req.body);
-		let genreList = req.body.genre;
+		let book = JSON.parse(req.body.book);
+		book.moreImage = [];
+		if(req.files){
+			let main = await cloudinary.v2.uploader.upload(req.files.main[0].path);
+			book.image = main.secure_url;
+			book.imageId = main.public_id;
+			for(let img of req.files.sub){
+				let sub = await cloudinary.v2.uploader.upload(img.path);
+				let image = {cloudId: sub.public_id, url: sub.secure_url};
+				book.moreImage.push(image);
+			}
+		}
+		let newBook = await db.Book.create(book);
+		let genreList = book.genre;
 		for(let val of genreList){
 			let bookgenre = {book: newBook._id, genre: val}
 			await db.BookGenre.create(bookgenre);
 		}
-		res.json(newBook._id);
+		res.json("Creating book successfully!");
 	} catch(err) {
 		res.send(err);
 	}
@@ -60,34 +72,5 @@ exports.updateBook = async(req, res) => {
 		res.send(err);
 	}
 }
-
-exports.mainImage = async(req, res) => {
-	try {
-		let book = await db.Book.findById(req.body.bookid);
-		if(req.file){
-			let url = (await cloudinary.uploader.upload(req.file.path)).secure_url;
-			book.image = url;
-			book.save();
-		}
-		res.json("Upload main image successfully!");
-	} catch(err) {
-		res.send(err);
-	}
-}
-
-exports.otherImage = async(req, res) => {
-	try {
-		let book = await db.Book.findById(req.body.bookid);
-		if(req.files){
-			for(let img of req.files){
-				book.moreImage.push((await cloudinary.uploader.upload(img.path)).secure_url);
-			}
-		}
-		book.save();
-		res.json("Upload sub image successfully!");
-	} catch(err) {
-		res.send(err);
-	}
-};
 
 module.exports = exports;

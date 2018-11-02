@@ -10,7 +10,7 @@ const {upload, cloudinary} = require("../../middleware/uploader");
 //=============================================================	
 router.route("/")
 .get(helpers.getBooks)
-.post(helpers.createBook)
+.post(upload.fields([{name: "main"}, {name: "sub"}]), helpers.createBook);
 
 router.route("/main")
 .put(upload.single("image"), helpers.mainImage)

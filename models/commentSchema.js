@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 	
-var commentModel = new mongoose.Schema({
+var commentSchema = new mongoose.Schema({
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "User"
@@ -14,4 +14,4 @@ var commentModel = new mongoose.Schema({
 	review: String
 });
 
-module.exports = mongoose.model("Comment", commentModel);
+module.exports = mongoose.model("Comment", commentSchema);

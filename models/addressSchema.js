@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var addressModel = new mongoose.Schema({
+var addressSchema = new mongoose.Schema({
 	receiver: String,
 	address: String,
 	city: String,
@@ -8,4 +8,4 @@ var addressModel = new mongoose.Schema({
 	phone: String
 })
 
-module.exports = mongoose.model("Address", addressModel);
+module.exports = mongoose.model("Address", addressSchema);

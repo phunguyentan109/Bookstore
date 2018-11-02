@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var orderModel = new mongoose.Schema({
+var orderSchema = new mongoose.Schema({
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "User"
@@ -24,4 +24,4 @@ var orderModel = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model("Order", orderModel);
+module.exports = mongoose.model("Order", orderSchema);
