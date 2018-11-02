@@ -567,6 +567,10 @@
 	margin-bottom: 5px;
 }
 
+.commentator>h4>b{
+	font-size: 16px;
+}
+
 .cmtInfo{
 	display: flex;
 	justify-content: space-between;
@@ -581,7 +585,7 @@
 }
 
 .review{
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1.8;
 }
 

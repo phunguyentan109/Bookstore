@@ -10,201 +10,9 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 	<div class="wrapper">
 
 		<%include partials/main-header%>
-
 		<%include partials/main-sidebar%>
 
 		<section class="content-wrapper displayBound">
-			<div class="overlay hide" id="overlay">
-				<div class="overlay-display">
-					<div class="overlay-content" id="overlayContent">
-						<h2 class="add-update">Update book's information</h2>
-						<div class="input-content">
-							<div class="row">
-								<div class="col-md-4 text-center addBorder">
-									<h4 class="mainDes">Book Image</h4>
-									<p class="note">This is the main image of this book</p>
-									<img src="" class="img-responsive mainImg" id="image">
-									<div class="no-image hide" id="no-image">
-										<i class="far fa-file-image"></i>
-									</div>
-									<button id="clickMainUpload"><i class="fas fa-file-image"></i> Change</button>
-									<input type="file" onchange="changeMainImg()" id="mainUploader" accept="image/*">
-									<h4 class="mainDes upperSpace">More Image</h4>
-									<p class="note">This is these additional image of this book</p>
-									<div class="row rowImg">
-										<div class="col-md-4">
-											<div class="hasImg">
-												<img src="" class="moreImg">
-												<div class="opaBG"></div>
-												<i class="fas fa-file-excel" id="removeImg"></i>
-											</div>
-											<div class="addImg hide" id="addImg">
-												<i class="fas fa-plus-circle addMoreImg"></i>
-												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="hasImg">
-												<img src="" class="moreImg">
-												<div class="opaBG"></div>
-												<i class="fas fa-file-excel" id="removeImg"></i>
-											</div>
-											<div class="addImg hide" id="addImg">
-												<i class="fas fa-plus-circle addMoreImg"></i>
-												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="hasImg">
-												<img src="" class="moreImg">
-												<div class="opaBG"></div>
-												<i class="fas fa-file-excel" id="removeImg"></i>
-											</div>
-											<div class="addImg hide">
-												<i class="fas fa-plus-circle addMoreImg"></i>
-												<input type="file" onchange="changeSubImg(this)" class="subUploader" accept="image/*">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-8">
-									<h4 class="bookDes">Book Information</h4>
-									<p class="note">This is the main information of the book</p>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>ISBN</label>
-												<input type="number" placeholder="Enter book ISBN here..." class="form-control" id="isbn">	
-											</div>
-											<div class="form-group">
-												<label>Book Name</label>
-												<input type="text" name="" placeholder="Enter book name here..." class="form-control" id="name">	
-											</div>
-											<div class="form-group">
-												<label>Author</label>
-												<select class="form-control" id="author">
-												</select>
-											</div>
-											<div class="form-group">
-												<label>Genre</label>
-												<div class="genreList" id="genres">
-												</div>
-												<div class="input-group">
-													<span class="input-group-btn">
-														<button type="button" class="btn pushGenre" id="addGenre">
-															<i class="fas fa-angle-double-up"></i>
-														</button>
-													</span>
-													<select class="form-control select2" style="width: 100%;" id="genreList">
-													</select>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-xs-6">
-													<label>Price</label>
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fa fa-dollar"></i>
-														</span>
-														<input type="number" min="0" placeholder="Enter the price here..." class="form-control" id="price">
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<label>Discount</label>
-													<div class="input-group">
-														<span class="input-group-addon">
-															<i class="fas fa-percentage"></i>
-														</span>
-														<input type="number" min="0" placeholder="Enter the discount here..." class="form-control" id="discount">
-													</div>
-												</div>
-											</div>
-											<div class="form-group deliveryType">
-												<label>Delivery</label>
-												<div class="input-group">
-													<select class="form-control" id="delivery">
-														<option value="false">Normal Delivery</option>
-														<option value="true">Fast Delivery</option>
-													</select>
-													<div class="input-group-addon">
-														<i class="fas fa-shipping-fast"></i>
-													</div>
-												</div>
-											</div>
-											<div class="form-group deliveryType">
-												<label>Supplier</label>
-												<div class="input-group">
-													<select class="form-control" id="supplier"></select>
-													<div class="input-group-addon">
-														<i class="fas fa-box-open"></i>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-xs-6">
-													<div class="form-group">
-														<label>Publisher</label>
-														<div class="input-group">
-															<select class="form-control" id="publisher"></select>
-															<div class="input-group-addon">
-																<i class="fas fa-globe-asia"></i>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<label>Publish Date</label>
-													<div class="input-group">
-														<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy" id="publishDate">
-														<span class="input-group-addon">
-															<i class="far fa-calendar-alt"></i>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Description</label>
-												<textarea class="form-control" rows="22" placeholder="Enter description here..." id="description"></textarea>	
-											</div>
-											<div class="row">
-												<div class="col-xs-6">
-													<div class="form-group">
-														<label>Cover</label>
-														<div class="form-group">
-															<select class="form-control" id="cover">
-																<option value="Hardcover">Hardcover</option>
-																<option value="Paperpack">Paperpack</option>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="col-xs-6">
-													<div class="form-group">
-														<label>Amount</label>
-														<input type="number" min="0" placeholder="Enter amount..." class="form-control" id="amount">
-													</div>
-												</div>
-											</div>
-											<div class="form-group">
-												<label>Language</label>
-												<input type="text" name="" placeholder="Enter book language here..." class="form-control" id="language">	
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="confirm-content text-right">
-							<button class="save" id="save">Save changes</button>
-							<button class="cancel" id="cancel">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>	
-
 			<section class="content-header">
 				<h1>Manage Books</h1>
 				<ol class="breadcrumb">
@@ -213,7 +21,6 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 					<li class="active">Data tables</li>
 				</ol>
 			</section>
-
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
@@ -221,7 +28,6 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 							<div class="box-header">
 								<div class="addon-header">
 									<h3 class="box-title">Book Data Tables </h3>
-									<div class="addNew" id="addNew"><i class="fas fa-plus-circle"></i> <span>New...</span></div>
 								</div> 
 							</div>
 							<div class="box-body table-responsive">
@@ -260,11 +66,9 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
 					</div>
 				</div>
 			</section>
-			
 		</section>
 		<%include partials/snackbar%>	
 		<%include partials/main-footer%>
-
 		<%include partials/control-sidebar%>
 	</div>
 

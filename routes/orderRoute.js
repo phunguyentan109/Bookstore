@@ -8,7 +8,7 @@ var express = require("express"),
 //=============================================================
 // CONFIGURATION
 //=============================================================
-const {isLoggedIn} = require("../middleware/middleware");
+const {isLoggedIn} = require("../middleware/authentication");
 
 //=============================================================
 // ROUTES

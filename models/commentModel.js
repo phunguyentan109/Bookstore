@@ -1,4 +1,4 @@
-var mongoose 		= require("mongoose");
+var mongoose = require("mongoose");
 	
 var commentModel = new mongoose.Schema({
 	user: {
@@ -13,7 +13,5 @@ var commentModel = new mongoose.Schema({
 	rate: Number,
 	review: String
 });
-
-
 
 module.exports = mongoose.model("Comment", commentModel);

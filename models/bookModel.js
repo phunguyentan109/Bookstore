@@ -1,4 +1,5 @@
-var mongoose = require("mongoose");
+var mongoose = require("mongoose"),
+	db = require("./index");
 
 var bookSchema = new mongoose.Schema({
 	image: String,
@@ -36,6 +37,10 @@ var bookSchema = new mongoose.Schema({
 	deliveryFast: Boolean,
 	amount: Number,
 	moreImage: []
+});
+
+bookSchema.pre("remove", async function() {
+	await db.Comment.deleteMany({"_id" : { $in : this.comment }});
 });
 
 module.exports = mongoose.model("Book", bookSchema);
