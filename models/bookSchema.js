@@ -1,5 +1,6 @@
 var mongoose = require("mongoose"),
-	db = require("./index");
+db = require("./index"),
+{upload, cloudinary} = require("../middleware/uploader");
 
 var bookSchema = new mongoose.Schema({
 	image: String,
@@ -16,10 +17,10 @@ var bookSchema = new mongoose.Schema({
 	discountPrice: String,
 	rating: String,
 	comment: [
-		{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Comment"
-		}
+	{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Comment"
+	}
 	],
 	supplier: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -38,15 +39,17 @@ var bookSchema = new mongoose.Schema({
 	deliveryFast: Boolean,
 	amount: Number,
 	moreImage: [
-		{
-			cloudId: String,
-			url: String
-		}
+	{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "BookImage"
+	}
 	]
 });
 
 bookSchema.pre("remove", async function() {
-	await db.Comment.deleteMany({"_id" : { $in : this.comment }});
+	await db.BookImage.deleteMany({"_id" : {$in : this.moreImage}})
+	await db.Comment.deleteMany({"_id" : {$in : this.comment}});
+	await db.BookGenre.deleteMany({"book": this._id});
 });
 
 module.exports = mongoose.model("Book", bookSchema);

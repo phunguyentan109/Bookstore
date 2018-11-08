@@ -1,14 +1,14 @@
 var express = require("express"),
-	router = express.Router(), 
+	router = express.Router(),
+	helpers = require("../../helpers/genre"), 
 	db = require("../../models");
 
-router.get("/", async(req, res) =>{
-	try{
-		var list = await db.Genre.find({});
-		res.json(list);
-	} catch(err){
-		res.send(err);
-	}
-});
+router.route("/")
+.get(helpers.getGenres)
+.post(helpers.createGenre)
+
+router.route("/:id")
+.delete(helpers.deleteGenre)
+.put(helpers.updateGenre)
 
 module.exports = router;

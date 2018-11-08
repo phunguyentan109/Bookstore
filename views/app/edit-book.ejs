@@ -1,0 +1,269 @@
+<%include partials/header%>
+<link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" type="text/css" href="../../stylesheet/app/edit-book.css">
+<link rel="stylesheet" href="../../plugins/iCheck/all.css">
+<link rel="stylesheet" type="text/css" href="../../stylesheet/app/snackbar.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	
+	<div class="wrapper">
+
+		<%include partials/main-header%>
+
+		<%include partials/main-sidebar%>
+
+		<div class="content-wrapper">
+			<section class="content-header">
+				<h1>
+					Update Book Information
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Forms</a></li>
+					<li class="active">Advanced Elements</li>
+				</ol>
+			</section>
+
+			<div class="content">
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="box box-success text-center">
+							<div class="box-header">
+								<h4 class="title">Book Image</h4>
+								<p>This is the main image of this book</p>
+							</div>
+							<div class="box-body">
+								<img src="" class="img-responsive mainImg" id="image">
+								<button id="clickMainUpload"><i class="fas fa-file-image"></i> Change</button>
+								<input type="file" onchange="changeMainImg()" id="mainUploader" accept="image/*">
+							</div>
+						</div>
+
+						<div class="box box-default">
+							<div class="box-header removeBottomPadding">
+								<h4 class="title">Book Genre</h4>
+								<p>This section is for selecting these genres of the book</p>
+							</div>
+							<div class="box-body">
+								<div class="form-group">
+									<label>Genre</label>
+									<div class="genreList">
+									</div>
+									<div class="input-group">
+										<span class="input-group-btn">
+											<button type="button" class="btn pushGenre" id="addGenre">
+												<i class="fas fa-angle-double-up"></i>
+											</button>
+										</span>
+										<select class="form-control select2" style="width: 100%;" id="genreList">
+											<%genres.forEach(genre => { %>
+											<option value="<%=genre._id%>"><%=genre.name%></option>	
+											<%})%>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-8">
+
+						<div class="box box-default">
+							<div class="box-header">
+								<h4 class="title">Book Information</h4>
+								<p>This is the main information of the book</p>
+							</div>
+							
+							<div class="box-body">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>ISBN</label>
+											<input type="number" placeholder="Enter book ISBN here..." class="form-control enterBook" name="isbn">
+										</div>
+										
+										<div class="form-group">
+											<label>Author</label>
+											<select class="form-control enterBook" id="author" name="author">
+												<%authors.forEach(author => { %>
+												<option value="<%=author._id%>"><%=author.name%></option>	
+												<%})%>	
+											</select>
+										</div>
+										
+										<div class="form-group deliveryType">
+											<label>Delivery</label>
+											<div class="input-group">
+												<select class="form-control enterBook" name="deliveryFast">
+													<option value="false">Normal Delivery</option>
+													<option value="true">Fast Delivery</option>
+												</select>
+												<div class="input-group-addon">
+													<i class="fas fa-shipping-fast"></i>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group deliveryType">
+											<label>Supplier</label>
+											<div class="input-group">
+												<select class="form-control enterBook" name="supplier">
+													<%suppliers.forEach(supplier => { %>
+													<option value="<%=supplier._id%>"><%=supplier.name%></option>	
+													<%})%>
+												</select>
+												<div class="input-group-addon">
+													<i class="fas fa-box-open"></i>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label>Publisher</label>
+											<div class="input-group">
+												<select class="form-control enterBook" name="publisher">
+													<%publishers.forEach(publisher => { %>
+													<option value="<%=publisher._id%>"><%=publisher.name%></option>	
+													<%})%>
+												</select>
+												<div class="input-group-addon">
+													<i class="fas fa-globe-asia"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Book Name</label>
+											<input type="text" name="name" placeholder="Enter book name here..." class="form-control enterBook">	
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Price</label>
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-dollar"></i>
+														</span>
+														<input type="number" min="0" placeholder="Enter the price here..." class="form-control enterBook" name="price">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Discount</label>
+													<div class="input-group">
+														<span class="input-group-addon">
+															<i class="fas fa-percentage"></i>
+														</span>
+														<input type="number" min="0" placeholder="Enter the discount here..." class="form-control enterBook" name="discount">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>Language</label>
+											<input type="text" placeholder="Enter book language here..." class="form-control enterBook" name="language">	
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Cover</label>
+													<select class="form-control enterBook" name="cover">
+														<option value="Hardcover">Hardcover</option>
+														<option value="Paperpack">Paperpack</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label>Amount</label>
+													<input type="number" min="0" placeholder="Enter amount..." class="form-control enterBook" name="amount">
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>Publish Date</label>
+											<div class="input-group">
+												<input type="text" class="form-control enterBook" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy" name="publishDate">
+												<span class="input-group-addon">
+													<i class="far fa-calendar-alt"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="box box-info">
+							<div class="box-header removeBottomPadding">
+								<h4 class="title">Book Description</h4>
+								<p>This is the description of the book</p>
+							</div>
+							<div class="box-body">
+								<div class="form-group">
+									<label>Description</label>
+									<textarea class="form-control enterBook" rows="6" placeholder="Enter description here..." name="description" data-type="paragraphs"></textarea>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="box box-image">
+							<div class="box-header">
+								<h4 class="title">Book Other Images</h4>
+								<p>This is the place for other images of the book</p>
+							</div>
+							<div class="box-body increaseBottomPadding">
+								<div class="rowImage">
+									<div name="empty">
+										<p><i>There is no images for this book yet.</i></p>
+									</div>
+								</div>
+							</div>
+							<div class="box-footer">
+								<input type="file" onchange="addSubImg()" id="subUploader" accept="image/*">
+								<button class="btn btn-addImg" id="uploader"><i class="fas fa-plus"></i> Add...</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="complete">
+							<p>After enter all the information, submit to save all the entered information and back to the manage book</p>
+							<div>
+								<button class="btn btn-success" id="confirm"><i class="fas fa-check"></i> Confirm infomation</button>
+								<a href="/app/book"><button class="btn btn-primary"><i class="fas fa-redo-alt"></i> Back to Manage Book</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%include partials/main-footer%>
+
+		<%include partials/control-sidebar%>
+
+	</div>
+
+	<%include partials/app-script%>
+	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<script type="text/javascript" src="/js/app/snackbar.js"></script>
+	<script type="text/javascript" src="/js/app/edit-book.js"></script>
+</body>

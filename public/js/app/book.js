@@ -1,10 +1,10 @@
 $(async function(){
 	loadBook();
 	$("tbody").on("click", ".delete", (e) => {
-		if(confirm("Do you want to remove this book's data?")) deleteBook($(e.target).closest(".delete").parents("tr"))
+		if(confirm("Do you want to remove this book's data?"))
+			deleteBook($(e.target).closest(".delete").parents("tr"));
 	});
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-    $('[data-mask]').inputmask();
+	$("tbody").on("click", ".edit", (e) => updateBook($(e.target).closest(".edit").parents("tr")));
 })
 
 //==================================================================================
@@ -68,9 +68,12 @@ function getGenre(genre){
 
 async function deleteBook(book){
 	try{
-		let del = await $.ajax({method: "DELETE", url: "/api/book/" + book.data("id")});
+		await $.ajax({method: "DELETE", url: "/api/book/" + book.data("id")});
 		$("#bookTable").DataTable().ajax.reload();
+		console.log("run");
 	}catch(err){
 		console.log(err);
 	}
 }
+
+const updateBook = (book) => window.location.href = "/app/book/" + book.data("id");

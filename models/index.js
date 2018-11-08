@@ -15,3 +15,4 @@ module.exports.Publisher = require("./publisherSchema");
 module.exports.Order = require("./orderSchema");
 module.exports.OrderBook = require("./OrderBook");
 module.exports.Address = require("./addressSchema");
+module.exports.BookImage = require("./bookImageSchema");

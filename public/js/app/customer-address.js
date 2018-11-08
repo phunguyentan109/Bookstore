@@ -30,12 +30,12 @@ function loadAddress(){
 			}
 		],
 		order: [],
-		createdRow: (row, data, index) => $(row).data("id", data._id)
+		createdRow: (row, data, index) => $(row).data("info", data)
 	});
 }
 
 async function removeAddress(address){
-	await $.ajax({method: "DELETE", url: `/api/address/${address.data("id")}`});
+	await $.ajax({method: "DELETE", url: `/api/address/${(address.data("info"))._id}`});
 	reloadTable();
 }
 
@@ -64,12 +64,8 @@ async function updateAddress(address){
 }
 
 function bindData(address){
-	$("#receiver").val(address.children("td:nth-of-type(1)").text());
-	$("#address").val(address.children("td:nth-of-type(2)").text());
-	$("#city").val(address.children("td:nth-of-type(3)").text());
-	$("#country").val(address.children("td:nth-of-type(4)").text());
-	$("#phone").val(address.children("td:nth-of-type(5)").text());
-	$("#save").data("id", address.data("id"));
+	FormUtil.bindObject(".enterAddress", address.data("info"))
+	$("#save").data("id", (address.data("info"))._id);
 }
 
 function cancelForm(){

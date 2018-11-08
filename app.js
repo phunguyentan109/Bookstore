@@ -1,14 +1,9 @@
-// =============================================================
-// REQUIREMENT
-// =============================================================
-
 require('dotenv').config()
 var express 				= require("express"),
 	app 					= express(),
 	bodyParser 				= require("body-parser"),
 	db						= require("./models"),
 	passport				= require("passport");
-	// seedDB					= require("./seedDB");
 
 var cartAPI			= require("./routes/api/cartAPI"),
 	commentAPI 		= require("./routes/api/commentAPI"),
@@ -38,8 +33,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-// Load data
-// seedDB();
 
 // Authentication
 app.use(require("express-session")({

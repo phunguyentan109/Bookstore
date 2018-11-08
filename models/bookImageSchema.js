@@ -3,8 +3,8 @@ var mongoose = require("mongoose"),
 
 var bookImageSchema = new mongoose.Schema({
 	cloudId: String,
-	link: String,
-	main: {type: Boolean, default: False}
+	url: String,
+	main: {type: Boolean, default: false}
 });
 
 // improved function

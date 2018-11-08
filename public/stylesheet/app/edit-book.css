@@ -1,0 +1,294 @@
+/*==========================================*/
+/* BOOK IMG CSS
+/*==========================================*/
+.mainImg{
+	width: 205px;
+	height: 320px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*.no-image{
+	width: 205px;
+	height: 320px;
+	border: 2px solid #a6a6a636;
+	margin: auto;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-color: #80808014;
+}
+
+.no-image>i{
+	font-size: 40px;
+	color: gray;
+}*/
+
+.upperSpace{
+	margin-top: 30px;
+}
+
+.addImg{
+	width: 110px;
+	height: 160px;
+	background-color: transparent;
+	margin: auto;
+	border: 2px solid #a6a6a636;
+	position: relative;
+}
+
+.hasImg{
+	position: relative;
+}
+
+.rowImg{
+	margin-top: 20px;
+}
+
+.fas.fa-plus-circle.addMoreImg{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 25px;
+	color: #8080807a;
+	transition-duration: 0.2s;
+	z-index: 1px;
+}
+
+.fas.fa-file-excel{
+	font-size: 30px;
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fefefe;
+	opacity: 0;
+	transition-duration: 0.2s;
+	transform: translateY(20px);
+}
+
+.opaBG{
+	background-color: #00000082;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	transition-duration: 0.2s;
+}
+
+.hasImg:hover .fas.fa-file-excel{
+	opacity: 1;
+	transform: translateY(0px);
+	cursor: pointer;
+}
+
+.hasImg:hover .opaBG{
+	opacity: 1;
+}
+
+.addImg:hover .fas.fa-plus-circle{
+	color: #808080;
+	cursor: pointer;
+}
+
+button#clickMainUpload {
+	margin-top: 18px;
+	margin-bottom: 10px;
+	padding: 7px 15px;
+	font-family: Lato;
+	border: none;
+	border-radius: 20px;
+	background-color: #5a97a5;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	transition-duration: 0.2s;
+}
+
+.mainImg + button:hover{
+	background-color: #446f79;
+}
+
+.mainImg + button > i{
+	margin-right: 5px;
+}
+
+input[type="file"]{
+	display: none;
+}
+
+/*==========================================*/
+/* BOOK INFO CSS
+/*==========================================*/
+label{
+	font-family: Lato;
+	color: #444;
+}
+
+.title{
+	font-size: 17px;
+	font-weight: bold;
+	font-family: Lato;
+	text-align: left;
+}
+
+.title + p{
+	text-align: left;
+	font-family: Lato;
+	color: #999999;
+	border-bottom: 1px solid #d2d6de61;
+	padding-bottom: 10px;
+	font-size: 13px;
+	margin-bottom: 0px;
+}
+
+/*==========================================*/
+/* BOOK GENRES CSS
+/*==========================================*/
+.removeBottomPadding{
+	padding-bottom: 0px;
+}
+
+.genreList{
+	margin-bottom: 9px;
+	margin-top: 6px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.genreList>p{
+    padding: 24px 10px;
+    background-color: #f4f4f4;
+    color: #605f5f;
+    width: 100%;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.genreList>span{
+	background-color: #6bb686;
+	color: white;
+	border-radius: 5px;
+	font-family: Lato;
+	font-size: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 6px;
+	margin-bottom: 8px;
+}
+
+.genreList>span>span:nth-of-type(1){
+	background-color: #444444;
+	color: #d04e3d;
+	transition-duration: 0.2s;
+	border-radius: 0px;
+	padding: 5px 8px 5px;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	cursor: pointer;
+}
+
+.genreList>span>span:nth-of-type(2){
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: default;
+}
+
+/*==========================================*/
+/* BOOK OTHER IMAGES CSS
+/*==========================================*/
+.box.box-image{
+	border-top-color: #a0b7ba;
+}
+
+.col-md-1>div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 153px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px dashed #aaaaaa;
+}
+
+.col-md-1>div>i{
+	font-size: 30px;
+	color: dimgray;
+}
+
+.col-md-1>div>p{
+	color: dimgray;
+	font-family: Lato;
+	margin-bottom: 0px;
+}
+
+.box-body.increaseBottomPadding{
+	padding-bottom: 20px;
+}
+
+.btn.btn-addImg{
+	background-color: #649199;
+	border-color: #649199;
+	color: white;
+}
+
+.complete{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.complete>p{
+	margin-bottom: 0px;
+	margin-right: 5px;
+	color: #a8a8a8;
+	margin-left: 10px;
+}
+
+.complete>div{
+	display: flex;
+}
+
+.complete>div>button{
+	margin-right: 5px;
+}
+
+.complete>div i{
+	margin-right: 5px;
+}
+
+.btn.btn-primary{
+	background-color: #649199;
+	border-color: #649199;
+}
+
+.btn.btn-success{
+	background-color: #6bb686;
+    border-color: #6bb686;
+}
+
+.rowImage>div[name="empty"]{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 154px;
+	font-family: Lato;
+	font-size: 16px;
+	background-color: #f4f4f4;
+	color: gray;
+}

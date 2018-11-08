@@ -1,14 +1,25 @@
 $(function(){
+	bindData()
 	$("#clickMainUpload").on("click", () => $("#mainUploader").click());
 	$("#addGenre").on("click", () => addGenre($("#genreList :selected")));
 	$(".genreList").on("click", ".removeSign", (e) => removeGenre($(e.target).closest(".removeSign").parent()));
 	$("#uploader").on("click", () => $("#subUploader").click());
 	$("#confirm").on("click", () => confirmData());
+	$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+	$('[data-mask]').inputmask();
 })
 
 //==================================================================================
 // WORKING WITH DATA & MANIPULATE
 //==================================================================================
+async function bindData(){
+	let book = await $.getJSON("/api/book/raw/" + HtmlUtil.getUrlId());
+	FormUtil.bindObject(".enterBook", book);
+	$("#image").attr("src", book.image);
+	book.genre.forEach(val => createGenre(val.genre.name, val.genre._id));
+	(book.moreImage).forEach(img => createImage(img.url));
+}
+
 const hasChildren = (parent, child) => HtmlUtil.showEmpty(parent, child);
 
 function isGenreExist(id){
@@ -20,14 +31,14 @@ async function confirmData(){
 	let data = gatherData();
 	if(data.raw.genre.length > 0){
 		beginProgress();
-		await storeBook(data);
+		await updateBook(data);
 		window.location.href = "/app/book";
 	} else {
 		alert("Please select the genre for the book!");
 	}
 }
 
-async function storeBook(book){
+async function updateBook(book){
 	try{
 		let fd = new FormData();
 		fd.append("book", JSON.stringify(book.raw));
@@ -35,7 +46,7 @@ async function storeBook(book){
 		for (var i = 0; i < book.imgs.length; i++) {
 			fd.append("sub", book.imgs[i]);
 		}
-		await $.ajax({method: "POST", url: "/api/book", processData: false, contentType: false, cache: false, data: fd});
+		await $.ajax({method: "PUT", url: "/api/book/" + HtmlUtil.getUrlId(), processData: false, contentType: false, cache: false, data: fd});
 	}catch(err){
 		console.log(err);
 	}
@@ -44,9 +55,18 @@ async function storeBook(book){
 function gatherData(){
 	let data = FormUtil.getObject(".enterBook");
 	data.genre = HtmlUtil.get$data(".genreList>span", "genreid");
-	let	image = $("#image").data("file"); 
+	let	image = "";
+	if($("#image").data("file")) image = $("#image").data("file"); 
 	let	images = HtmlUtil.get$data(".uploading", "file");
 	return {raw: data, img: image, imgs : images};
+}
+
+function addGenre(genre){
+	if(!isGenreExist(genre.val())){
+		createGenre(genre.text(), genre.val());
+	} else {
+		alert("This genre has been added!");
+	}
 }
 
 //==================================================================================
@@ -61,30 +81,28 @@ function changeMainImg(){
 }
 
 function addSubImg(){
-	createImage(UploadUtil.getUrl("#subUploader"));
+	let img = UploadUtil.getUrl("#subUploader");
+	createImage(img.url, "uploading", img.detail);
 	hasChildren(".rowImage");
 }
 
-function createImage(file){
-	let image = $(`<div class="col-md-1 uploading">
-		<img src=${file.url} class="img-responsive">
+function createImage(url, upload = "", detail = ""){
+	let image = $(`<div class="col-md-1 ${upload}">
+		<img src=${url} class="img-responsive">
 		</div>`);
-	image.data("file", file.detail);
+	image.data("file", detail);
 	$(".rowImage").prepend(image);
+	hasChildren(".rowImage");
 }
 
-function addGenre(genre){
-	if(!isGenreExist(genre.val())){
-		let item = $(`<span>
-			<span class="removeSign"><i class="fas fa-times"></i></span>
-			<span>${genre.text()}</span>
-			</span>`);
-		item.data("genreid", genre.val());
-		$(".genreList").append(item);
-		hasChildren(".genreList");
-	} else {
-		alert("This genre has been added!");
-	}
+function createGenre(name, id){
+	let item = $(`<span>
+		<span class="removeSign"><i class="fas fa-times"></i></span>
+		<span>${name}</span>
+		</span>`);
+	item.data("genreid", id);
+	$(".genreList").append(item);
+	hasChildren(".genreList");
 }
 
 function removeGenre(genre){
