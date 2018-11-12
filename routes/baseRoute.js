@@ -4,6 +4,8 @@
 var express 				= require("express"),
 	router 					= express.Router(),
 	db 						= require("../models"),
+	nodemailer				= require("nodemailer"),
+	async					= require("async"),
 	passport				= require("passport"),
 	LocalStrategy 			= require("passport-local"),
 	passportLocalMongoose 	= require("passport-local-mongoose");
@@ -57,5 +59,7 @@ router.get("/logout", function(req, res){
    req.session.destroy();
    res.redirect("/login");
 });
+
+router.get("/forgot", (req, res) => res.render("forgot"));
 
 module.exports = router;

@@ -252,34 +252,25 @@ body{
 	margin-bottom: 20px;
 }
 
-.email{
+.added{
 	visibility: hidden;
 	transform: translateX(-50px);
 	opacity: 0;
-	transition-duration: 0.7s;
-	transition-delay: 0s;
 	height: 0px;
 	margin-bottom: 0px;
+	transition-duration: 0.7s;
+}
+
+.email{
+	transition-delay: 0s;
 }
 
 .re-email{
-	visibility: hidden;
-	transform: translateX(-50px);
-	opacity: 0;
-	transition-duration: 0.7s;
 	transition-delay: 0.3s; 
-	height: 0px;
-	margin-bottom: 0px;
 }
 
 .re-password{
-	visibility: hidden;
-	transform: translateX(-50px);
-	opacity: 0;
-	transition-duration: 0.7s;
 	transition-delay: 0.6s;
-	height: 0px;
-	margin-bottom: 0px;
 }
 
 .signup-appear{

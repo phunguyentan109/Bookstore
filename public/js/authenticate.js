@@ -1,21 +1,11 @@
-$(document).ready(function(){
+$(function(){
 
-	$(".join").click(function(){
-		$("#authenForm")[0].reset();
-		$("#re-email").get(0).setCustomValidity("");
-		$("#re-password").get(0).setCustomValidity("");
-
-		//remove animation class
-		$(".button-signup").removeClass("button-signup-appear-bottom");
-		$(".join").removeClass("join-appear-left");
-		$(".become-member").removeClass("become-member-appear-left");
-		$(".title").removeClass("name-appear-up");
-		$(".title-des").removeClass("slogan-appear-up");
+	$(".join").click(() => {
+		resetForm();
+		clearBeginAnimation();
 		
 		//add some field box for typing information and change the button
-		$(".email").toggleClass("signup-appear");
-		$(".re-email").toggleClass("signup-appear");
-		$(".re-password").toggleClass("signup-appear");
+		prepareSignUp();
 		if($(".button-signup").css("margin-top") === "7.01563px"){
 			$(".button-signup").removeClass("show_btn_si");
 			$(".button-signup").css("opacity", "0");
@@ -62,12 +52,11 @@ $(document).ready(function(){
 		}, 800);
 
 		//add valid confirm email and password
-		if($(".title").text() === "Login"){
+		if($(".title").text() === "Sign Up"){
 			$("#re-email").on("keyup", validConfirmEmail);
 			$("#re-email").on("change", validConfirmEmail);
 			$("#re-password").on("keyup", validConfirmPassword);
 			$("#re-password").on("change", validConfirmPassword);
-
 		} else {
 			$("#re-email").off("keyup");
 			$("#re-email").off("change");
@@ -95,19 +84,44 @@ $(document).ready(function(){
 		}, 800)	
 	});
 
-	function validConfirmEmail(){
-		if($("#re-email").val() !== $("#email").val()){
-			$("#re-email").get(0).setCustomValidity("Emails is not matched.");
-		} else {
-			$("#re-email").get(0).setCustomValidity("");
-		}
-	}
-	
-	function validConfirmPassword(){
-		if($("#re-password").val() !== $("#password").val()){
-			$("#re-password").get(0).setCustomValidity("Passwords is not matched.");
-		} else {
-			$("#re-password").get(0).setCustomValidity("");
-		}
-	}
+	$("#forget").on("click", openForgetForm);
 });
+
+function resetForm(){
+	$("#authenForm")[0].reset();
+	$("#re-email").get(0).setCustomValidity("");
+	$("#re-password").get(0).setCustomValidity("");
+	clearBeginAnimation();
+}
+
+function clearBeginAnimation(){
+	$(".button-signup").removeClass("button-signup-appear-bottom");
+	$(".join").removeClass("join-appear-left");
+	$(".become-member").removeClass("become-member-appear-left");
+	$(".title").removeClass("name-appear-up");
+	$(".title-des").removeClass("slogan-appear-up");
+}
+
+function prepareSignUp(){
+	Array.from($(".added")).forEach(val => $(val).toggleClass("signup-appear"));
+}
+
+function validConfirmEmail(){
+	if($("#re-email").val() !== $("#email").val()){
+		$("#re-email").get(0).setCustomValidity("Emails is not matched.");
+	} else {
+		$("#re-email").get(0).setCustomValidity("");
+	}
+}
+
+function validConfirmPassword(){
+	if($("#re-password").val() !== $("#password").val()){
+		$("#re-password").get(0).setCustomValidity("Passwords is not matched.");
+	} else {
+		$("#re-password").get(0).setCustomValidity("");
+	}
+}
+
+function openForgetForm(){
+	console.log("forget");
+}
