@@ -1,118 +1,62 @@
-.content-appear-up{
-opacity: 0;
--webkit-animation-name: appearUpContent;
-		animation-name: appearUpContent;
--webkit-animation-duration: 1s;
-		animation-duration: 1s;
--webkit-animation-iteration-count: 1;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;		
+.content-appear-up {
+	-webkit-animation-name: appearUpContent;
+	animation-name: appearUpContent;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	animation-fill-mode: backwards;		
 }
 
 /*==========================================*/
 /* STARTER ANIMATION FOR INTRODUCTION
 /*==========================================*/
-.name-appear-up{
-	opacity: 0;
+.slogan-appear, .name-appear {
 	-webkit-animation-name: appearUp;
-			animation-name: appearUp;
+	animation-name: appearUp;
 	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
+	animation-duration: 0.5s;
 	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 0.6s;
-			animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0.3s;
+	animation-fill-mode: backwards;
 }
 
-.slogan-appear-up{
-	opacity: 0;
-	-webkit-animation-name: appearUp;
-			animation-name: appearUp;
-	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 0.3s;
-			animation-fill-mode: forwards;
-}
+.name-appear { animation-delay: 0.6s; }
 
-.become-member-appear-left{
-	opacity: 0;
+.beMember-appear {
 	-webkit-animation-name: appearLeft;
-			animation-name: appearLeft;
+	animation-name: appearLeft;
 	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
+	animation-duration: 0.5s;
 	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 0.9s;
-			animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0.9s;
+	animation-fill-mode: backwards;
 }
 
-.join-appear-left{
-	opacity: 0;
-	-webkit-animation-name: appearLeft;
-			animation-name: appearLeft;
-	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 0.9s;
-			animation-fill-mode: forwards;
-}
-
-.social-appear-bottom{
-	opacity: 0;
+.social-appear, .facebook-appear,
+.twitter-appear, .google-appear {
 	-webkit-animation-name: appearBottom;
-			animation-name: appearBottom;
+	animation-name: appearBottom;
 	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
+	animation-duration: 0.5s;
 	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 1.2s;
-			animation-fill-mode: forwards;	
+	animation-iteration-count: 1;
+	animation-delay: 1.2s;
+	animation-fill-mode: backwards;	
 }
 
-.facebook-appear-bottom{
-	opacity: 0;
-	-webkit-animation-name: appearBottom;
-			animation-name: appearBottom;
-	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 1.5s;
-			animation-fill-mode: forwards;	
-}
+.facebook-appear { animation-delay: 1.5s; }
 
-.twitter-appear-bottom{
-	opacity: 0;
-	-webkit-animation-name: appearBottom;
-			animation-name: appearBottom;
-	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 1.7s;
-			animation-fill-mode: forwards;	
-}
+.twitter-appear { animation-delay: 1.7s; }
 
-.google-appear-bottom{
-	opacity: 0;
-	-webkit-animation-name: appearBottom;
-			animation-name: appearBottom;
-	-webkit-animation-duration: 0.5s;
-			animation-duration: 0.5s;
-	-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;
-			animation-delay: 1.9s;
-			animation-fill-mode: forwards;	
-}
+.google-appear { animation-delay: 1.9s; }
 
 /*==========================================*/
 /* STARTER ANIMATION FOR FORM
 /*==========================================*/
-.username-appear-right{
-	opacity: 0;
+.username-appear, .password-appear{
 	-webkit-animation-name: appearRight;
 	animation-name: appearRight;
 	-webkit-animation-duration: 0.7s;
@@ -120,23 +64,12 @@ opacity: 0;
 	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
 	animation-delay: 0.5s;
-	animation-fill-mode: forwards;
+	animation-fill-mode: backwards;
 }
 
-.password-appear-right{
-	opacity: 0;
-	-webkit-animation-name: appearRight;
-	animation-name: appearRight;
-	-webkit-animation-duration: 0.7s;
-	animation-duration: 0.7s;
-	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;
-	animation-delay: 0.8s;
-	animation-fill-mode: forwards;
-}
+.password-appear { animation-delay: 0.8s; }
 
-.button-signup-appear-bottom{
-	opacity: 0;
+.btnSignup-appear, .forgot-appear {
 	-webkit-animation-name: appearBottom;
 	animation-name: appearBottom;
 	-webkit-animation-duration: 1s;
@@ -144,26 +77,17 @@ opacity: 0;
 	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
 	animation-delay: 0.5s;
-	animation-fill-mode: forwards;
+	animation-fill-mode: backwards;
 }
 
-.forgot-appear-bottom{
-	opacity: 0;
-	-webkit-animation-name: appearBottom;
-	animation-name: appearBottom;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;
-	animation-delay: 0.8s;
-	animation-fill-mode: forwards;
-}
+.forgot-appear { animation-delay: 0.8s; }
 
 /*==========================================*/
 /* KEYFRAME
 /*==========================================*/
 @keyframes appearUp{
 	0%{
+		opacity: 0;	
 		transform: translateY(-40px);
 	}
 	100%{
@@ -171,8 +95,10 @@ opacity: 0;
 		transform: translateX(0px);
 	}
 }
+
 @keyframes appearUpContent{
 	0%{
+		opacity: 0;
 		transform: translateY(-50px);
 	}
 	100%{
@@ -183,6 +109,7 @@ opacity: 0;
 
 @keyframes appearLeft{
 	0%{
+		opacity: 0;
 		transform: translateX(-40px);
 	}
 	100%{
@@ -193,6 +120,7 @@ opacity: 0;
 
 @keyframes appearBottom{
 	0%{
+		opacity: 0;
 		transform: translateY(40px);
 	}
 	100%{
@@ -203,6 +131,7 @@ opacity: 0;
 
 @keyframes appearRight{
 	0%{
+		opacity: 0;
 		transform: translateX(20px);
 	}
 	100%{

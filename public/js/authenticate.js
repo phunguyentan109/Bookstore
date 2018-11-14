@@ -1,127 +1,96 @@
 $(function(){
-
-	$(".join").click(() => {
-		resetForm();
-		clearBeginAnimation();
-		
-		//add some field box for typing information and change the button
-		prepareSignUp();
-		if($(".button-signup").css("margin-top") === "7.01563px"){
-			$(".button-signup").removeClass("show_btn_si");
-			$(".button-signup").css("opacity", "0");
-			$(".button-signup").css("transform", "translateX(-40px)")
-			setTimeout(function(){
-				$(".button-signup").css("opacity", "1");
-				$(".button-signup").css("transform", "translateX(0px)");
-				$(".button-signup").toggleClass("show_btn_su");
-				$(".button-signup").text("Register");
-			}, 800);
-		} else {
-			$(".button-signup").css("opacity", "0");
-			$(".button-signup").css("transform", "translateX(40px)")
-			$(".button-signup").toggleClass("show_btn_su");
-			setTimeout(function(){
-				$(".button-signup").css("opacity", "1");
-				$(".button-signup").css("transform", "translateX(0px)");
-				$(".button-signup").toggleClass("show_btn_si");
-				$(".button-signup").text("Sign in");
-			}, 800);
-		}
-
-		//change the title and the action of the form
-		$(".title").css("opacity", "0");
-		$(".title-des").css("opacity", "0");
-		setTimeout(function(){
-			if($(".title").text() === "Login"){
-				$(".title").text("Sign Up");
-				$(".title-des").text("Enter required information below to register.");
-				$("#email").prop("required", true);
-				$("#re-email").prop("required", true);
-				$("#re-password").prop("required", true);
-				$("#authenForm").attr("action", "/register");
-			} else {
-				$(".title").text("Login");
-				$(".title-des").text("Enter your username and password to log on.");
-				$("#email").prop("required", false);
-				$("#re-email").prop("required", false);
-				$("#re-password").prop("required", false);
-				$("#authenForm").attr("action", "/login");
-			}
-			$(".title").css("opacity", "1");
-			$(".title-des").css("opacity", "1");
-		}, 800);
-
-		//add valid confirm email and password
-		if($(".title").text() === "Sign Up"){
-			$("#re-email").on("keyup", validConfirmEmail);
-			$("#re-email").on("change", validConfirmEmail);
-			$("#re-password").on("keyup", validConfirmPassword);
-			$("#re-password").on("change", validConfirmPassword);
-		} else {
-			$("#re-email").off("keyup");
-			$("#re-email").off("change");
-			$("#re-password").off("keyup");
-			$("#re-password").off("change");
-		}
-
-		//change the join us button and the line for become member
-		$(".join").css("opacity", "0");
-		$(".become-member").css("opacity", "0");
-		setTimeout(function(){
-			if($(".join").text() === "Join Us"){
-				$(".join").text("Get Access");
-				$(".join").toggleClass("join-color");
-				$(".become-member").text("Already have account? Login your account here:");
-				$(".join").css("opacity", "1");
-				$(".become-member").css("opacity", "1");
-			} else {
-				$(".join").text("Join Us");
-				$(".join").toggleClass("join-color");
-				$(".become-member").text("Don't have account? Want to be a member?");
-				$(".join").css("opacity", "1");
-				$(".become-member").css("opacity", "1");	
-			}
-		}, 800)	
+	$(".intro-content>button").click(() => {
+		$(".register-form form")[0].reset();
+		clearAnimation();
+		handleChangeMode();
 	});
-
-	$("#forget").on("click", openForgetForm);
 });
 
-function resetForm(){
-	$("#authenForm")[0].reset();
-	$("#re-email").get(0).setCustomValidity("");
-	$("#re-password").get(0).setCustomValidity("");
-	clearBeginAnimation();
-}
+// GLOBAL VARIABLE
+let btn = $(".register-form>div>form>button");
 
-function clearBeginAnimation(){
-	$(".button-signup").removeClass("button-signup-appear-bottom");
-	$(".join").removeClass("join-appear-left");
-	$(".become-member").removeClass("become-member-appear-left");
-	$(".title").removeClass("name-appear-up");
-	$(".title-des").removeClass("slogan-appear-up");
-}
-
-function prepareSignUp(){
-	Array.from($(".added")).forEach(val => $(val).toggleClass("signup-appear"));
-}
-
-function validConfirmEmail(){
-	if($("#re-email").val() !== $("#email").val()){
-		$("#re-email").get(0).setCustomValidity("Emails is not matched.");
+//==================================================================================
+// WORKING WITH DATA & MANIPULATE
+//==================================================================================
+function handleChangeMode(){
+	Array.from($("form>.appear")).forEach(val => $(val).toggleClass("signup-appear"));
+	toggleTitle("0");
+	toggleRequest("0");
+	if($(".register-form>div>h2").text() === "Login"){
+		modeSignUp();
 	} else {
-		$("#re-email").get(0).setCustomValidity("");
+		modeSignIn();
 	}
+	setTimeout(() => toggleTitle("1"), 800);
 }
 
-function validConfirmPassword(){
-	if($("#re-password").val() !== $("#password").val()){
-		$("#re-password").get(0).setCustomValidity("Passwords is not matched.");
-	} else {
-		$("#re-password").get(0).setCustomValidity("");
-	}
+function modeSignUp(){
+	btn.addClass("hideSItoSU");
+	setTimeout(() => {
+		btn.removeClass("hideSItoSU").addClass("modeSignUp").text("Register");
+		toRegisterAction();
+	}, 800);
 }
 
-function openForgetForm(){
-	console.log("forget");
+function modeSignIn(){
+	btn.removeClass("modeSignUp").addClass("hideSUtoSI");
+	setTimeout(() => {
+		btn.removeClass("hideSUtoSI").text("Sign in");
+		toLoginAction();
+	}, 800);
+}
+
+//==================================================================================
+// DRAW INTERFACE
+//==================================================================================
+function clearAnimation(){
+	btn.removeClass("btnSignup-appear-bottom");
+	$(".intro-content>button").removeClass("beMember-appear");
+	$(".intro-content>p:nth-of-type(2)").removeClass("beMember-appear");
+	$(".register-form>div>h2").removeClass("name-appear");
+	$(".register-form>div>p").removeClass("slogan-appear");
+}
+
+function toggleRequire(agree){
+	$(".register-form form>div:nth-of-type(2) input").prop("required", agree);
+	$(".register-form form>div:nth-of-type(3) input").prop("required", agree);
+	$(".register-form form>div:nth-of-type(5) input").prop("required", agree);
+}
+
+function toRegisterAction(){
+	$(".register-form>div>h2").text("Sign Up");
+	$(".register-form>div>p").text("Enter required information below to register.");
+	toggleRequire(true);
+	$(".register-form form").attr("action", "/register");
+	requestGetAccess();
+}
+
+function toLoginAction(){
+	$(".register-form>div>h2").text("Login");
+	$(".register-form>div>p").text("Enter your username and password to log on.");
+	toggleRequire(false);
+	$(".register-form form").attr("action", "/login");
+	requestJoinUs();
+}
+
+function toggleTitle(agree){
+	$(".register-form>div>h2").css("opacity", agree);
+	$(".register-form>div>p").css("opacity", agree);
+}
+
+function requestGetAccess(){
+	$(".intro-content>button").text("Get Access").toggleClass("join-color");
+	$(".intro-content>p:nth-of-type(2)").text("Already have account? Login your account here:");
+	toggleRequest("1");
+}
+
+function requestJoinUs(){
+	$(".intro-content>button").text("Join Us").toggleClass("join-color");
+	$(".intro-content>p:nth-of-type(2)").text("Don't have account? Want to be a member?");
+	toggleRequest("1");
+}
+
+function toggleRequest(agree){
+	$(".intro-content>button").css("opacity", agree);
+	$(".intro-content>p:nth-of-type(2)").css("opacity", agree);
 }

@@ -12,11 +12,6 @@ body{
 	flex-direction: row;
 }
 
-.content-show{
-	opacity: 1;
-	transform: translateY(0px);
-}
-
 .customize-md-6{
 	flex-grow: 1;
 	flex-basis: 50%;
@@ -27,7 +22,6 @@ body{
 /*==========================================*/
 /* INTRODUCTION CSS
 /*==========================================*/
-
 .intro-content{
 	color: #e0e0e0;
 	padding-top: 5%;
@@ -37,7 +31,7 @@ body{
 	font-family: 'Montserrat';
 }
 
-.brand-name{
+.intro-content>h1{
 	color: #f7f7f7;
 	font-size: 50px;
 	font-weight: 700;
@@ -47,7 +41,7 @@ body{
 	margin-bottom: 6%;
 }
 
-.brand-slogan{
+.intro-content>p:nth-of-type(1){
 	margin-top: 4%;
 	margin-bottom: 6%;
 	text-align: center;
@@ -56,18 +50,17 @@ body{
 	font-weight: lighter;
 }
 
-.become-member{
+.intro-content>p:nth-of-type(2){
 	margin-top: 10%;
 	margin-bottom: 7%;
 	text-align: center;
 	letter-spacing: 1px;
 	font-weight: 700;
 	color: #ccc;
-
 	transition-duration: 0.5s;
 }
 
-.join{
+.intro-content>button{
 	display: block;
 	width: 40%;
 	margin: auto;
@@ -79,16 +72,15 @@ body{
 	font-weight: 700;
 	text-transform: uppercase;
 	outline: none;
-
 	transition-duration: 0.5s;
 }
 
-.join-color{
+.intro-content>button.join-color{
 	color: #4cc5b0;
 	border-color: #4cc5b0;
 }
 
-.social-account{
+.intro-content>p:nth-of-type(3){
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 12%;
@@ -98,125 +90,68 @@ body{
 	margin-bottom: 7%;
 }
 
-#social-login{
+.intro-content>div{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 
-.button-facebook{
+.intro-content>div button{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	
-	padding: 6px 12px; 
+	padding: 6px 12px;
 	border-radius: 30px;
+	line-height: 2;
+	flex-basis: 10%;
+	margin-left: 1%;
+	margin-right: 1%;
+	transition: flex-basis .1s linear .3s;
+}
+
+.intro-content>div button:nth-of-type(1){	 
 	background-color: #496b9c;
 	border: 2px solid #496b9c;
-	line-height: 2;
-	flex-basis: 10%;
-    margin-left: 1%;
-    margin-right: 1%;
-
-    transition: flex-basis 0.3s;
 }
 
-.button-twitter{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-
-	padding: 6px 12px;
-	outline: none;
-	border-radius: 30px;
+.intro-content>div button:nth-of-type(2){
 	background-color: #4eb1ab;
 	border: 2px solid #4eb1ab;
-	line-height: 2;
-	margin-top: 0px;
-	flex-basis: 10%;
-    margin-left: 1%;
-    margin-right: 1%;
-
-    transition: flex-basis 0.3s;
 }
 
-.button-google{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-
-	padding: 6px 12px;
-	border-radius: 30px;
+.intro-content>div button:nth-of-type(3){
 	background-color: #b74c2f;
-	border: 2px solid #b74c2f;
-	line-height: 2;
-	flex-basis: 10%;
-    margin-left: 1%;
-    margin-right: 1%;
-	margin-top: 0px;
-	transition: flex-basis 0.3s;
+	border: 2px solid #b74c2f;	
 }
 
-.button-facebook:hover .social-icon,
-.button-facebook:focus .social-icon,
-.button-twitter:hover .social-icon,
-.button-twitter:focus .social-icon,
-.button-google:hover .social-icon,
-.button-google:focus .social-icon{
-	margin-right: 7%;
+.intro-content>div button:hover,
+.intro-content>div button:focus{
+	outline: none;
+	flex-basis: 28%;
+	justify-content: center;
+	transition: flex-basis .3s;
 }
 
-.social-text{
+.intro-content>div button span{
 	visibility: hidden;
-	transition: visibility 0s, opacity 0.5s;
+	transition: opacity .3s linear, max-width .3s linear .1s, margin-left .3s linear .1s, visibility 0s linear .4s;
 	opacity: 0;
-	width: 0px;
+	max-width: 0;
 }
 
-.button-facebook:hover .social-text,
-.button-facebook:focus .social-text,
-.button-twitter:hover .social-text,
-.button-twitter:focus .social-text,
-.button-google:hover .social-text,
-.button-google:focus .social-text{
+.intro-content>div button:hover span,
+.intro-content>div button:focus span{
 	visibility: visible;
 	opacity: 1;
-}
-
-.button-facebook:hover,
-.button-facebook:focus{
-	outline: none;
-	flex-basis: 28%;
-	justify-content: flex-start;
-	border-color: #496b9c;
-	background-color: #496b9c;
-}
-
-.button-twitter:hover, 
-.button-twitter:focus{
-	outline: none;
-	flex-basis: 28%;
-	justify-content: flex-start;
-	border-color: #4eb1ab;
-	background-color: #4eb1ab;
-}
-
-.button-google:hover,
-.button-google:focus{
-	outline: none;
-	flex-basis: 28%;
-	justify-content: flex-start;
-	border-color: #b74c2f;
-	background-color: #b74c2f;
+	max-width: 100px;
+	margin-left: 7px;
+	transition: all .3s;
 }
 
 /*==========================================*/
 /* LOGIN CSS
 /*==========================================*/
-
 .register-form{
 	background-color: white;
 	padding-top: 5%;
@@ -227,32 +162,30 @@ body{
 	flex-basis: 100%;
 }
 
-.type-form{
+.register-form>div{
 	width: 60%;
 	margin: auto;
 }
 
-#icon-login{
-	font-size: 100px;
-	text-align: center;
-	display: block;
-	color: #69b599;
-}
-
-.title{
+.register-form>div>h2{
 	font-family: Lato;
 	transition-duration: 0.5s;
 }
 
-.title-des{
-	transition-duration: 0.5s;	
+.register-form>div>p{
+	transition-duration: 0.5s;
+	margin: 0;
+	margin-top: 20px;
+	font-weight: lighter;
+	color: gray;
 }
 
 .form-group{
 	margin-bottom: 20px;
 }
 
-.added{
+.register-form form>div:nth-of-type(2), .register-form form>div:nth-of-type(3),
+.register-form form>div:nth-of-type(5){
 	visibility: hidden;
 	transform: translateX(-50px);
 	opacity: 0;
@@ -261,19 +194,11 @@ body{
 	transition-duration: 0.7s;
 }
 
-.email{
-	transition-delay: 0s;
-}
+.register-form form>div:nth-of-type(3) {transition-delay: 0.3s;}
 
-.re-email{
-	transition-delay: 0.3s; 
-}
+.register-form form>div:nth-of-type(5) {transition-delay: 0.6s;}
 
-.re-password{
-	transition-delay: 0.6s;
-}
-
-.signup-appear{
+.register-form form>div.signup-appear{
 	visibility: visible;
 	transform: translateX(0px);
 	opacity: 1;
@@ -281,13 +206,13 @@ body{
 	margin-bottom: 20px;
 }
 
-.addon-customize{
+.register-form .input-group-addon{
 	border: none;
 	background-color: white;
 	border-bottom: 1px solid #80808054;
 }
 
-.field-box{
+.register-form input{
 	width: 100%;
 	display: block;
 	line-height: 2;
@@ -296,33 +221,39 @@ body{
 	outline: none;
 }
 
-.button-signup{
+.register-form>div>form>button{
 	border-radius: 20px;
 	background-color: #69b599;
 	border: 1px solid #69b599;
-	margin-top: 2%;
+	margin-top: 7px;
 	line-height: 1.8;
+	opacity: 1;
+	transform: translateX(0px);
 	transition-duration: 1s;
 }
 
-.show_btn_su{
+.register-form>div>form>button.modeSignUp{
 	background-color: #d04242;
 	border-color: #d04242;
-	margin-top: 8%;
 }
 
-.show_btn_si{
-	margin-top: 2%;
+.register-form>div>form>button.hideSItoSU, 
+.register-form>div>form>button.hideSUtoSI{
+	opacity: 0;
+	transform: translateX(-40px);
 }
 
-.option-choice{
+.register-form>div>form>button.hideSUtoSI{
+	transform: translateX(40px);
+}
+
+form + a{
 	display: block;
 	color: gray;
 	margin-top: 6%;
 }
 
-.option-choice:hover,
-.option-choice:focus{
+form + a:hover, form + a:focus{
 	text-decoration: none;
 	color: #dc6767;
 }
