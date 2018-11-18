@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/stylesheet/partials/partial.css">
 <link rel="stylesheet" href="/stylesheet/authen.css">
 <link rel="stylesheet" href="/stylesheet/authen-animation.css">
+<script src="https://unpkg.com/eva-icons"></script>
 </head>
 <body>
 	<% include partials/navbar%>
@@ -64,7 +65,33 @@
 			</div>			
 		</div>
 	</div>
+
+	<div class="container forgetPanel">
+		<div>
+			<h2><i class="fas fa-unlock"></i> Forgot Password?</h2>
+			<p>Enter the email which you have signed up for the account below here:</p>
+			<p class="announce-appear"><i></i></p>
+			<div>	
+				<div class="input-group">
+					<div class="input-group-addon"><i class="fas fa-at"></i></div>
+					<input type="email" placeholder="Enter your email here..." name="email">
+				</div>
+				<button type="submit">Confirm email</button>
+			</div>
+			<p>Try to access with different account, <span>click here</span> <i class="fas fa-key"></i></p>
+		</div>
+		<div>
+			<div>
+				<h2>Recovery Instruction</h2>
+				<p><i class="fas fa-caret-right"></i> Enter the email of your account</p>	
+				<p><i class="fas fa-caret-right"></i> Click button "Confirm email" to process</p>	
+				<p><i class="fas fa-caret-right"></i> Wait until the loading icon stop then check the message in your email</p>	
+				<p><i class="fas fa-caret-right"></i> Follow the link of the email to get back your password</p>	
+			</div>
+		</div>
+	</div>
 	
 	<script src="/js/authenticate.js"></script>
 </body>
+<script type="module" src="/js/Utility/PutilCore.js"></script>
 </html>

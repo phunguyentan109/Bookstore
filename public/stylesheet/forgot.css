@@ -1,0 +1,86 @@
+body{
+	background-image: url(/image/forget.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: Lato;
+}
+
+.forgotContent{
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+/*======================================================*/
+/* MESSAGE CSS
+/*======================================================*/
+.content{
+	color: white;
+	padding-right: 80px;
+}
+
+.content h1{
+	font-weight: bold;
+}
+
+.content h4{
+	color: #d2d2d2;
+	line-height: 2;
+	margin-top: 30px;
+}
+
+.content h4:nth-of-type(2){
+	margin-top: 20px;
+}
+
+.content>p{
+	font-style: italic;
+	color: #adadad;
+}
+
+/*======================================================*/
+/* FORM CSS
+/*======================================================*/
+.form{
+	background-color: #131313b3;
+	padding: 10px 40px;
+	color: white;
+	border-radius: 5px;
+}
+
+.form input {
+	width: 100%;
+	display: block;
+	line-height: 2;
+	border: none;
+	border-bottom: 1px solid #80808054;
+	outline: none;
+	background-color: transparent;
+	margin-top: 10px;
+}
+
+.form .input-group-addon{
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #80808054;
+	border-radius: 0px;
+	color: white;
+}
+
+.form>p{
+	line-height: 2;
+	margin-top: 20px;
+}
+
+.form button{
+	border-radius: 20px;
+	background-color: #69b599;
+	border: 1px solid #69b599;
+	margin-top: 10px;
+	line-height: 1.8;
+	opacity: 1;
+	transform: translateX(0px);
+	transition-duration: 1s;
+	width: 100%;
+	padding: 5px 5px;
+}

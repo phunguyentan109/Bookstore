@@ -257,3 +257,139 @@ form + a:hover, form + a:focus{
 	text-decoration: none;
 	color: #dc6767;
 }
+
+/*==========================================*/
+/* FORGOT CSS
+/*==========================================*/
+.forgetPanel{
+	background-color: #131313b3;
+	color: #f7f7f7;
+	padding: 0;
+	margin-top: 230px;
+	margin-bottom: 150px;
+	display: flex;
+}
+
+.forgetPanel>div{
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-family: Lato;
+}
+
+.forgetPanel>div>h2{
+	margin: 0;
+	letter-spacing: 3px;
+}
+
+.forgetPanel>div>p{
+	margin-top: 35px;
+	color: #9c9c9c;
+}
+
+.forgetPanel>div>p.error,
+.forgetPanel>div>p.success{
+	background-color: #902a2a91;
+	margin-top: 20px;
+	padding: 5px 13px;
+	color: #eaeaea;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.forgetPanel>div>p.success{
+	color: #eaeaea;
+	background-color: #1b7e8487;
+}
+
+.forgetPanel>div>p.success span{
+	margin-left: 3px;
+	font-weight: bold;
+	max-width: 70%;
+}
+
+.forgetPanel>div>p.error>svg,
+.forgetPanel>div>p.success>svg{
+	margin-right: 5px;
+}
+
+.forgetPanel>div>p:nth-of-type(3){
+	margin-bottom: 0;
+}
+
+.forgetPanel>div>p:nth-of-type(3) span{
+	color: #ab8d57;
+	font-style: italic;
+}
+
+.forgetPanel>div>p:nth-of-type(3) i {
+	margin-left: 3px;
+	color: #ab8d57;
+}
+
+.forgetPanel>div>div>div{
+	margin-top: 15px;
+}
+
+.forgetPanel>div>div>div>div{
+	border: none;
+	background-color: transparent;
+	border-bottom: 1px solid #80808054;
+	color: #9a9a9a;
+}
+
+.forgetPanel>div input{
+	width: 250px;
+	display: block;
+	line-height: 2;
+	border: none;
+	border-bottom: 1px solid #80808054;
+	outline: none;
+	background-color: transparent;
+	color: #9a9a9a;
+}
+
+.forgetPanel>div>div>button{
+	display: block;
+	outline: none;
+	background-color: transparent;
+	border-radius: 20px;
+	padding: 8px 7px;
+	width: 60%;
+	border: 2px solid #4d8a73;
+	margin: auto;
+	margin-top: 30px;
+	color: #71caa8;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.forgetPanel>div:nth-of-type(2){
+	align-items: flex-start;
+	background-color: #2b31306b;
+}
+
+.forgetPanel>div:nth-of-type(2)>div{
+	width: 60%;
+	margin: auto;
+}
+
+.forgetPanel>div:nth-of-type(2)>div h2{
+	margin-top: 0px;
+	color: #ada6a6;
+	margin-bottom: 25px;
+}
+
+.forgetPanel>div:nth-of-type(2)>div p{
+	color: #af5c5c;
+	line-height: 2;
+}
+
+.forgetPanel>div:nth-of-type(2)>div i{
+	margin-right: 5px;
+}

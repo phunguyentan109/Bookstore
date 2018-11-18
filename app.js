@@ -3,6 +3,7 @@ var express 				= require("express"),
 	app 					= express(),
 	bodyParser 				= require("body-parser"),
 	db						= require("./models"),
+	flash					= require("connect-flash"),
 	passport				= require("passport");
 
 var cartAPI			= require("./routes/api/cartAPI"),
@@ -32,6 +33,7 @@ var	storeRoutes = require("./routes/storeRoute"),
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
+app.use(flash());
 
 
 // Authentication

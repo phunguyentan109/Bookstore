@@ -1,5 +1,7 @@
 var mongoose = require("mongoose");
 
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.DATABASEURL || process.env.LOCALDATABASEURL, { useNewUrlParser: true });
 mongoose.Promise = Promise;
 

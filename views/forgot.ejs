@@ -1,0 +1,49 @@
+<% include partials/header %>
+<link rel="stylesheet" href="/stylesheet/partials/partial.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/forgot.css">
+<link rel="stylesheet" type="text/css" href="/stylesheet/navbar-color.css">
+</head>
+<body>
+	<% include partials/navbar%>
+
+	<div class="container forgotContent">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="content">
+					<h1>Hey, it's us, Kafka</h1>
+					<h4>It looks like that you have found it difficult to remember the password which you had used in the last accessing to Kafka. That's why this page exists to help you change the old password with a new different one.</h4> 
+					<h4>The password for your account is unique and it is yours, the best way to keep it for yourself and recommend Kafka for your people.</h4>
+					<p>This link is only active in 1 hours</p>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="form">
+					<h2>Reset password</h2>
+					<p>Enter here your new password to replace the old one and return to Kafka</p>
+					<form method="POST" action="/forgot">
+						<div class="form-group">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon"><i class="fas fa-key"></i></div>
+									<input type="password" placeholder="Password" pattern=".{3,}" name="password" required title="Your password requires equal to or more than 3 characters">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon"><i class="fas fa-redo"></i></div>
+									<input type="password" placeholder="Confirm Password" name="re-password">
+								</div>
+							</div>
+							<button>Confirm Password</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-content">
+		<% include partials/footer %>
+	</div>
+</body>
+</html>

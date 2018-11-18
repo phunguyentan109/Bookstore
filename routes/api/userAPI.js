@@ -6,7 +6,13 @@ var express = require("express"),
 router.route("/")
 .get(helpers.getUsers)
 
+router.route("/forgot")
+.post(helpers.recoverPassword)
+
 router.route("/:id")
 .get(helpers.getUser)
+.delete(helpers.deleteUser)
+.put(helpers.updateUser)
+
 
 module.exports = router;

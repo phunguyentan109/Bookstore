@@ -17,17 +17,17 @@ function loadUser(){
 			dataSrc: (data) => Array.from(data).reverse()
 		},
 		columns: [
-			{data: "viewname"},
-			{data: "email"},
-			{data: "username"},
-			{
-				data: "_id",
-				render: (data, type, row) => `<a href="/app/customer/${data}"><i class="far fa-eye"></i> View list</a>` 
-			},
-			{
-				render: () => `<button class="btn btn-success btn-sm edit">Edit</button>
-							<button class="btn btn-danger btn-sm delete">Delete</button>`
-			}
+		{data: "viewname"},
+		{data: "email"},
+		{data: "username"},
+		{
+			data: "_id",
+			render: (data, type, row) => `<a href="/app/customer/${data}"><i class="far fa-eye"></i> View list</a>` 
+		},
+		{
+			render: () => `<button class="btn btn-success btn-sm edit">Edit</button>
+			<button class="btn btn-danger btn-sm delete">Delete</button>`
+		}
 		],
 		order: [],
 		createdRow: (row, data, index) => $(row).data("info", data)
@@ -66,6 +66,17 @@ const gatherInput = () => FormUtil.getObject(".enterUser");
 function cancelForm(){
 	resetForm();
 	$("#overlay").toggleClass("hide");
+}
+
+async function removeUser(user){
+	try{
+		if(confirm("Do you want to remove this customer permanently?")){
+			await $.ajax({method: "DELETE", url: "/api/user/" + (user.data("info"))._id});
+			reloadTable();	
+		}	
+	}catch(err){
+		console.log(err);
+	}
 }
 
 //==============================================================================

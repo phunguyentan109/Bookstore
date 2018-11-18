@@ -4,8 +4,6 @@
 var express 				= require("express"),
 	router 					= express.Router(),
 	db 						= require("../models"),
-	nodemailer				= require("nodemailer"),
-	async					= require("async"),
 	passport				= require("passport"),
 	LocalStrategy 			= require("passport-local"),
 	passportLocalMongoose 	= require("passport-local-mongoose");
@@ -57,9 +55,22 @@ router.post("/register", function(req, res){
 router.get("/logout", function(req, res){
    req.logout();
    req.session.destroy();
-   res.redirect("/login");
+   return res.redirect("/login");
 });
 
-router.get("/forgot", (req, res) => res.render("forgot"));
+router.get("/reset", async(req, res) => {
+	try{
+		// let user = await db.User.findOne({resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now()}});
+		// if(!user){
+		// 	req.flash("error", "Password reset token is invalid or has expired.");
+		// 	return res.redirect("/oops");
+		// }
+		res.render("forgot", {token: req.params.token, statusMsg: req.flash("error")});
+	}catch(err){
+		console.error(err);
+	}
+});
+
+router.get("/oops", (req, res) => res.render("oops"));
 
 module.exports = router;

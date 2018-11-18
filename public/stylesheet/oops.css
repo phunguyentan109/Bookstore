@@ -1,0 +1,45 @@
+body{
+	background-image: url(/image/oops.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: Lato;
+}
+
+.content{
+	color: white;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.content h1{
+	font-weight: bold;
+	font-size: 70px;
+}
+
+.content h1>span{
+	font-weight: normal;
+	font-size: 50px;
+}
+
+.content>h3{
+	line-height: 2;
+}
+
+.content a{
+	width: 200px;
+}
+
+.content button{
+	width: 200px;
+	color: white;
+	border: none;
+	padding: 12px 0px;
+	background-color: #66a066a6;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
