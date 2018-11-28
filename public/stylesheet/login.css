@@ -3,13 +3,16 @@ body{
 	background-repeat: no-repeat;
 }
 
-.content{
+.contentLogin{
 	margin-top: 150px;
 	padding-right: 0px;
 	padding-left: 0px;
-	background-color: #131313b3;
 	display: flex;
 	flex-direction: row;
+}
+
+.contentLogin.hide{
+	display: none;
 }
 
 .customize-md-6{
@@ -17,6 +20,10 @@ body{
 	flex-basis: 50%;
 	display: flex;
 	align-items: center;
+}
+
+.customize-md-6:nth-of-type(1){
+	background-color: #131313b3;
 }
 
 /*==========================================*/
@@ -262,12 +269,15 @@ form + a:hover, form + a:focus{
 /* FORGOT CSS
 /*==========================================*/
 .forgetPanel{
-	background-color: #131313b3;
 	color: #f7f7f7;
 	padding: 0;
 	margin-top: 230px;
 	margin-bottom: 150px;
 	display: flex;
+}
+
+.forgetPanel.hide{
+	display: none;
 }
 
 .forgetPanel>div{
@@ -279,6 +289,7 @@ form + a:hover, form + a:focus{
 	padding-top: 50px;
 	padding-bottom: 50px;
 	font-family: Lato;
+	background-color: #131313b3;
 }
 
 .forgetPanel>div>h2{
@@ -325,6 +336,7 @@ form + a:hover, form + a:focus{
 .forgetPanel>div>p:nth-of-type(3) span{
 	color: #ab8d57;
 	font-style: italic;
+	cursor: pointer;
 }
 
 .forgetPanel>div>p:nth-of-type(3) i {
@@ -371,7 +383,7 @@ form + a:hover, form + a:focus{
 
 .forgetPanel>div:nth-of-type(2){
 	align-items: flex-start;
-	background-color: #2b31306b;
+	background-color: #2b3332d4;
 }
 
 .forgetPanel>div:nth-of-type(2)>div{

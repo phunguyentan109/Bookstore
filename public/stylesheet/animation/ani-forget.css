@@ -1,0 +1,37 @@
+/*==========================================*/
+/* FORGET KEYFRAME APPEAR
+/*==========================================*/
+.forgot-left-appear {animation: appearBottomForget .7s 1 backwards;}
+
+.forgot-right-appear {animation: appearBottomForget .7s .3s 1 backwards;}
+
+.forgot-left-disappear {animation: disappearBottomForget .7s backwards;}
+
+.forgot-right-disappear {animation: disappearBottomForget .7s .3s 1 backwards;}
+
+@keyframes appearBottomForget{
+	0%{
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes disappearBottomForget{
+	0%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+	100%{
+		opacity: 0;
+		transform: translateY(100px);
+	}
+}
+
+/*==========================================*/
+/* ANNOUNCEMENT ANIMATION
+/*==========================================*/
+.announce-appear {animation: appearLeft .5s 1 backwards;}

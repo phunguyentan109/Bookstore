@@ -20,7 +20,7 @@
 				<div class="form">
 					<h2>Reset password</h2>
 					<p>Enter here your new password to replace the old one and return to Kafka</p>
-					<form method="POST" action="/forgot">
+					<form method="POST" action="/reset/<%=token%>">
 						<div class="form-group">
 							<div class="form-group">
 								<div class="input-group">
@@ -31,7 +31,7 @@
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-addon"><i class="fas fa-redo"></i></div>
-									<input type="password" placeholder="Confirm Password" name="re-password">
+									<input type="password" placeholder="Confirm Password" name="confirm" required>
 								</div>
 							</div>
 							<button>Confirm Password</button>

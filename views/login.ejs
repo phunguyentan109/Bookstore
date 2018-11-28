@@ -1,13 +1,14 @@
 <% include partials/header %>
 <link rel="stylesheet" href="/stylesheet/partials/partial.css">
-<link rel="stylesheet" href="/stylesheet/authen.css">
-<link rel="stylesheet" href="/stylesheet/authen-animation.css">
+<link rel="stylesheet" href="/stylesheet/login.css">
+<link rel="stylesheet" href="/stylesheet/animation/ani-login.css">
+<link rel="stylesheet" href="/stylesheet/animation/ani-forget.css">
 <script src="https://unpkg.com/eva-icons"></script>
 </head>
 <body>
 	<% include partials/navbar%>
-	<div class="container content content-appear-up">
-		<div class="customize-md-6">
+	<div class="container contentLogin">
+		<div class="customize-md-6 content-left-appear">
 			<div class="intro-content">
 				<h1 class="name-appear"><i class="fas fa-book"></i> Kafka</h1>
 				<p class="slogan-appear">Book for everyone</p>
@@ -21,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="customize-md-6">
+		<div class="customize-md-6 content-right-appear">
 			<div class="register-form">
 				<div>
 					<h2 class="name-appear">Login</h2>
@@ -66,8 +67,8 @@
 		</div>
 	</div>
 
-	<div class="container forgetPanel">
-		<div>
+	<div class="container forgetPanel hide">
+		<div class="forgot-left-disappear">
 			<h2><i class="fas fa-unlock"></i> Forgot Password?</h2>
 			<p>Enter the email which you have signed up for the account below here:</p>
 			<p class="announce-appear"><i></i></p>
@@ -80,18 +81,20 @@
 			</div>
 			<p>Try to access with different account, <span>click here</span> <i class="fas fa-key"></i></p>
 		</div>
-		<div>
+		<div class="forgot-right-disappear">
 			<div>
 				<h2>Recovery Instruction</h2>
 				<p><i class="fas fa-caret-right"></i> Enter the email of your account</p>	
 				<p><i class="fas fa-caret-right"></i> Click button "Confirm email" to process</p>	
 				<p><i class="fas fa-caret-right"></i> Wait until the loading icon stop then check the message in your email</p>	
-				<p><i class="fas fa-caret-right"></i> Follow the link of the email to get back your password</p>	
+				<p><i class="fas fa-caret-right"></i> Follow the link of the email to get back your password</p>
+				<i data-eva="alert-triangle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i> No account with that email address exists	
 			</div>
 		</div>
 	</div>
 	
-	<script src="/js/authenticate.js"></script>
+	<script src="/js/login.js"></script>
+	<script src="/js/animation/loginAnimation.js"></script>
+	<script type="module" src="/js/Utility/PutilCore.js"></script>
 </body>
-<script type="module" src="/js/Utility/PutilCore.js"></script>
 </html>

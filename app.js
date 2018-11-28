@@ -1,10 +1,10 @@
 require('dotenv').config()
-var express 				= require("express"),
-	app 					= express(),
-	bodyParser 				= require("body-parser"),
-	db						= require("./models"),
-	flash					= require("connect-flash"),
-	passport				= require("passport");
+var express 	= require("express"),
+	app 		= express(),
+	bodyParser 	= require("body-parser"),
+	db			= require("./models"),
+	flash		= require("connect-flash"),
+	passport	= require("passport");
 
 var cartAPI			= require("./routes/api/cartAPI"),
 	commentAPI 		= require("./routes/api/commentAPI"),

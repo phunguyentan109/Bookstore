@@ -1,22 +1,19 @@
 $(function(){
 	$(".forgetPanel>div>p:nth-of-type(2)").hide();
-	// $(".content").hide();
-
 	$(".intro-content>button").click(() => {
 		$(".register-form form")[0].reset();
 		clearAnimation();
 		handleChangeMode();
 	});
-
-	$(".forgetPanel button").on("click", () => forgetSubmit());
+	$(".forgetPanel button").on("click", forgetSubmit);
 });
 
 // GLOBAL VARIABLE
-let btn = $(".register-form>div>form>button");
+const btn = $(".register-form>div>form>button");
 
-//==================================================================================
-// WORKING WITH DATA & MANIPULATE
-//==================================================================================
+//================================================================================
+// CONTROLLING SECTION
+//================================================================================
 function handleChangeMode(){
 	Array.from($(".register-form form>.appear")).forEach(val => $(val).toggleClass("signup-appear"));
 	toggleTitle("0");
@@ -57,9 +54,9 @@ async function forgetSubmit(){
 	}	
 }
 
-//==================================================================================
-// DRAW INTERFACE
-//==================================================================================
+//================================================================================
+// DRAWING SECTION
+//================================================================================
 function clearAnimation(){
 	btn.removeClass("btnSignup-appear");
 	$(".intro-content>button").removeClass("beMember-appear");
@@ -114,17 +111,15 @@ function toggleRequest(agree){
 
 function drawMsg(msg){
 	let announce = $(".forgetPanel>div>p:nth-of-type(2)");
-	switch(msg){
-		case "noexist":
-		announce.html(`<i data-eva="alert-triangle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i> No account with that email address exists`);
-		announce.addClass("error");
-		break;
-		case "sent":
-		announce.html(`<i data-eva="checkmark-circle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i> An email has been sent to <span>${$(".forgetPanel input").val()}</span>`);
-		announce.addClass("success");
-		break;
+	if(msg === noexist){
+		let icon = `<i data-eva="alert-triangle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i>`;
+		let text = `No account with that email address exists`;	
+	} else {
+		let icon = `<i data-eva="checkmark-circle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i>`;
+		let text = `An email has been sent to <span>${$(".forgetPanel input").val()}</span>`;	
 	}
 	eva.replace();	
-	announce.show();
+	announce.html(`${icon} ${text}`).show();
 	$(".forgetPanel input").val("");
 }
+
