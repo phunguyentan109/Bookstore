@@ -33,7 +33,6 @@
     "npm-check": "^5.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1",
-    "purify-css": "^1.2.6"
+    "passport-local-mongoose": "^5.0.1"
   }
 }
