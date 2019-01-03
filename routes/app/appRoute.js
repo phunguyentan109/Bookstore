@@ -28,5 +28,6 @@ router.get("/customer/:id", (req, res) => res.render("app/customer-address"));
 
 router.get("/genre", (req, res) => res.render("app/genre"));
 
-module.exports = router;
+router.get("/order", (req, res) => res.render("app/order"));
 
+module.exports = router;

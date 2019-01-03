@@ -65,7 +65,7 @@ function sendFormData(){
 	if($("#another").text() === "Save changes"){
 		updateAddress($("#another").data("add-id"));
 	} else {
-		
+
 	}
 }
 
@@ -90,9 +90,9 @@ function toggleCover(cover){
 async function submitOrder(){
 	if($(".selected").length > 0){
 		let addressId = $(".selected").parent().children("input").val();
-		let address = await $.getJSON("/api/address/" + addressId);
+		let {address, city, country, receiver} = await $.getJSON("/api/address/" + addressId);
 		let total = $("#subtotal").text();
-		let order = {...address};
+		let order = {address, city, country, receiver};
 		order.money = Number($("#subtotal").text().substring(1, total.length));
 		if($(".fas.fa-check-square").attr("name") === "fast") order.deliveryFast = true;
 		let orderId = await $.post("/api/order/new", order);
@@ -119,7 +119,6 @@ async function submitOrder(){
 //==================================================================================
 // DRAW HTML
 //==================================================================================
-
 function setTotal(sum){
 	$("#notional").text(`$${sum}`);
 	$("#shipping").text(`$${15}`);
@@ -136,7 +135,7 @@ function drawCover(cart){
 				</div>`);
 	book.data("amount", cart.quantity);
 	book.data("info", cart);
-	$(".rowCare + .row").append(book);			
+	$(".rowCare + .row").append(book);
 }
 
 function addSelect(button){
@@ -189,7 +188,7 @@ function fillAddress(address){
 
 function clearForm(){
 	let form = $(".inputValue");
-	for(var inp of form) 
+	for(var inp of form)
 		$(inp).val("");
 	$("#another").text("Use this address");
 	$("#another").data("add-id", "");
@@ -207,7 +206,7 @@ function coverBook(cover){
 	cover.html(`<i class="fas fa-bookmark"></i> Covered!`);
 	cover.parent().children("p:nth-of-type(2)").addClass("cover");
 	cover.parent().addClass("selectCover");
-	
+
 	let price = 5 * cover.parents(".col-md-2").data("amount");
 	cover.parent().children("p:nth-of-type(2)").html(`<i class="fas fa-dollar-sign"></i> ${price}`);
 	addPrice("#cover", price);
@@ -227,7 +226,7 @@ function checkBox(e){
 		removeCheckBox();
 		e.attr("class", "fas fa-check-square");
 		if(e.attr("name") === "fast") addPrice("#shipping", 5);
-		else subPrice("#shipping", 5);	
+		else subPrice("#shipping", 5);
 	}
 }
 
@@ -270,25 +269,14 @@ function addTotalPrice(number){
 	let current = $("#subtotal").text();
 	let currentNum = Number(current.substring(1, current.length));
 	$("#subtotal").css("font-weight", "bold");
-	$("#subtotal").text(`$${currentNum + number}`);
+	$("#subtotal").text(`$${(currentNum + number).toFixed(2)}`);
 }
 
 function subTotalPrice(number){
 	let current = $("#subtotal").text();
 	let currentNum = Number(current.substring(1, current.length));
-	$("#subtotal").text(`$${currentNum - number}`);
+	$("#subtotal").text(`$${(currentNum - number).toFixed(2)}`);
 	if($("#cover").text().indexOf("+") === -1 && $("#shipping").text().indexOf("+") === -1){
 		$("#subtotal").css("font-weight", "normal");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

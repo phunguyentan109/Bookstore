@@ -1,7 +1,8 @@
-var db = require("../models"),
-	{getToken, transportMail} = require("../middleware/sendMail");
+const db = require("../models");
+const {getToken, transportMail} = require("../middleware/sendMail");
+const {noEmailExist, emailSent, recoverEmail} = require("./sysMessage");
 
-require('dotenv').config();	
+require('dotenv').config();
 
 exports.getUsers = async(req, res) => {
 	try{
@@ -25,19 +26,13 @@ exports.recoverPassword = async(req, res) => {
 	try{
 		let token = await getToken();
 		let user = await db.User.findOne({email: req.body.email});
-		if(!user) return res.json("noexist");
+		if(!user) return res.json(noEmailExist);
 		user.resetPasswordToken = token;
 		user.resetPasswordExpires = Date.now() + 3600000;
 		user.save();
-		let subject = `🔑 Kafka Bookstore Password Reset`;
-		let text = `You are receiving this because you (or someone else) have requested the reset of the password for your account.
-
-Please click on the following link, or paste this into your browser to complete the process:
-http://${req.headers.host}/reset/${token}
-
-If you did not request this, please ignore this email and your password will remain unchanged.`;
-		await transportMail(subject, text, user.email);
-		res.json("sent");
+		let {subject, text} = recoverEmail(req.headers.host, token);
+		transportMail(subject, text, user.email);
+		res.json(emailSent(req.body.email));
 	}catch(err){
 		res.send(err);
 	}

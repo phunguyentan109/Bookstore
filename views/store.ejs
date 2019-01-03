@@ -21,11 +21,11 @@
 								<h4 class="fadeInDown_recommend">Agatha Christie</h4>
 								<h2 class="fadeInLeft_custom">And Then There Were None</h2>
 								<h3 class="fadeInLeft_custom">90.000đ <span class="first-sale">120.000</span> <span class="first-discount">-30%</span></h3>
-								<button class="fadeInUp_recommend">View Now</button>	
+								<button class="fadeInUp_recommend">View Now</button>
 							</div>
 							<img src="/image/book14.jpg" class="book-first fadeInRight_recommend_b1">
 							<img src="/image/back1.jpg" class="book-first second fadeInRight_recommend_b2">
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -67,7 +67,7 @@
 	<div class="container content">
 		<div class="row">
 			<div class="col-md-5 remove-pad">
-				<div class="eve-content upcoming-content-bg">			
+				<div class="eve-content upcoming-content-bg">
 					<div class="upcoming-layout">
 						<h2 class="upcoming-content">Upcoming books</h2>
 						<p class="upcoming-des">Calendar of upcoming books on Kafka Stores and pre-order</p>
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<div class="col-md-7 remove-pad">
-				<div class="eve-content recommend-bg">		
+				<div class="eve-content recommend-bg">
 					<h2 class="upcoming-content">Kafka Recommends</h2>
 					<p class="recommend-des">Calendar of upcoming books on Kafka Stores and pre-order</p>
 				</div>
@@ -87,7 +87,7 @@
 		<div class="col-md-3 category-design">
 			<div class="category-list">
 				<h4 class="category"><i class="fas fa-list-ul cate-icon"></i> Book Category</h4>
-				
+
 				<ul class="listGenre">
 					<li><a href="#">All</a></li>
 					<li><a href="#">Fantasy & Sci-Fi</a></li>
@@ -107,9 +107,9 @@
 
 				<h4 class="category"><i class="fas fa-hand-holding-usd cate-icon"></i> Book Price Range</h4>
 				<p class="price-filter">Range: <span class="start">0.00</span> - <span class="end">0.00</span></p>
-				
+
 				<div class="price-bar">
-					<div id="slider-range"></div>	
+					<div id="slider-range"></div>
 				</div>
 
 				<form class="price-range">
@@ -139,7 +139,7 @@
 					<li><a href="#">Biographies & Memoirs</a></li>
 				</ul>
 			</div>
-		</div>	
+		</div>
 
 		<div class="col-md-9 content-design">
 			<h4 class="category"><i class="fas fa-book-open cate-icon"></i> Book showncase</h4>
@@ -160,13 +160,13 @@
 						<p class="author"><%=book.author.name%></p>
 						<p class="price">$<%=(book.price*(100 - book.discount)/100).toFixed(2)%>
 							<% if(book.discount != "0"){ %>
-							<span class="sale"><%=book.price%></span> 
-							<span class="discount">-<%=book.discount%>%</span>	
-							<% } %> 
+							<span class="sale"><%=book.price%></span>
+							<span class="discount">-<%=book.discount%>%</span>
+							<% } %>
 						</p>
 					</div>
-				</div>	
-				<% }) %>	          		                 
+				</div>
+				<% }) %>
 			</div>
 
 			<hr>
@@ -177,7 +177,7 @@
 				<li class="page"><a href="#">3</a></li>
 				<li class="page"><a href="#">4</a></li>
 				<li class="page"><a href="#">5</a></li>
-			</ul>            
+			</ul>
 		</div>
 	</div>
 

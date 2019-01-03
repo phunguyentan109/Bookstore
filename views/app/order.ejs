@@ -1,0 +1,77 @@
+<%include partials/header%>
+<link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" type="text/css" href="../../stylesheet/app/order.css">
+<link rel="stylesheet" href="../../plugins/iCheck/all.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<%include partials/main-header%>
+		<%include partials/main-sidebar%>
+
+		<section class="content-wrapper displayBound">
+			<section class="content-header">
+				<h1>Manage Books</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Tables</a></li>
+					<li class="active">Data tables</li>
+				</ol>
+			</section>
+			<section class="content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<div class="box-header">
+								<div class="addon-header">
+									<h3 class="box-title">Book Data Tables </h3>
+								</div>
+							</div>
+							<div class="box-body table-responsive">
+								<table id="orderTable" class="table table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>Serial</th>
+											<th>Receiver</th>
+											<th>Date Created</th>
+											<th>Total Price</th>
+											<th>Status</th>
+											<th>Option</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+									<tfoot>
+										<tr>
+                                            <th>Serial</th>
+											<th>Books</th>
+											<th>Date Created</th>
+											<th>Total Price</th>
+											<th>Status</th>
+											<th>Option</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<%include partials/snackbar%>
+		<%include partials/main-footer%>
+		<%include partials/control-sidebar%>
+	</div>
+
+	<%include partials/app-script%>
+	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="../../plugins/iCheck/icheck.min.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+	<script type="text/javascript" src="/js/app/order.js"></script>
+</body>

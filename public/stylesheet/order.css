@@ -110,17 +110,17 @@
   margin-right: 5px;
 }
 
-.rowOrder>.col-md-2>p.completed,
+.rowOrder>.col-md-2>b.completed,
 .section>div>p>.filter.completed{
   color: #64c964;
 }
 
-.rowOrder>.col-md-2>p.working,
+.rowOrder>.col-md-2>b.working,
 .section>div>p>.filter.working{
-  color: gray;
+  color: #989898;
 }
 
-.rowOrder>.col-md-2>p.cancelled,
+.rowOrder>.col-md-2>b.cancelled,
 .section>div>p>.filter.cancelled{
   color: #cb6d2e;
 }
@@ -128,7 +128,6 @@
 /*==========================================*/
 /* PAGINATION CSS
 /*==========================================*/
-
 .listPage{
   display: flex;
   list-style-type: none;

@@ -1,5 +1,5 @@
 $(function(){
-	$(".forgetPanel>div>p:nth-of-type(3) span, form + a").on("click", animateLoginForgot);
+	$(".forgetPanel>div>p:nth-of-type(2) span, form + a").on("click", animateLoginForgot);
 });
 
 //================================================================================
@@ -19,4 +19,3 @@ function configLoginForgot(){
 	$(".forgetPanel>div:nth-of-type(1)").toggleClass("forgot-left-appear").toggleClass("forgot-left-disappear");
 	$(".forgetPanel>div:nth-of-type(2)").toggleClass("forgot-right-appear").toggleClass("forgot-right-disappear");
 }
-

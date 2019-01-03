@@ -1,18 +1,9 @@
-var express = require("express"),
-	router = express.Router(),
-	db = require("../../models");
+const express = require("express");
+const router = express.Router({mergeParms: true});
+const {getOrders, createOrder} = require("../../helpers/order");
 
-router.post("/new", async(req, res) => {
-	try{
-		let order = req.body;
-		order.user = req.user._id;
-		console.log(order.user);
-		debugger;
-		let newOrder = await db.Order.create(order);
-		res.json(newOrder._id);
-	} catch(err){
-		res.send(err);
-	}
-})
+router.route("/").get(getOrders);
+
+router.route("/new").post(createOrder);
 
 module.exports = router;

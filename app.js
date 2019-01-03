@@ -18,7 +18,7 @@ var cartAPI			= require("./routes/api/cartAPI"),
 	orderAPI		= require("./routes/api/orderAPI"),
 	orderBookAPI	= require("./routes/api/orderBookAPI");
 
-var	appRoute 		= require("./routes/app/appRoute");
+var	appRoute = require("./routes/app/appRoute");
 
 var	storeRoutes = require("./routes/storeRoute"),
 	baseRoute 	= require("./routes/baseRoute"),

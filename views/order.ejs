@@ -46,24 +46,14 @@
 						<p><%=(details[i])[0].book.name%>...and <%=(details[i]).length - 1%> other product(s)</p>
 					</div>
 					<div class="col-md-2">
-						<p><%=orders[i].dateCreated.getDate()%>/<%=orders[i].dateCreated.getMonth()+1%>/<%=orders[i].dateCreated.getFullYear()%></p>
+						<p><%=orders[i].dateCreated%></p>
 					</div>
 					<div class="col-md-2">
 						<p>$<%=orders[i].money%></p>
 					</div>
-					<%if (orders[i].status === "Working") {%>
 					<div class="col-md-2">
-						<p class="working"><i class="fas fa-truck"></i> Working</p>
+						<%-orders[i].status%>
 					</div>
-					<%} else if(orders[i].status === "Completed") {%>
-					<div class="col-md-2">
-						<p class="completed"><i class="fas fa-flag-checkered"></i> Completed</p>
-					</div>
-					<%} else {%>
-					<div class="col-md-2">
-						<p class="cancelled"><i class="fas fa-ban"></i> Cancelled</p>
-					</div>
-					<%}%>
 				</div>
 				<%}%>
 				<% if(orders.length > 5){ %>
@@ -82,4 +72,4 @@
 
 	<% include partials/footer %>
 </body>
-</html>	
+</html>

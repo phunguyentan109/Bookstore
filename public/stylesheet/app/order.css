@@ -1,0 +1,16 @@
+b>i{
+    margin-right: 5px;
+}
+
+.working{
+    color: #989898;
+
+}
+
+.completed{
+    color: #64c964;
+}
+
+.cancelled{
+    color: #cb6d2e;
+}

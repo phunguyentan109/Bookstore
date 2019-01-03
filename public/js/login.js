@@ -1,5 +1,5 @@
 $(function(){
-	$(".forgetPanel>div>p:nth-of-type(2)").hide();
+	$(".forgetPanel>.announce-content").hide();
 	$(".intro-content>button").click(() => {
 		$(".register-form form")[0].reset();
 		clearAnimation();
@@ -51,7 +51,7 @@ async function forgetSubmit(){
 		FormUtil.offLoading(".forgetPanel button", "confirm email");
 	}catch(err){
 		console.error(err);
-	}	
+	}
 }
 
 //================================================================================
@@ -110,16 +110,8 @@ function toggleRequest(agree){
 }
 
 function drawMsg(msg){
-	let announce = $(".forgetPanel>div>p:nth-of-type(2)");
-	if(msg === noexist){
-		let icon = `<i data-eva="alert-triangle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i>`;
-		let text = `No account with that email address exists`;	
-	} else {
-		let icon = `<i data-eva="checkmark-circle-outline" data-eva-width="20" data-eva-height="20" data-eva-fill="#e0e0e0"></i>`;
-		let text = `An email has been sent to <span>${$(".forgetPanel input").val()}</span>`;	
-	}
-	eva.replace();	
-	announce.html(`${icon} ${text}`).show();
+	let announce = $(".announce-content");
+	announce.empty();
+	announce.append(`${msg}`);
 	$(".forgetPanel input").val("");
 }
-

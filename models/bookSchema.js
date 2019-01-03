@@ -39,10 +39,10 @@ var bookSchema = new mongoose.Schema({
 	deliveryFast: Boolean,
 	amount: Number,
 	moreImage: [
-	{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "BookImage"
-	}
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "BookImage"
+		}
 	]
 });
 

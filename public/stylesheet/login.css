@@ -117,7 +117,7 @@ body{
 	transition: flex-basis .1s linear .3s;
 }
 
-.intro-content>div button:nth-of-type(1){	 
+.intro-content>div button:nth-of-type(1){
 	background-color: #496b9c;
 	border: 2px solid #496b9c;
 }
@@ -129,7 +129,7 @@ body{
 
 .intro-content>div button:nth-of-type(3){
 	background-color: #b74c2f;
-	border: 2px solid #b74c2f;	
+	border: 2px solid #b74c2f;
 }
 
 .intro-content>div button:hover,
@@ -244,7 +244,7 @@ body{
 	border-color: #d04242;
 }
 
-.register-form>div>form>button.hideSItoSU, 
+.register-form>div>form>button.hideSItoSU,
 .register-form>div>form>button.hideSUtoSI{
 	opacity: 0;
 	transform: translateX(-40px);
@@ -302,8 +302,8 @@ form + a:hover, form + a:focus{
 	color: #9c9c9c;
 }
 
-.forgetPanel>div>p.error,
-.forgetPanel>div>p.success{
+.forgetPanel .error,
+.forgetPanel .success{
 	background-color: #902a2a91;
 	margin-top: 20px;
 	padding: 5px 13px;
@@ -313,33 +313,33 @@ form + a:hover, form + a:focus{
 	align-items: center;
 }
 
-.forgetPanel>div>p.success{
+.forgetPanel .success{
 	color: #eaeaea;
 	background-color: #1b7e8487;
 }
 
-.forgetPanel>div>p.success span{
+.forgetPanel .success>span{
 	margin-left: 3px;
 	font-weight: bold;
 	max-width: 70%;
 }
 
-.forgetPanel>div>p.error>svg,
-.forgetPanel>div>p.success>svg{
+.forgetPanel .error>i,
+.forgetPanel .success>i{
 	margin-right: 5px;
 }
 
-.forgetPanel>div>p:nth-of-type(3){
+.forgetPanel>div>p:nth-of-type(2){
 	margin-bottom: 0;
 }
 
-.forgetPanel>div>p:nth-of-type(3) span{
+.forgetPanel>div>p:nth-of-type(2) span{
 	color: #ab8d57;
 	font-style: italic;
 	cursor: pointer;
 }
 
-.forgetPanel>div>p:nth-of-type(3) i {
+.forgetPanel>div>p:nth-of-type(2) i {
 	margin-left: 3px;
 	color: #ab8d57;
 }
