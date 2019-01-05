@@ -1,9 +1,7 @@
-var express = require("express"),
-	router	= express.Router(),
-	db 		= require("../../models");
+const db = require("../models");
 
-router.post("/new", async(req, res) =>{
-	try{
+exports.createComment = async(req, res) => {
+    try{
 		var cmt = new db.Comment({
 			user: req.user._id,
 			title: req.body.cmtTitle,
@@ -14,10 +12,8 @@ router.post("/new", async(req, res) =>{
 		let book = await db.Book.findById(req.body.bookID);
 		book.comment.push(newCmt._id);
 		book.save();
-		res.send({user: req.user})
+		return res.json({user: req.user});
 	} catch(err){
-		console.log(err);
+		return res.send(err);
 	}
-});
-
-module.exports = router;
+}

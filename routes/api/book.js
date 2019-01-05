@@ -1,13 +1,13 @@
-var express = require("express"),
-	router = express.Router(),
-	helpers = require("../../helpers/book"),
-	db = require("../../models"),
-	{needDestroy, uploadImg} = require("../../middleware/handleUpload"),
-	{upload, cloudinary} = require("../../middleware/uploader");
+const express = require("express");
+const router = express.Router({mergeParams: true});
+const helpers = require("../../helpers/book");
+const db = require("../../models");
+const {needDestroy, uploadImg} = require("../../middleware/handleUpload");
+const {upload, cloudinary} = require("../../middleware/uploader");
 
 //=============================================================
 // ROUTE
-//=============================================================	
+//=============================================================
 router.route("/")
 .get(helpers.getBooks)
 .post(upload.fields([{name: "main"}, {name: "sub"}]), uploadImg, helpers.createBook);

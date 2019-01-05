@@ -3,12 +3,12 @@
 //=============================================================
 var express = require("express"),
 	router	= express.Router(),
-	db		= require("../models");
+	db		= require("../../models");
 
 //=============================================================
 // CONFIGURATION
 //=============================================================
-const {isLoggedIn} = require("../middleware/authentication");
+const {isLoggedIn} = require("../../middleware/authentication");
 
 //=============================================================
 // ROUTES

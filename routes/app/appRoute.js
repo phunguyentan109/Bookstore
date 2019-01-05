@@ -1,6 +1,6 @@
-var express = require("express"),
-	router = express.Router(),
-	db = require("../../models");
+const express = require("express");
+const router = express.Router();
+const db = require("../../models");
 
 router.get("/", (req, res) => res.render("app/dashboard"));
 
@@ -11,7 +11,7 @@ router.get("/book/new", async(req, res) => {
 	let suppliers = await db.Supplier.find();
 	let publishers = await db.Publisher.find();
 	let genres = await db.Genre.find();
-	res.render("app/new-book", {authors: authors, suppliers: suppliers, publishers: publishers, genres: genres});
+	res.render("app/new-book", {authors, suppliers, publishers, genres});
 });
 
 router.get("/book/:id", async(req, res) => {
@@ -19,7 +19,7 @@ router.get("/book/:id", async(req, res) => {
 	let suppliers = await db.Supplier.find();
 	let publishers = await db.Publisher.find();
 	let genres = await db.Genre.find();
-	res.render("app/edit-book", {authors: authors, suppliers: suppliers, publishers: publishers, genres: genres});
+	res.render("app/edit-book", {authors, suppliers, publishers, genres});
 })
 
 router.get("/customer", (req, res) => res.render("app/customer"));

@@ -7,7 +7,7 @@ gulp.task('nodemon', function (cb) {
     var called = false;
     return nodemon({
         ext: "ejs, js, json, css",
-        watch: ['views/', 'public/js/', 'models/', 'middleware/', 'helpers/'],
+        watch: ['*', 'views/', 'public/js/', 'models/', 'middleware/', 'helpers/', 'config/'],
         script: 'app.js',
         ignore: ['gulpfile.js', 'node_modules/']
     })

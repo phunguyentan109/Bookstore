@@ -1,3 +1,4 @@
+
 var db = require("../models");
 
 exports.getAddresses = async(req, res) => {
@@ -11,7 +12,6 @@ exports.getAddresses = async(req, res) => {
 
 exports.createAddress = async(req, res) => {
 	try{
-		console.log(req.body);
 		let createdAdd = await db.Address.create(req.body.address);
 		let customer = await db.User.findById(req.body.user);
 		customer.address.push(createdAdd._id);

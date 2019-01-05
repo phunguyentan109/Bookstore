@@ -3,15 +3,15 @@
 // =============================================================
 var express 				= require("express"),
 	router 					= express.Router(),
-	db 						= require("../models"),
+	db 						= require("../../models"),
 	passport				= require("passport"),
 	LocalStrategy 			= require("passport-local"),
-	{getToken, transportMail} = require("../middleware/sendMail"),
+	{getToken, transportMail} = require("../../middleware/sendMail"),
 	passportLocalMongoose 	= require("passport-local-mongoose");
 
 // =============================================================
 // CONFIGURATION
-// =============================================================	
+// =============================================================
 passport.use(new LocalStrategy(db.User.authenticate()));
 passport.serializeUser(db.User.serializeUser());
 passport.deserializeUser(db.User.deserializeUser());
@@ -92,7 +92,7 @@ This is a confirmation that the password for your account ${user.email} has just
 					return res.redirect("/");
 				});
 			});
-			
+
 		} else {
 			req.flash("error", "Password do not match.");
 			return res.redirect("back");
