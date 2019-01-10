@@ -1,4 +1,3 @@
-
 var db = require("../models");
 
 exports.getAddresses = async(req, res) => {
@@ -48,5 +47,3 @@ exports.deleteAddress = async(req, res) => {
 		res.send(err);
 	}
 }
-
-module.exports = exports;

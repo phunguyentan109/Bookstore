@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const db = require("./models");
 const flash = require("connect-flash");
 const passport = require("passport");
-
 const site = require("./config/site");
 const api = require("./config/api");
 const appRoute = require("./routes/app/appRoute");

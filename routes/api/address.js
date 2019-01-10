@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router({mergeParams: true});
 const db = require("../../models");
-const helpers = require("../../helpers/address");
+const {createAddress, getAddresses, getAddress, updateAddress, deleteAddress} = require("../../helpers/address");
 
 router.route("/")
-.get(helpers.getAddresses)
-.post(helpers.createAddress);
+.get(getAddresses)
+.post(createAddress);
 
 router.route("/:id")
-.get(helpers.getAddress)
-.put(helpers.updateAddress)
-.delete(helpers.deleteAddress);
+.get(getAddress)
+.put(updateAddress)
+.delete(deleteAddress);
 
 module.exports = router;
