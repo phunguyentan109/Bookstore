@@ -191,7 +191,8 @@ body{
 	margin-bottom: 20px;
 }
 
-.register-form form>div:nth-of-type(2), .register-form form>div:nth-of-type(3),
+.register-form form>div:nth-of-type(2),
+.register-form form>div:nth-of-type(3),
 .register-form form>div:nth-of-type(5){
 	visibility: hidden;
 	transform: translateX(-50px);
@@ -201,9 +202,13 @@ body{
 	transition-duration: 0.7s;
 }
 
-.register-form form>div:nth-of-type(3) {transition-delay: 0.3s;}
+.register-form form>div:nth-of-type(3) {
+	transition-delay: 0.3s;
+}
 
-.register-form form>div:nth-of-type(5) {transition-delay: 0.6s;}
+.register-form form>div:nth-of-type(5) {
+	transition-delay: 0.6s;
+}
 
 .register-form form>div.signup-appear{
 	visibility: visible;

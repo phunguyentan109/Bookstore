@@ -1,7 +1,9 @@
 /*==========================================*/
 /* APPEAR & DISAPPEAR CONTENT
 /*==========================================*/
-.content-left-appear, .content-right-appear {animation: appearUpContent 1s 1 backwards;}
+.content-left-appear, .content-right-appear {
+	animation: appearUpContent 1s 1 backwards;
+}
 
 .content-right-appear {animation-delay: .3s;}
 
@@ -67,7 +69,7 @@
 /*==========================================*/
 @keyframes appearUp{
 	0%{
-		opacity: 0;	
+		opacity: 0;
 		transform: translateY(-40px);
 	}
 	100%{
@@ -108,4 +110,3 @@
 		transform: translateX(0px);
 	}
 }
-

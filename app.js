@@ -39,6 +39,6 @@ site.load().forEach(data => app.use(data.url, data.pathName));
 api.load().forEach(data => app.use(data.url, data.pathName));
 app.use("/app", appRoute);
 
-app.listen(process.env.PORT || process.env.LOCALSERVER, function(req, res){
-	console.log("SERVER IS INITIALIZING...");
+app.listen(process.env.LOCALSERVER, function(req, res){
+	console.log("[ SERVER IS INITIALIZING ON PORT " + process.env.LOCALSERVER + " ]");
 });
