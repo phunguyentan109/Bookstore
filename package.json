@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/phulicon1998/Bookstore#readme",
   "dependencies": {
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.26.3",
     "cloudinary": "^1.13.2",
